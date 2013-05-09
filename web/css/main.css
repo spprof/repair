@@ -40,3 +40,7 @@ h1, h2, h3 {
 	border-bottom: 1px dashed #333;
 	font-size: 12px;
 }
+
+.alert {
+	font-size: 13px;
+}
