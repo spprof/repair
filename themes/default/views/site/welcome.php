@@ -45,6 +45,7 @@
 					<label class="checkbox">
 						<input type="checkbox" value="">Окна
 					</label>
+					<span class='pseudo-link'>Больше видов работ</span>
 				</div>
 			</div>
 			<br/>
