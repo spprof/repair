@@ -1,4 +1,37 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+    background: url(../images/white_wall.png) repeat;
+}
+
+.navbar-inverse .navbar-inner {
+	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2), 0 0 2px 1px #CCC inset;
+	border-bottom: 1px solid #bbb;
+}
+
+.hero-unit {
+    box-shadow: 0 0 1px 1px #D0D0D0 inset;
+}
+
+h1, h2, h3 {
+	text-shadow: 0 1px 2px #888;
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+	text-shadow: 0 -1px 0 #888;
+}
+
+.navbar-form input[type='text'],
+.navbar-form input[type='password']{
+	font-size: 12px;
+}
+
+#content {
+	background: #fff;
+	padding: 70px 20px 20px;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.brand {
+	color: #000;
+	font-size: 11px;
 }

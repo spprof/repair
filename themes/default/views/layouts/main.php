@@ -53,14 +53,14 @@
 		</div>
 	</div>
 	
-	<div class="container">
+	<div id="content" class="container">
 		
 		<?=$content; ?>
 		
 		<hr/>
 		
 		<footer>
-			<p>&copy; Company 2012</p>
+			<p>&copy; Биржа строительных и ремонтных работ 2013</p>
 		</footer>
 	</div> <!-- /container -->
 </body>
