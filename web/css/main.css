@@ -39,6 +39,7 @@ h1, h2, h3 {
 .pseudo-link {
 	border-bottom: 1px dashed #333;
 	font-size: 12px;
+	cursor: pointer;
 }
 
 .alert {
