@@ -1,6 +1,10 @@
 body {
-    padding-bottom: 20px;
-    background: url(../images/white_wall.png) repeat;
+    padding-bottom: 0px;
+    background: url(../images/cream_pixels.png) repeat;
+}
+
+.clear{
+	clear: both;
 }
 
 .navbar-inverse .navbar-inner {
@@ -27,7 +31,7 @@ h1, h2, h3 {
 
 #content {
 	background: #fff;
-	padding: 70px 20px 20px;
+	padding: 70px 20px 20px 20px;
 	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
 }
 
@@ -44,4 +48,18 @@ h1, h2, h3 {
 
 .alert {
 	font-size: 13px;
+}
+
+
+
+.spec-item{
+	border-bottom: 0px solid #333;
+}
+
+.spec-item-rating{
+	float: right;
+}
+
+.spec-item-info{
+	float: left;
 }
