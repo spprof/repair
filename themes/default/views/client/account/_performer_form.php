@@ -24,6 +24,6 @@
 
 <div class="field">
     <?php echo $form->labelEx($model, 'area'); ?>
-    <?php echo $form->radioButtonList($model, 'area', $model->getAreaList()) ?>
+    <?php echo $form->radioButtonList($model, 'area', $model->getAreaList(), array('separator' => '')) ?>
     <?php echo $form->error($model, 'area'); ?>
 </div>

@@ -14,7 +14,7 @@ class Customer extends YModel
 	public function rules()
 	{
 		return array(
-			array('id, city_id', 'numerical', 'integerOnly'=>true),
+			array('city_id', 'numerical', 'integerOnly'=>true),
 			array('phone', 'length', 'max'=>20),
 			array('address', 'safe'),
 			array('id, phone, city_id, address', 'safe', 'on'=>'search'),
@@ -24,7 +24,6 @@ class Customer extends YModel
 	public function relations()
 	{
 		return array(
-			'profile'=>array(self::HAS_ONE, 'User', 'id'),
 		);
 	}
 

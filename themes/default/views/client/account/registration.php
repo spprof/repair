@@ -17,6 +17,12 @@ $this->breadcrumbs = array('Регистрация нового пользова
     <?php echo $form->errorSummary($model); ?>
 
     <div class="field">
+        <?php echo $form->labelEx($model, 'nick_name'); ?>
+        <?php echo $form->textField($model, 'nick_name') ?>
+        <?php echo $form->error($model, 'nick_name'); ?>
+    </div>
+    
+    <div class="field">
         <?php echo $form->labelEx($model, 'name'); ?>
         <?php echo $form->textField($model, 'name') ?>
         <?php echo $form->error($model, 'name'); ?>
@@ -69,7 +75,7 @@ $this->breadcrumbs = array('Регистрация нового пользова
     <?php endif; ?>
 	<br/>
     <div class="submit">
-        <?php echo CHtml::submitButton('Зарегистрироваться', array('class' => 'btn')); ?>
+        <?php echo CHtml::submitButton('Зарегистрироваться', array('class' => 'btn btn-large')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

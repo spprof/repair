@@ -43,11 +43,7 @@
 						<li><a href="#contact">Найти работу</a></li>
 						<li><a href="#contact">О проекте</a></li>
 					</ul>
-					<form class="navbar-form pull-right">
-						<input class="span1" type="text" placeholder="Email">
-						<input class="span1" type="password" placeholder="Пароль">
-						<button type="submit" class="btn">Вход</button>
-					</form>
+					<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

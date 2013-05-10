@@ -51,6 +51,7 @@ class UserIdentity extends CUserIdentity
             Yii::app()->user->setState('nick_name', $user->nick_name);
             Yii::app()->user->setState('email', $user->email);
             Yii::app()->user->setState('loginTime', time());
+            Yii::app()->user->setState('client_type', $user->client_type);
 
             // для админа в сессию запишем еще несколько значений
             if ($user->access_level == User::ACCESS_LEVEL_ADMIN) {

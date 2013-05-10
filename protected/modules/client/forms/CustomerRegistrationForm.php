@@ -2,6 +2,7 @@
 
 class CustomerRegistrationForm extends CFormModel{
 	
+	public $nick_name;
 	public $name;
 	public $email;
 	public $phone;
@@ -17,16 +18,17 @@ class CustomerRegistrationForm extends CFormModel{
 		$module = Yii::app()->getModule('client');
 	
 		return array(
-				array('name, email', 'filter', 'filter' => 'trim'),
-				array('name, email', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
-				array('name, email, password, cPassword', 'required'),
-				array('name, email', 'length', 'max' => 50),
+				array('nick_name, name, email, phone, address', 'filter', 'filter' => 'trim'),
+				array('nick_name, name, email, phone, address', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
+				array('nick_name, name, email, password, cPassword', 'required'),
+				array('nick_name, name, email, phone', 'length', 'max' => 50),
 				array('password, cPassword', 'length', 'min' => $module->minPasswordLength),
-				array('name', 'match','pattern' => '/^[A-Za-z0-9]{2,50}$/', 'message' => Yii::t('UserModule.user', 'Неверный формат поля "{attribute}" допустимы только буквы и цифры, от 2 до 20 символов')),
-				array('name', 'checkNickName'),
+				array('nick_name,', 'match','pattern' => '/^[A-Za-z0-9]{2,50}$/', 'message' => Yii::t('UserModule.user', 'Неверный формат поля "{attribute}" допустимы только буквы и цифры, от 2 до 20 символов')),
+				array('nick_name,', 'checkNickName'),
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
 				array('email', 'checkEmail'),
+				array('city_id', 'checkCityId'),
 				array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.')),
 				array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements()),
 				array('verifyCode', 'emptyOnInvalid'),
@@ -36,6 +38,7 @@ class CustomerRegistrationForm extends CFormModel{
 	public function attributeLabels()
 	{
 		return array(
+				'nick_name'  	 => Yii::t('ClientModule.customer', 'Ваш ник-нэйм'),
 				'name'  	 => Yii::t('ClientModule.customer', 'Ваше имя'),
 				'email'      => Yii::t('ClientModule.customer', 'Email'),
 				'phone'      => Yii::t('ClientModule.customer', 'Телефон'),
@@ -49,16 +52,22 @@ class CustomerRegistrationForm extends CFormModel{
 
 	public function checkNickName($attribute,$params)
 	{
-		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->name));
+		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->nick_name));
 		if ($model)
-			$this->addError('name', Yii::t('ClientModule.user', 'Такое имя уже присутствует в системе'));
+			$this->addError('name', Yii::t('ClientModule.customer', 'Такое имя уже присутствует в системе'));
 	}
 
 	public function checkEmail($attribute,$params)
 	{
 		$model = User::model()->find('email = :email', array(':email' => $this->email));
 		if ($model)
-			$this->addError('email', Yii::t('UserModule.user', 'Email уже занят'));
+			$this->addError('email', Yii::t('ClientModule.customer', 'Email уже занят'));
+	}
+	
+	public function checkCityId($attribute,$params) {
+		if ($this->city_id && (! key_exists($this->city_id, $this->getCityList()))) {
+			$this->addError('city_id', Yii::t('ClientModule.customer', 'Город выбран неккорректно'));
+		}
 	}
 	
 	public function emptyOnInvalid($attribute, $params)

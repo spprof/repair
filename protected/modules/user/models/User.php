@@ -66,15 +66,15 @@ class User extends YModel
         $module = Yii::app()->getModule('user');
 
         return array(
-            array('birth_date, site, about, location, online_status, nick_name, first_name, last_name, middle_name, email', 'filter', 'filter' => 'trim'),
-            array('birth_date, site, about, location, online_status, nick_name, first_name, last_name, middle_name, email', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
+            array('birth_date, site, about, location, online_status, nick_name, first_name, last_name, middle_name, email, client_type', 'filter', 'filter' => 'trim'),
+            array('birth_date, site, about, location, online_status, nick_name, first_name, last_name, middle_name, email, client_type', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
             array('nick_name, email, password', 'required'),
             array('first_name, last_name, middle_name, nick_name, email', 'length', 'max' => 50),
             array('password, salt, activate_key', 'length', 'max' => 32),
             array('site', 'length', 'max' => 100),
             array('about', 'length', 'max' => 300),
             array('location, online_status', 'length', 'max' => 150),
-            array('registration_ip, activation_ip, registration_date', 'length', 'max' => 20),
+            array('registration_ip, activation_ip, registration_date, client_type', 'length', 'max' => 20),
             array('gender, status, access_level, use_gravatar, email_confirm', 'numerical', 'integerOnly' => true),
             array('email_confirm', 'in', 'range' => array_keys($this->emailConfirmStatusList)),
             array('use_gravatar', 'in', 'range' => array(0, 1)),
@@ -369,7 +369,8 @@ class User extends YModel
         $status       = self::STATUS_NOT_ACTIVE,
         $emailConfirm = self::EMAIL_CONFIRM_NO,
         $first_name   = '',
-        $last_name    = ''
+        $last_name    = '',
+    	$type = null
     )
     {
         $salt = ($salt === NULL) ? $this->generateSalt() : $salt;
@@ -386,6 +387,7 @@ class User extends YModel
             'activation_ip'     => Yii::app()->request->userHostAddress,
             'status'            => $status,
             'email_confirm'     => $emailConfirm,
+        	'client_type'				=> $type
         ));
 
         // если не определен емэйл то генерим уникальный

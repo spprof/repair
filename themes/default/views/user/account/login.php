@@ -18,27 +18,27 @@ $this->breadcrumbs = array('Авторизация');
 
     <?php echo $form->errorSummary($model); ?>
 
-    <div class="row">
+    <div class="field">
         <?php echo $form->labelEx($model, 'email'); ?>
         <?php echo $form->textField($model, 'email') ?>
         <?php echo $form->error($model, 'email'); ?>
     </div>
 
-    <div class="row">
+    <div class="field">
         <?php echo $form->labelEx($model, 'password'); ?>
         <?php echo $form->passwordField($model, 'password') ?>
         <?php echo $form->error($model, 'password'); ?>
     </div>
 
-    <div class="row">
+    <div class="field">
         <p class="hint">
             <?php echo CHtml::link(Yii::t('user', "Регистрация"), array('/user/account/registration')); ?>
             | <?php echo CHtml::link(Yii::t('user', "Восстановление пароля"), array('/user/account/recovery')) ?>
         </p>
     </div>
 
-    <div class="row submit">
-        <?php echo CHtml::submitButton('Войти'); ?>
+    <div class="submit">
+        <?php echo CHtml::submitButton('Войти', array('class' => 'btn btn-large')); ?>
     </div>
 
     <?php $this->endWidget(); ?>
