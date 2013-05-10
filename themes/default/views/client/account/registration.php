@@ -23,9 +23,9 @@ $this->breadcrumbs = array('Регистрация нового пользова
     </div>
     
     <div class="field">
-        <?php echo $form->labelEx($model, 'name'); ?>
-        <?php echo $form->textField($model, 'name') ?>
-        <?php echo $form->error($model, 'name'); ?>
+        <?php echo $form->labelEx($model, 'first_name'); ?>
+        <?php echo $form->textField($model, 'first_name') ?>
+        <?php echo $form->error($model, 'first_name'); ?>
     </div>
 
     <div class="field">

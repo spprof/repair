@@ -1,6 +1,6 @@
 <?php 
 
-class CustomerRegistrationForm extends CFormModel{
+class CustomerProfileForm extends CFormModel {
 	
 	public $nick_name;
 	public $first_name;
@@ -11,7 +11,6 @@ class CustomerRegistrationForm extends CFormModel{
 	
 	public $password;
 	public $cPassword;
-	public $verifyCode;
 	
 	public function rules()
 	{
@@ -29,9 +28,6 @@ class CustomerRegistrationForm extends CFormModel{
 				array('email', 'email'),
 				array('email', 'checkEmail'),
 				array('city_id', 'checkCityId'),
-				array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.')),
-				array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements()),
-				array('verifyCode', 'emptyOnInvalid'),
 		);
 	}
 	
@@ -46,23 +42,30 @@ class CustomerRegistrationForm extends CFormModel{
 				'address'	 => Yii::t('ClientModule.customer', 'Адрес'),
 				'password'   => Yii::t('ClientModule.customer', 'Пароль'),
 				'cPassword'  => Yii::t('ClientModule.customer', 'Подтверждение пароля'),
-				'verifyCode' => Yii::t('ClientModule.customer', 'Код проверки'),
 		);
 	}
-
+	
 	public function checkNickName($attribute,$params)
-	{
-		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->nick_name));
-		if ($model)
-			$this->addError('name', Yii::t('ClientModule.customer', 'Такое имя уже присутствует в системе'));
-	}
-
+    {
+        // Если ник поменяли
+        if (Yii::app()->user->profile->nick_name != $this->nick_name)
+        {
+            $model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->nick_name));
+            if ($model)
+                 $this->addError('nick_name', Yii::t('UserModule.user', 'Ник уже занят'));
+        }
+    }
+	
 	public function checkEmail($attribute,$params)
-	{
-		$model = User::model()->find('email = :email', array(':email' => $this->email));
-		if ($model)
-			$this->addError('email', Yii::t('ClientModule.customer', 'Email уже занят'));
-	}
+    {
+        // Если мыло поменяли
+        if (Yii::app()->user->profile->email != $this->email)
+        {
+            $model = User::model()->find('email = :email', array(':email' => $this->email));
+            if ($model)
+                $this->addError('email', Yii::t('UserModule.user', 'Email уже занят'));
+        }
+    }
 	
 	public function checkCityId($attribute,$params) {
 		if ($this->city_id && (! key_exists($this->city_id, $this->getCityList()))) {

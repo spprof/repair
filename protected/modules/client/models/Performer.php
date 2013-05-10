@@ -1,6 +1,8 @@
 <?php
 class Performer extends YModel
 {
+	public $work_types = array();
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -25,6 +27,17 @@ class Performer extends YModel
 	{
 		return array(
 			'user'=>array(self::HAS_ONE, 'User', 'id'),
+			'work_type'=>array(self::MANY_MANY, 'WorkType',
+                'rpr_performer_work_type(user_id, work_type_id)'),
+		);
+	}
+	
+	public function behaviors()
+	{
+		return array(
+			'withRelated'=>array(
+				'class'=>'application.components.WithRelatedBehavior',
+			),
 		);
 	}
 

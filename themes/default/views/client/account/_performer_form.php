@@ -27,3 +27,14 @@
     <?php echo $form->radioButtonList($model, 'area', $model->getAreaList(), array('separator' => '')) ?>
     <?php echo $form->error($model, 'area'); ?>
 </div>
+
+
+<div class="field">
+    <?php echo $form->labelEx($model, 'work_types'); ?>
+    <?php $this->widget('application.modules.work.widgets.WorkFormWidget', array(
+    			'model' => $model,
+    			'attribute' => 'work_types',
+    		));
+    ?>
+    <?php echo $form->error($model, 'work_types'); ?>
+</div>

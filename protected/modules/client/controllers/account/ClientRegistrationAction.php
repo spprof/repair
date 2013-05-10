@@ -1,6 +1,5 @@
 <?php 
 
-
 class ClientRegistrationAction extends CAction {
 	
 	public function run()
@@ -33,7 +32,7 @@ class ClientRegistrationAction extends CAction {
 				// если активации не требуется - сразу создаем аккаунт
 				$user = new User;
 
-				$user->createAccount($form->nick_name, $form->email, $form->password, null , User::STATUS_ACTIVE, User::EMAIL_CONFIRM_NO, $form->name, '', $type);
+				$user->createAccount($form->nick_name, $form->email, $form->password, null , User::STATUS_ACTIVE, User::EMAIL_CONFIRM_NO, $form->first_name, '', $type);
 
 				if ($user && !$user->hasErrors())
 				{
@@ -74,6 +73,7 @@ class ClientRegistrationAction extends CAction {
 				}
 			}
 		}
+		Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
 		$this->controller->render('registration', array('model' => $form, 'module' => $module, 'type' => $type));
 	}
 	

@@ -1,7 +1,7 @@
 <?php 
 
-class PerformerRegistrationForm extends CFormModel {
-	
+class PerformerProfileForm extends CFormModel {
+
 	public $nick_name;
 	public $first_name;
 	public $email;
@@ -15,7 +15,6 @@ class PerformerRegistrationForm extends CFormModel {
 	
 	public $password;
 	public $cPassword;
-	public $verifyCode;
 	
 	public function rules()
 	{
@@ -32,9 +31,6 @@ class PerformerRegistrationForm extends CFormModel {
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
 				array('email', 'checkEmail'),
-				array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.')),
-				array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements()),
-				array('verifyCode', 'emptyOnInvalid'),
 		);
 	}
 	
@@ -51,27 +47,34 @@ class PerformerRegistrationForm extends CFormModel {
 				'is_company' => Yii::t('ClientModule.customer', 'Фирма'),
 				'company_name' => Yii::t('ClientModule.customer', 'Название фирмы'),
 				'work_types' => Yii::t('ClientModule.customer', 'Типы работ'),
-				
+	
 				'password'   => Yii::t('ClientModule.customer', 'Пароль'),
 				'cPassword'  => Yii::t('ClientModule.customer', 'Подтверждение пароля'),
-				'verifyCode' => Yii::t('ClientModule.customer', 'Код проверки'),
 		);
 	}
 	
 	public function checkNickName($attribute,$params)
-	{
-		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->name));
-		if ($model)
-			$this->addError('nick_name', Yii::t('ClientModule.user', 'Ник уже занят'));
-	}
+    {
+        // Если ник поменяли
+        if (Yii::app()->user->profile->nick_name != $this->nick_name)
+        {
+            $model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->nick_name));
+            if ($model)
+                 $this->addError('nick_name', Yii::t('UserModule.user', 'Ник уже занят'));
+        }
+    }
 	
 	public function checkEmail($attribute,$params)
-	{
-		$model = User::model()->find('email = :email', array(':email' => $this->email));
-		if ($model)
-			$this->addError('email', Yii::t('UserModule.user', 'Email уже занят'));
-	}
-	
+    {
+        // Если мыло поменяли
+        if (Yii::app()->user->profile->email != $this->email)
+        {
+            $model = User::model()->find('email = :email', array(':email' => $this->email));
+            if ($model)
+                $this->addError('email', Yii::t('UserModule.user', 'Email уже занят'));
+        }
+    }
+    
 	public function emptyOnInvalid($attribute, $params)
 	{
 		if ($this->hasErrors())
@@ -80,15 +83,15 @@ class PerformerRegistrationForm extends CFormModel {
 	
 	public function getIsCompanyList() {
 		return array(
-			1 => 'Да',
-			0 => 'Нет',
+				1 => 'Да',
+				0 => 'Нет',
 		);
 	}
 	
 	public function getAreaList () {
 		return array(
-			0 => 'Город',
-			1 => 'Город + область',
+				0 => 'Город',
+				1 => 'Город + область',
 		);
 	}
 	

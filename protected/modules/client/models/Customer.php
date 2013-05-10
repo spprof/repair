@@ -24,6 +24,7 @@ class Customer extends YModel
 	public function relations()
 	{
 		return array(
+			'user'=>array(self::HAS_ONE, 'User', 'id'),
 		);
 	}
 
@@ -49,5 +50,22 @@ class Customer extends YModel
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getCityList() {
+		return array(
+				0 => 'Киров',
+				1 => 'Кирово-Чепецк',
+				2 => 'Слободской',
+				3 => 'Котельнич',
+				4 => 'Яранск',
+				5 => 'Уржум',
+				6 => 'Вятские Поляны',
+		);
+	}
+	
+	public function getProfile() {
+		$client_id = Yii::app()->user->getId();
+		return Customer::model()->findByPk($client_id);
 	}
 }

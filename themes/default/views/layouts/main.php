@@ -10,7 +10,8 @@
     <meta name="keywords" content="<?php echo $this->keywords; ?>"/>
     <meta name="description" content="<?php echo $this->description; ?>"/>
     <meta name="viewport" content="width=device-width">
-    
+    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script> 
+    <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     
     <link rel="shortcut icon" href="/favicon.ico"/>
@@ -19,8 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/web/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="/web/css/form.css"/>
     
-    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script> 
-    <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
+    
     <script type="text/javascript" src="/web/js/common.js"></script>
     
 </head>
@@ -36,7 +36,7 @@
 				
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Главная</a></li>
+						<li class="active"><a href="/">Главная</a></li>
 						<li><a href="#about">Исполнители</a></li>
 						<li><a href="#contact">Тендеры</a></li>
 						<li><a href="#contact">Вопросы</a></li>

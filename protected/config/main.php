@@ -98,14 +98,16 @@ return array(
                 'cache'        => true,
             ),
             // на продакшне gii рекомендуется отключить, подробнее: http://www.yiiframework.com/doc/guide/1.1/en/quickstart.first-app
-            /*'gii'   => array(
+            /*
+            'gii'   => array(
                 'class'          => 'system.gii.GiiModule',
                 'password'       => 'giiYupe',
                 'generatorPaths' => array(
                     'application.modules.yupe.extensions.yupe.gii',
                 ),
                 'ipFilters'=>array(),
-            ),*/
+            ),
+            */
         ), $config['modules']
     ),
     'behaviors' => array(
@@ -115,6 +117,11 @@ return array(
     // конфигурирование основных компонентов (подробнее http://www.yiiframework.ru/doc/guide/ru/basics.component)
     'components' => CMap::mergeArray(
         array(
+	        'clientScript' => array (
+	        		'scriptMap' => array (
+	        				'jquery.js' => false,
+	        		),
+	        ),
             // assetsManager:
             'assetsManager' => array(
                 // Don't use on windows:
