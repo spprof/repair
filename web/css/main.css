@@ -45,3 +45,7 @@ h1, h2, h3 {
 .alert {
 	font-size: 13px;
 }
+
+input[id$="verifyCode"] {
+	display: block;
+}

@@ -27,8 +27,6 @@ class YFrontController extends YMainController
      * Присваивает значения, необходимым переменным
      */
     
-    public $layout = 'main';
-    
     public function init()
     {
         parent::init();

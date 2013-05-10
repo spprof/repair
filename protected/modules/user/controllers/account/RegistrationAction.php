@@ -1,15 +1,32 @@
 <?php
 class RegistrationAction extends CAction
 {
+	protected $_model = null;
+	
+	protected $_module = null;
+	
+	protected $_form = null;
+	
+	protected $_params = array();
+	
+	public function __construct($controller, $id) {
+		parent::__construct($controller, $id);
+		$this->_model 	= new User;
+		$this->_module 	= Yii::app()->getModule('user');
+		$this->_form 	= new RegistrationForm;
+	}
+	
     public function run()
     {
-        $module = Yii::app()->getModule('user');
+        $module = $this->_module;
 
+        $module_class = get_class($module);
+        
         if ($module->registrationDisabled){
         	throw new CHttpException(404, Yii::t('UserModule.user', 'Запрошенная страница не найдена!'));
         }
 
-        $form = new RegistrationForm;
+        $form = $this->_form;
 
         if (Yii::app()->user->isAuthenticated()){
             $this->controller->redirect(Yii::app()->user->returnUrl);
@@ -19,16 +36,18 @@ class RegistrationAction extends CAction
 
         $module->onBeginRegistration($event);
 
-        if (Yii::app()->request->isPostRequest && !empty($_POST['RegistrationForm']))
+        $form_class_name = get_class($form);
+        
+        if (Yii::app()->request->isPostRequest && !empty($_POST[$form_class_name]))
         {
-            $form->setAttributes($_POST['RegistrationForm']);
+            $form->setAttributes($_POST[$form_class_name]);
 
             if ($form->validate())
             {
                 // если требуется активация по email
                 if ($module->emailAccountVerification)
                 {
-                    $user = new User;
+                    $user = $this->_model;
 
                     // скопируем данные формы
                     $data = $form->getAttributes();
@@ -59,7 +78,7 @@ class RegistrationAction extends CAction
                             // запись в лог о создании учетной записи
                             Yii::log(
                                 Yii::t('UserModule.user', "Создана учетная запись {nick_name}!", array('{nick_name}' => $user->nick_name)),
-                                CLogger::LEVEL_INFO, UserModule::$logCategory
+                                CLogger::LEVEL_INFO, $module_class::$logCategory
                             );
 
                             $transaction->commit();
@@ -76,7 +95,7 @@ class RegistrationAction extends CAction
 
                             Yii::log(
                                 Yii::t('UserModule.user', "Ошибка при создании  учетной записи!"),
-                                CLogger::LEVEL_ERROR, UserModule::$logCategory
+                                CLogger::LEVEL_ERROR, $module_class::$logCategory
                             );
                         }
                     }
@@ -97,7 +116,7 @@ class RegistrationAction extends CAction
                     {
                         Yii::log(
                             Yii::t('UserModule.user', "Создана учетная запись {nick_name} без активации!", array('{nick_name}' => $user->nick_name)),
-                            CLogger::LEVEL_INFO, UserModule::$logCategory
+                            CLogger::LEVEL_INFO, $module_class::$logCategory
                         );
 
                         // отправить email с сообщением о успешной регистрации
@@ -122,13 +141,13 @@ class RegistrationAction extends CAction
 
                         Yii::log(
                             Yii::t('UserModule.user', "Ошибка при создании  учетной записи без активации!"),
-                            CLogger::LEVEL_ERROR, UserModule::$logCategory
+                            CLogger::LEVEL_ERROR, $module_class::$logCategory
                         );
                     }
                 }
             }
         }
 
-        $this->controller->render('registration', array('model' => $form, 'module' => $module));
+        $this->controller->render('registration', CMap::mergeArray (array('model' => $form, 'module' => $module), $this->_params));
     }
 }
