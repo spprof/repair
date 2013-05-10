@@ -51,6 +51,7 @@
 	
 	<div id="content" class="container">
 		
+		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>
 		
 		<hr/>

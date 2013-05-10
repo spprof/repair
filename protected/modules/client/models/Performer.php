@@ -18,7 +18,7 @@ class Performer extends YModel
 		return array(
 			array('id, number, experience, area, rating, status, weight, is_company', 'numerical', 'integerOnly'=>true),
 			array('company_name', 'length', 'max'=>100),
-			array('phone, name', 'safe'),
+			array('phone', 'safe'),
 			array('id, number, experience, area, rating, status, weight, is_company, company_name', 'safe', 'on'=>'search'),
 		);
 	}
@@ -73,5 +73,10 @@ class Performer extends YModel
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getProfile() {
+		$client_id = Yii::app()->user->getId();
+		return Performer::model()->findByPk($client_id);
 	}
 }

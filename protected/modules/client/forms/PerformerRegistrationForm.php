@@ -22,10 +22,11 @@ class PerformerRegistrationForm extends CFormModel {
 		$module = Yii::app()->getModule('client');
 	
 		return array(
-				array('nick_name, first_name, email', 'filter', 'filter' => 'trim'),
-				array('nick_name, first_name, email', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
+				array('nick_name, first_name, email, phone, company_name', 'filter', 'filter' => 'trim'),
+				array('nick_name, first_name, email, phone, company_name', 'filter', 'filter' => array($obj = new CHtmlPurifier(), 'purify')),
+				array('number, experience, area, is_company', 'numerical', 'integerOnly'=>true),
 				array('nick_name, first_name, email, password, cPassword', 'required'),
-				array('nick_name, first_name, email', 'length', 'max' => 50),
+				array('nick_name, first_name, email, phone', 'length', 'max' => 50),
 				array('password, cPassword', 'length', 'min' => $module->minPasswordLength),
 				array('nick_name,', 'match','pattern' => '/^[A-Za-z0-9]{2,50}$/', 'message' => Yii::t('UserModule.user', 'Неверный формат поля "{attribute}" допустимы только буквы и цифры, от 2 до 20 символов')),
 				array('nick_name,', 'checkNickName'),
@@ -60,7 +61,7 @@ class PerformerRegistrationForm extends CFormModel {
 	
 	public function checkNickName($attribute,$params)
 	{
-		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->name));
+		$model = User::model()->find('nick_name = :nick_name', array(':nick_name' => $this->nick_name));
 		if ($model)
 			$this->addError('nick_name', Yii::t('ClientModule.user', 'Ник уже занят'));
 	}

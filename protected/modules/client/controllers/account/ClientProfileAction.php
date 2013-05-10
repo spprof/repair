@@ -38,7 +38,8 @@ class ClientProfileAction extends CAction
 
                 $orgMail = $user->email;
                 $user->setAttributes($data);
-
+                $client->setAttributes($data);
+                
                 if ($newPass)
                 {
                     $user->salt     = $user->generateSalt();
@@ -85,8 +86,8 @@ class ClientProfileAction extends CAction
                         );
                     }
                     // Сохраняем профиль
-                    $user->save(false);
-
+                    $user->save();
+                    $client->save();
                     $this->controller->redirect(array('/client/account/profile/'));
                 }
                 else

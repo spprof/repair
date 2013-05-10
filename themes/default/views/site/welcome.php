@@ -69,7 +69,7 @@
 		  на нашем сайте, участвуйте в общем рейтинге, заполняйте портфолио и мы обеспечим вас
 		  <b>стабильной работой</b>.
 		</div>
-		<button class="btn btn-inverse btn-large">Регистрация</button><br>
+		<a href='/client/account/registration?type=performer' class="btn btn-inverse btn-large">Регистрация</a><br>
 		<br/>
 		Так же вы можете <a href="#">Найти работу</a> в одном из коллективов профессионалов.
 	</div>
