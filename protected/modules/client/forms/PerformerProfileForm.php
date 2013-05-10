@@ -31,6 +31,7 @@ class PerformerProfileForm extends CFormModel {
 				array('nick_name,', 'checkNickName'),
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
+				array('work_types', 'safe'),
 				array('email', 'checkEmail'),
 		);
 	}

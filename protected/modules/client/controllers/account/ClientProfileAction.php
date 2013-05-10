@@ -15,9 +15,10 @@ class ClientProfileAction extends CAction
             $this->controller->redirect(array(Yii::app()->user->loginUrl));
 
         $user = Yii::app()->user->profile;
-        $client = $model->getProfile();
+        $profile = $model->getProfile();
+        $client = $model::model()->findByPk($user->id);
         
-        $form->setAttributes(CMap::mergeArray($client->getAttributes(), $user->getAttributes()));
+        $form->setAttributes(CMap::mergeArray($profile, $user->getAttributes()));
         $form->password = $form->cPassword = null;
 
         $module = Yii::app()->getModule('client');
@@ -28,18 +29,17 @@ class ClientProfileAction extends CAction
         if (Yii::app()->request->isPostRequest && !empty($_POST[$form_class]))
         {
             $form->setAttributes($_POST[$form_class]);
-
             if ($form->validate())
             {
                 // скопируем данные формы
                 $data = $form->getAttributes();
+
                 $newPass = isset($data['password']) ? $data['password'] : null;
                 unset($data['password']);
 
                 $orgMail = $user->email;
                 $user->setAttributes($data);
                 $client->setAttributes($data);
-                
                 if ($newPass)
                 {
                     $user->salt     = $user->generateSalt();
@@ -97,6 +97,7 @@ class ClientProfileAction extends CAction
                      );
             }
         }
+        Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
         $this->controller->render('profile', array('model' => $form, 'module' => $module, 'type' => $type));
     }
 }

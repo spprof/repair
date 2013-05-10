@@ -42,7 +42,7 @@ class WorkFormWidget extends CJuiInputWidget{
 				'maxHeight' => false,
 			)); 
 		
-		$options=CJavaScript::encode($this->options);
+		$options=CJavaScript::encode($options);
 		$js = "jQuery('#{$id}').multiselect($options);";
 		
 		$cs = Yii::app()->getClientScript();

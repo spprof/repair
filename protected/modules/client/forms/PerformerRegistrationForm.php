@@ -32,6 +32,7 @@ class PerformerRegistrationForm extends CFormModel {
 				array('nick_name,', 'checkNickName'),
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
+				array('work_types', 'safe'),
 				array('email', 'checkEmail'),
 				array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.')),
 				array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements()),

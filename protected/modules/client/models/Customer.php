@@ -66,6 +66,6 @@ class Customer extends YModel
 	
 	public function getProfile() {
 		$client_id = Yii::app()->user->getId();
-		return Customer::model()->findByPk($client_id);
+		return Customer::model()->findByPk($client_id)->getAttributes();
 	}
 }
