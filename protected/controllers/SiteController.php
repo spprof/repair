@@ -17,5 +17,8 @@ class SiteController extends YFrontController
         $this->render('register');
     }
 
-
+	public function actionProfile()
+    {
+        $this->render('profile');
+    }    
 }
