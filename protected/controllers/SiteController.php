@@ -12,4 +12,10 @@ class SiteController extends YFrontController
         $this->render('specialists');
     }
 
+    public function actionRegister()
+    {
+        $this->render('register');
+    }
+
+
 }
