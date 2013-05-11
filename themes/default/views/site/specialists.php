@@ -1,63 +1,81 @@
 <div class="row">
-		<div class="span3 text-center">
-			<a href="/"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a><br/>
-		<a class="brand" href="/">HandsHammer - биржа строительных и ремонтных работ г.Кирова</a>
-	</div>
-	<div class="span6">
-		<br/>
-		<div class="hero-unit">
-			<p><strong>HandsHammer</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
-				качественный ремонт и специалистами в области ремонта и строительства.</p>
-			<br/>
-			<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
-		</div>
-	</div>
 	<div class="span3">
-		<br/>
 		<div class="alert">
-			Вход на сайт
-			<form  class="form-horizontal">
-				<div class="control-group">
-						<input type="text" id="inputEmail" class="input-medium" placeholder="Email">
-				</div>
-				<div class="control-group">
-				      <input type="password" id="inputPassword" class="input-medium" placeholder="Пароль">
-				</div>
-				<div class="control-group">
-				        <input type="checkbox"> Запомнить
-				 </div>
-				 <div class="control-group">
-				 	<button type="submit" class="btn btn-inverse">Вход</button>
-				 </div>
-			</form>
+			<h3>Поиск</h3>
+			<label class="checkbox">
+				<input type="checkbox" name="type" value="">Мастера
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" name="type" value="">Компании
+			</label>
+			Вид работ
+			<label class="checkbox">
+				<input type="checkbox" value="">Отделка
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" value="">Сантехника
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" value="">Электрика
+			</label>
+			<button class="btn btn-inverse">Найти &raquo;</button>
+			
 		</div>
-	</div>
-</div>
-<br/>
-<div class="row">
-	<div class="span3">
-		<h2 >Для заказчиков</h2>
 		
-
-			<div class="alert">
-				<h3>Заголовок</h3>
-
+	</div>
+	<div class="span9">
+		<h3>Cпециалисты</h3>
+		<div class="navbar navbar-sort">
+		  <div class="navbar-inner navbar-inner-sort">
+		    <a class="brand brand-sort" href="#">Сортировать по:</a>
+		    <ul class="nav nav-sort">
+		      <li class="active"><a href="#">Популярности</a></li>
+		      <li><a href="#">Дате регистрации</a></li>
+		      <li><a href="#">Количеству работ</a></li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="spec-item">
+			<div class="spec-item-info">
+				#432 <a href="#">Профиль</a> <a href="#">Отправить сообщение</a>
+			</div>	
+			<div class="spec-item-rating">
+					<a href="#" rel="tooltip" class="label label-warning" title="Общий рейтинг / Количество отзывов">120 / 8</a>
 			</div>
-		
-	</div>
-	<div class="span6">
-		<h2>Специалисты</h2>
-
-		<div class="alert">
-			<h3><!--<i class="icon-user"></i>--> Зарегистрируйтесь, как специалист</h3>
-		  <p>
-		  <strong></strong>Если вы <b>мастер строительных и ремонтных работ</b>, то зарегистрируйтесь
-		  на нашем сайте, участвуйте в общем рейтинге, заполняйте портфолио, участвуйте в тендерах и мы обеспечим вас
-		  <b>стабильной работой</b>.
-		</p>
-		<button class="btn btn-inverse btn-large">Регистрация</button><br>
+			<div class="clear"></div>
+			<b>Мастер:</b> Роман<br/>
+			<b>Виды работ:</b> установка окон, установка дверей.<br/>
+			<b>Стаж работы:</b> 3 года<br/>
+			<b>География работ:</b> Киров+Область<br/>
+			<b>Описание:</b> я мастер до мозга костей. ремонтирую все что движется и не движется.
 		</div>
-		<br/>
+		<hr>
+		<div class="spec-item">
+			<div class="spec-item-info">
+				#291 <a href="#">Профиль</a> <a href="#">Отправить сообщение</a>
+			</div>	
+			<div class="spec-item-rating">
+					<a href="#" rel="tooltip" class="label label-warning" title="Общий рейтинг / Количество отзывов">79 / 5</a>
+			</div>
+			<div class="clear"></div>
+			<b>Компания:</b> "Set&Setting"<br/>
+			<b>Виды работ:</b> отделка, сантехника, электрика.<br/>
+			<b>Человек в бригаде:</b> 4<br/>
+			<b>Стаж работы:</b> 3 года<br/>
+			<b>География работ:</b> Киров+Область<br/>
+			<b>Описание:</b> мы новая стабильно развивающаяся компания осуществляющие ремонтные работы с высоким качеством.
+		</div>
+
+		<div class="pagination">
+		  <ul>
+		    <li class="disabled"><a href="#">Назад</a></li>
+		    <li class="active"><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">Вперед</a></li>
+		  </ul>
+		</div>
 	
 			
 	</div>

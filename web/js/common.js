@@ -1,4 +1,4 @@
 $(function () {
-	$('.spec-item-rating span').tooltip();
+	$('.spec-item-rating a').tooltip();
 
 });

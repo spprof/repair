@@ -37,8 +37,8 @@
 				
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Главная</a></li>
-						<li><a href="#about">Исполнители</a></li>
+						<li class="active"><a href="/">Главная</a></li>
+						<li><a href="/index.php?r=site/specialists">Исполнители</a></li>
 						<li><a href="#contact">Тендеры</a></li>
 						<li><a href="#contact">Вопросы</a></li>
 						<li><a href="#contact">Найти работу</a></li>
@@ -48,8 +48,43 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="content" class="container">
+		<div class="row">
+			<div class="span3 text-center">
+				<a href="/"><img class="logo" src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a>
+				<div class="brand"><a href="/">HandsHammer - биржа строительных и ремонтных работ г.Кирова</a></div>
+			</div>
+			<div class="span6">
+				<div class="hero-unit">
+					<p><strong>HandsHammer</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
+						качественный ремонт и специалистами в области ремонта и строительства.</p>
+					<br/>
+					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="alert">
+					<div style="margin-bottom: 5px;"><strong>Вход на сайт</strong></div>
+					<form  class="form-horizontal">
+						<div class="control-group">
+								<input type="text" id="inputEmail" class="input-medium" placeholder="Email">
+						</div>
+						<div class="control-group">
+						      <input type="password" id="inputPassword" class="input-medium" placeholder="Пароль">
+						</div>
+						<div class="control-group">
+						        <input type="checkbox"> Запомнить
+						 </div>
+						 <div class="control-group">
+						 	<button type="submit" class="btn btn-inverse">Вход</button>
+						 	<a href="#" class="btn btn-warning">Регистрация</a>
+						 </div>
+						 
+					</form>
+				</div>
+			</div>
+		</div>
 		
 		<?=$content; ?>
 		
