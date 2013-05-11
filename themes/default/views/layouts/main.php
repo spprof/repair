@@ -10,7 +10,10 @@
     <meta name="keywords" content="<?php echo $this->keywords; ?>"/>
     <meta name="description" content="<?php echo $this->description; ?>"/>
     <meta name="viewport" content="width=device-width">
-    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script> 
+    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    	$.browser = new Object();
+	</script> 
     <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     

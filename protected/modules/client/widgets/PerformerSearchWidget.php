@@ -15,6 +15,7 @@ class PerformerSearchWidget extends YWidget {
 		$performer_types = Performer::model()->getPerformerTypes();
 		
 		$this->render('widget', array(
+				'params' => $this->params,
 				'work_types' => $work_types, 
 				'performer_types' => $performer_types));
 	}
