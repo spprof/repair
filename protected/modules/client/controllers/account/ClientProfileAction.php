@@ -97,7 +97,6 @@ class ClientProfileAction extends CAction
                      );
             }
         }
-        Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
         $this->controller->render('profile', array('model' => $form, 'module' => $module, 'type' => $type));
     }
 }

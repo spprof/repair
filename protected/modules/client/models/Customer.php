@@ -37,20 +37,6 @@ class Customer extends YModel
 			'address' => 'Address',
 		);
 	}
-
-	public function search()
-	{
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('city_id',$this->city_id);
-		$criteria->compare('address',$this->address,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
 	
 	public function getCityList() {
 		return array(

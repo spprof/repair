@@ -3,6 +3,7 @@ class AccountController extends YFrontController
 {
     public function actions()
     {
+    	Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
         return array(
             'captcha' => array(
                 'class'     => 'CCaptchaAction',

@@ -73,7 +73,6 @@ class ClientRegistrationAction extends CAction {
 				}
 			}
 		}
-		Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
 		$this->controller->render('registration', array('model' => $form, 'module' => $module, 'type' => $type));
 	}
 	

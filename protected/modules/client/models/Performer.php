@@ -55,25 +55,6 @@ class Performer extends YModel
 			'company_name' => 'Company Name',
 		);
 	}
-
-	public function search()
-	{
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('number',$this->number);
-		$criteria->compare('experience',$this->experience);
-		$criteria->compare('area',$this->area);
-		$criteria->compare('rating',$this->rating);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('weight',$this->weight);
-		$criteria->compare('is_company',$this->is_company);
-		$criteria->compare('company_name',$this->company_name,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
 	
 	public function getProfile() {
 		$client_id = Yii::app()->user->getId();
@@ -89,6 +70,15 @@ class Performer extends YModel
 		$res = $performer->getAttributes();
 		$res['work_types'] = $work_types; 
 		return $res;
+	}
+	
+	public function beforeSave() {
+		if ($this->id)
+			Yii::app()->db->createCommand()
+				->delete(	'rpr_performer_work_type', 
+							'performer_id=:id', 
+							array(':id'=>$this->id));
+		return parent::beforeSave();
 	}
 	
 	public function save($runValidation=true,$attributes=null) {
