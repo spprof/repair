@@ -53,6 +53,7 @@ class Performer extends YModel
 			'weight' => 'Weight',
 			'is_company' => 'Is Company',
 			'company_name' => 'Company Name',
+			'work_types' => 'Виды работ',
 		);
 	}
 	
@@ -87,5 +88,12 @@ class Performer extends YModel
 		$work_types = WorkType::model()->findAll($criteria);
 		$this->work_type = $work_types;
 		$this->withRelated->save($runValidation, array('work_type'));
+	}
+	
+	public function getPerformerTypes() {
+		return array(
+			0 => 'Мастер',
+			1 => 'Компания',
+		);
 	}
 }
