@@ -38,9 +38,9 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="/">Главная</a></li>
-						<li><a href="/index.php?r=site/specialists">Исполнители</a></li>
+						<li><a href="/index.php?r=site/specialists">Специалисты</a></li>
 						<li><a href="#contact">Тендеры</a></li>
-						<li><a href="#contact">Вопросы</a></li>
+						<li><a href="#contact">Вопросы и ответы</a></li>
 						<li><a href="#contact">Найти работу</a></li>
 						<li><a href="#contact">О проекте</a></li>
 					</ul>
