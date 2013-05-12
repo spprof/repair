@@ -1,38 +1,63 @@
 <?php if (!Yii::app()->user->isAuthenticated()):?>
-<div class="form row">
+
+
+<div class="form alert">
+	<div style="margin-bottom: 5px;"><strong>Вход на сайт</strong></div>
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'minilogin-form',
 		'enableAjaxValidation'=>false,
 		'action' => '/login/',
-		'htmlOptions' => array('class' => 'navbar-form pull-right'),
+		'htmlOptions' => array('class' => 'form-horizontal'),
 	)); ?>
+		<div class="control-group">
+			<?php echo $form->textField($model,'email',array('size'=>32,'maxlength'=>32, 'class'=>'input-medium', 'placeholder' => 'Email')); ?>
+		</div>
+		<div class="control-group">
+		      <?php echo $form->passwordField($model,'password',array('class'=>'input-medium', 'placeholder' => 'Пароль')); ?>
+		</div>
 		
-		<?php echo $form->textField($model,'email',array('size'=>32,'maxlength'=>32, 'class'=>'span1', 'placeholder' => 'email')); ?>
-		
-		<?php echo $form->passwordField($model,'password',array('class'=>'span1', 'placeholder' => 'Пароль')); ?>
-		
-		<button type="submit" class="btn">Вход</button>
-		
+		<div class="control-group">
+			<input type="checkbox"> Запомнить
+		</div>
+		 <div class="control-group">
+		 	<button type="submit" class="btn btn-inverse">Вход</button>
+		 	<a href="#" class="btn btn-warning">Регистрация</a>
+		 </div>
+		 
 	<?php $this->endWidget(); ?>
 </div>
+
 <?php else:?>
-<div class='pull-right' style='padding-top: 10px;'>
+<div class="alert">
+
+	<?php $links = array();?>
 	<?php
 		switch (Yii::app()->user->getState('client_type')) {
 			case 'customer' : {
-				$profile_url = '/client/account/profile?type=customer';
+				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=customer', 'ico' => 'user' );
+				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
+				$links[] = array( 'label' => 'Мои тендеры', 'url' => '/tender/index/owner/', 'ico' => 'home' );
+				$links[] = array( 'label' => 'Избранные исполнители', 'url' => '/tender/index/owner/', 'ico' => 'star' );
 				break;
 			}
 			case 'performer' : {
-				$profile_url = '/client/account/profile?type=performer';
+				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=performer', 'ico' => 'user' );
+				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
+				$links[] = array( 'label' => 'Мои вакансии', 'url' => '/vacancy/index/owner/', 'ico' => 'volume-up' );
+				$links[] = array( 'label' => 'Мои клиенты', 'url' => '/tender/index/owner/', 'ico' => 'star' );
 				break;
 			}
-			default :  
-				$profile_url = '/profile/';
+			default :
+				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/profile/', 'ico' => 'user' );
+				$links[] = array( 'label' => 'Админ панель', 'url' => '#', 'ico'=>'eye-open' );
+				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
 		}
-	
 	?>
-	<a href='<?=$profile_url?>'><i class="icon-user"></i> <b><?=Yii::app()->user->nick_name?></b></a>&nbsp;&nbsp;
-	<a href='/logout/'><small>Выход</small></a>
+	<?php $links[] = array( 'label' => 'Выход', 'url' => '/logout/', 'ico' => 'share-alt' );?>
+	<ul class='client-panel'>
+	<?php foreach ($links as $link):?>
+		<li><a href='<?=$link['url']?>'><i class='icon-<?=(isset($link['ico'])) ? $link['ico'] : ''?>'></i>&nbsp;<?=$link['label']?></a></li>
+	<?php endforeach;?>
+	</ul>
 </div>
 <?php endif;?>

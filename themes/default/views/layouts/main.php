@@ -46,13 +46,30 @@
 						<li><a href="#contact">Найти работу</a></li>
 						<li><a href="#contact">О проекте</a></li>
 					</ul>
-					<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
 	</div>
 	
 	<div id="content" class="container">
+		<div class="row">
+			<div class="span3 text-center">
+				<a href="/"><img class="logo" src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a>
+				<div class="brand"><a href="/">HandsHammer - биржа строительных и ремонтных работ г.Кирова</a></div>
+			</div>
+			<div class="span6">
+				<div class="hero-unit">
+					<p><strong>HandsHammer</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
+						качественный ремонт и специалистами в области ремонта и строительства.</p>
+					<br/>
+					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
+				</div>
+			</div>
+			<div class="span3">
+				<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
+			</div>
+		</div>
+		<hr>
 		
 		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>

@@ -1,18 +1,4 @@
-<div class="row">
-			<div class="span3 text-center">
-				<a href="/"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png" /></a><br/>
-			<a class="brand" href="/">Биржа строительных и ремонтных работ</a>
-		</div>
-	<div class="span9">
-		<br/>
-		<div class="hero-unit">
-			<p>Наш сайт позволяет наладить коммуникации между тему, кому нужен качественный ремонт и мастерами строительства.</p>
-			<br/>
-			<p><a class="btn btn-primary">Узнать больше &raquo;</a></p>
-		</div>
-	</div>
-</div>
-<br/>
+
 <div class="row">
 	<div class="span6">
 		<h2>Для заказчиков</h2>

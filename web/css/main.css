@@ -49,3 +49,16 @@ h1, h2, h3 {
 input[id$="verifyCode"] {
 	display: block;
 }
+
+.client-panel, .client-panel li {
+	list-style: none;
+	list-style-type: none;
+	font-size: 14px;
+	display: block;
+	padding-bottom: 12px;
+	margin: 0;
+}
+
+.client-panel li:FIRST-CHILD {
+	padding-bottom: 24px;
+}
