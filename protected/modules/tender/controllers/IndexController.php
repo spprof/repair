@@ -2,7 +2,6 @@
 
 class IndexController extends YFrontController
 {
-	
 	public function filters() {
 		return array(
 			array('application.components.FrontAccessControl'),
@@ -34,7 +33,6 @@ class IndexController extends YFrontController
 	}
 	
 	public function actionCreate() {
-		Yii::app()->clientScript->registerScriptFile( Yii::app()->theme->baseUrl . '/web/tournament/js/create.js');
 		$model = $this->_model;
 		$model_class = get_class($model);
 		if (isset($_POST[$model_class])) {
@@ -55,7 +53,7 @@ class IndexController extends YFrontController
 			$model->setAttributes(Yii::app()->request->getPost($model_class));
 			if ($model->save())
 			{
-				$this->redirect(array('view', 'id' => $model->id));
+				$this->redirect(array('owner'));
 			}
 		}
 		$this->render('update',array(

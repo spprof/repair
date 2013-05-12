@@ -5,6 +5,5 @@ return array(
     ),
     'import'    => array(
         'application.modules.tender.models.*',
-    	'application.modules.tender.widgets.*',
     ),
 );
