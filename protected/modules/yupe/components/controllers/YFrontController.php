@@ -27,6 +27,8 @@ class YFrontController extends YMainController
      * Присваивает значения, необходимым переменным
      */
     
+    protected $_model = null;
+    
     public function init()
     {
         parent::init();
@@ -37,5 +39,25 @@ class YFrontController extends YMainController
             Yii::app()->theme = $this->yupe->theme;
         else
             Yii::app()->theme = 'default';
+    }
+    
+    public function loadSelfModel($id, $model=null) {
+    	$model = ($model) ? $model : $this->_model;
+    	$model = $model->findByPk((int)$id);
+    	$user_id = Yii::app()->user->id ;
+    	$owner_id = $model->owner_id;
+    	$is_super_user = Yii::app()->user->isSuperUser();
+    	if ($model === null || (! $is_super_user && ($user_id !== $owner_id || !$owner_id)) )
+    		throw new CHttpException(404, Yii::t('TournamentSys.404', 'Запрошенная страница не найдена!'));
+    	return $model;
+    }
+    
+    public function loadModel($id, $model=null)
+    {
+    	$model = ($model) ? $model : $this->_model;
+    	$model = $model->findByPk($id);
+    	if ($model === null)
+    		throw new CHttpException(404, Yii::t('tournament_stat', 'Запрошенная страница не найдена.'));
+    	return $model;
     }
 }
