@@ -15,6 +15,16 @@
 	</div>
 	
 	<div class="field">
+	    <?php echo $form->labelEx($model, 'work_types'); ?>
+	    <?php $this->widget('application.modules.work.widgets.WorkFormWidget', array(
+	    			'model' => $model,
+	    			'attribute' => 'work_types',
+	    		));
+	    ?>
+	    <?php echo $form->error($model, 'work_types'); ?>
+	</div>
+	
+	<div class="field">
 		<?php echo $form->labelEx($model,'with_materials'); ?>
 		<?php echo $form->radioButtonList($model, 'with_materials', array('1' => 'Да', '0' => 'Нет' ), array('separator' => '')); ?>
 		<?php echo $form->error($model,'with_materials'); ?>

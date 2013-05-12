@@ -42,8 +42,7 @@ class YFrontController extends YMainController
     }
     
     public function loadSelfModel($id, $model=null) {
-    	$model = ($model) ? $model : $this->_model;
-    	$model = $model->findByPk((int)$id);
+    	$model = $this->loadModel((int)$id, $model);
     	$user_id = Yii::app()->user->id ;
     	$owner_id = $model->owner_id;
     	$is_super_user = Yii::app()->user->isSuperUser();
