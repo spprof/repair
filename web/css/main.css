@@ -111,3 +111,13 @@ h1, h2, h3 {
 	width: 200px;
 	
 }
+
+
+.faq-item-cont{
+	margin: 0 0 10px 0;
+}
+.faq-item-answer{
+	margin: 0 0 5px 0;
+	padding: 0 0 0 50px;
+	font-size: 13px;
+}

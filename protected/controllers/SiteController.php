@@ -24,5 +24,9 @@ class SiteController extends YFrontController
     public function actionTenders()
     {
         $this->render('tenders');
+    }  
+    public function actionFaq()
+    {
+        $this->render('faq');
     }    
 }
