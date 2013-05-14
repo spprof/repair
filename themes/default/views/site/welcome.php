@@ -6,36 +6,7 @@
 			<h3><!--<i class="icon-search"></i>--> Поиск специалиста</h3>
 		  <strong></strong>Если вам нужен <b>ремонт</b>, выполнение <b>строительных работ</b>, и вы хотите 
 		  найти подходящих <b>специалистов</b> &ndash; воспользуйтесь формой ниже. 
-		<p>
-			<h4>Выберите вид работ</h4>
-			<div class='row'>
-				<div class='span2'>
-					<label class="checkbox">
-						<input type="checkbox" value="">Отделка
-					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Сантехника
-					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Электрика
-					</label>
-				</div>
-				<div class='span2'>
-					<label class="checkbox">
-						<input type="checkbox" value="">Установка окон
-					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Установка дверей
-					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Потолки
-					</label>
-					<span class='pseudo-link'>Больше видов работ</span>
-				</div>
-			</div>
-			<br/>
-			<button class="btn btn-inverse btn-large">Найти исполнителя</button>
-		</p>
+	 	  <?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>array(), 'view' => 'main'));?>
 		</div>
 		<br/>
 		

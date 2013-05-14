@@ -1,7 +1,10 @@
 <div class='row'>
 
 	<div class='span3'>
-		<?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>$params));?>
+		<div class="alert">
+			<h3>Поиск</h3>
+			<?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>$params));?>
+		</div>
 	</div>
 	
 	<div class='span9'>

@@ -15,7 +15,9 @@ class IndexController extends YFrontController {
 			$criteria->with = array('work_type'); 
 			$criteria->addInCondition('work_type.id',$params['search']['work_types']);
 		}
-		$criteria->order = 'experience desc';
+		if ($params['order']) {
+			//$criteria->order = $params['order'] . ' desc';
+		}
 		$criteria->together = true;
 		
 		$data_provider = new CActiveDataProvider(

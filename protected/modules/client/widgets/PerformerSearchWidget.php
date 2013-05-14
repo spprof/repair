@@ -4,6 +4,8 @@ class PerformerSearchWidget extends YWidget {
 	
 	public $params = array();
 	
+	public $view = 'inside';
+	
 	public function run()
 	{
 		$criteria = new CDbCriteria();
@@ -15,6 +17,7 @@ class PerformerSearchWidget extends YWidget {
 		$performer_types = Performer::model()->getPerformerTypes();
 		
 		$this->render('widget', array(
+				'view' => $this->view,
 				'params' => $this->params,
 				'work_types' => $work_types, 
 				'performer_types' => $performer_types));
