@@ -11,6 +11,8 @@
     <meta name="description" content="<?php echo $this->description; ?>"/>
     <meta name="viewport" content="width=device-width">
     <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/bootstrap.js"></script> 
+    <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
     <script type="text/javascript">
     	$.browser = new Object();
 	</script> 
@@ -23,7 +25,6 @@
     <link rel="stylesheet" type="text/css" href="/web/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="/web/css/form.css"/>
     
-    
     <script type="text/javascript" src="/web/js/common.js"></script>
     
 </head>
@@ -31,7 +32,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -50,11 +51,11 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="content" class="container">
 		<div class="row">
 			<div class="span3 text-center">
-				<a href="/"><img class="logo" src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a>
+				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a>
 				<div class="brand"><a href="/">HandsHammer - биржа строительных и ремонтных работ г.Кирова</a></div>
 			</div>
 			<div class="span6">
@@ -77,7 +78,22 @@
 		<hr/>
 		
 		<footer>
-			<p>&copy; Биржа строительных и ремонтных работ 2013</p>
+			<div class="row">
+				<div class="span6">
+					<p> <strong>HandsHammer</strong> &ndash; биржа строительных и ремонтных работ. &copy; 2013</p>
+				</div>
+				<div class="span3">
+					По вопросам рекламы и сотрудничества пишите на <a href="mailto:info@handshammer.ru">info@handshammer.ru</a>
+				</div>
+				<div class="span3">
+				
+				<div style="text-align: center;">
+					<a href="http://lepotart.ru/" target="_blank">
+						<img style="width: 40px;" src="http://lepotart.ru/assets/images/logo.png" alt="Lepoart"></a><br/>
+					<a href="http://lepotart.ru/" target="_blank"><small>Разработка сайта – «Lepotart»</small></a>
+				</div>
+			</div>
+			</div>
 		</footer>
 	</div> <!-- /container -->
 </body>

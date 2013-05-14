@@ -7,4 +7,9 @@ class SiteController extends YFrontController
         $this->render('welcome');
     }
 
+    public function actionSpecialists()
+    {
+        $this->render('specialists');
+    }
+
 }

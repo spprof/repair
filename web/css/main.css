@@ -1,6 +1,10 @@
 body {
-    padding-bottom: 20px;
-    background: url(../images/white_wall.png) repeat;
+    padding-bottom: 0px;
+    background: url(../images/cream_pixels.png) repeat;
+}
+
+.clear{
+	clear: both;
 }
 
 .navbar-inverse .navbar-inner {
@@ -27,13 +31,23 @@ h1, h2, h3 {
 
 #content {
 	background: #fff;
-	padding: 70px 20px 20px;
+	padding: 70px 20px 20px 20px;
 	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
 }
 
-.brand {
+.brand{
 	color: #000;
 	font-size: 11px;
+	line-height: 14px;
+}
+
+.brand a{
+	color: #000;
+	font-size: 11px;
+	line-height: 14px;
+}
+.logo{
+	width: 177px;
 }
 
 .pseudo-link {
@@ -61,4 +75,44 @@ input[id$="verifyCode"] {
 
 .client-panel li:FIRST-CHILD {
 	padding-bottom: 24px;
+}
+
+.spec-item{
+	border-bottom: 0px solid #333;
+}
+
+.spec-item-rating{
+	float: right;
+}
+
+.spec-item-info{
+	float: left;
+}
+
+.navbar-sort{
+	line-height: 14px;
+}
+
+.navbar-inner-sort{
+	min-height: 24px;
+	line-height: 14px;
+}
+
+.navbar-inner-sort a{
+	font-size: 13px;
+	padding: 5px 15px 5px !important; 
+} 
+
+.nav-sort{
+	line-height: 14px;
+}
+
+.nav-sort li{
+	font-size: 13px;
+	line-height: 14px;
+}
+
+.brand-sort{
+	font-size: 13px !important;
+	font-weight: bold !important;
 }
