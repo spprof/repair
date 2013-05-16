@@ -3,9 +3,9 @@
  * @var CActiveDataProvider $dataProvider
  * @var DefaultController $this
  */
-$this->breadcrumbs += array(PmModule::t('Outgoing'));
+$this->breadcrumbs += array(MessageModule::t('Исходящие сообщения'));
 ?>
-<h2><?php echo PmModule::t('Outgoing'); ?></h2>
+<h2><?php echo MessageModule::t('Исходящие сообщения'); ?></h2>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider' => $dataProvider,

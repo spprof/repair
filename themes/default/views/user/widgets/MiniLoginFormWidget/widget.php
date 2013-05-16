@@ -32,31 +32,36 @@
 
 	<?php $links = array();?>
 	<?php
+		$links[1] = $this->widget('application.modules.message.components.pmwidget', array(), true);
 		switch (Yii::app()->user->getState('client_type')) {
 			case 'customer' : {
-				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=customer', 'ico' => 'user' );
-				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
-				$links[] = array( 'label' => 'Мои тендеры', 'url' => '/tender/index/owner/', 'ico' => 'home' );
-				$links[] = array( 'label' => 'Избранные исполнители', 'url' => '/tender/index/owner/', 'ico' => 'star' );
+				$links[0] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=customer', 'ico' => 'user' );
+				$links[5] = array( 'label' => 'Мои тендеры', 'url' => '/tender/index/owner/');
+				$links[6] = array( 'label' => 'Избранные исполнители', 'url' => '/tender/index/owner/' );
 				break;
 			}
 			case 'performer' : {
-				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=performer', 'ico' => 'user' );
-				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
-				$links[] = array( 'label' => 'Мои вакансии', 'url' => '/vacancy/index/owner/', 'ico' => 'volume-up' );
-				$links[] = array( 'label' => 'Мои клиенты', 'url' => '/tender/index/owner/', 'ico' => 'star' );
+				$links[0] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=performer', 'ico' => 'user' );
+				$links[5] = array( 'label' => 'Мои вакансии', 'url' => '/vacancy/index/owner/' );
+				$links[6] = array( 'label' => 'Мои клиенты', 'url' => '/tender/index/owner/' );
 				break;
 			}
 			default :
-				$links[] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/profile/', 'ico' => 'user' );
-				$links[] = array( 'label' => 'Админ панель', 'url' => '#', 'ico'=>'eye-open' );
-				$links[] = array( 'label' => 'Мои сообщения', 'url' => '/client/account/messages/', 'ico' => 'envelope' );
+				$links[0] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/profile/', 'ico' => 'user' );
+				$links[5] = array( 'label' => 'Админ панель', 'url' => '#', 'ico'=>'eye-open' );
 		}
 	?>
-	<?php $links[] = array( 'label' => 'Выход', 'url' => '/logout/', 'ico' => 'share-alt' );?>
+	<?php $links[99] = array( 'label' => 'Выход', 'url' => '/logout/', 'ico' => 'share-alt' );?>
 	<ul class='client-panel'>
+	<?php ksort($links)?>
 	<?php foreach ($links as $link):?>
-		<li><a href='<?=$link['url']?>'><i class='icon-<?=(isset($link['ico'])) ? $link['ico'] : ''?>'></i>&nbsp;<?=$link['label']?></a></li>
+		<li>
+		<?php if (is_array($link)):?>
+			<a href='<?=$link['url']?>'><?php if (isset($link['ico'])):?><i class='icon-<?=$link['ico']?>'></i>&nbsp;<?php endif;?><?=$link['label']?></a>
+		<?php else:?>
+			<?=$link?>
+		<?php endif;?>
+		</li>
 	<?php endforeach;?>
 	</ul>
 </div>

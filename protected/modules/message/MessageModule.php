@@ -39,7 +39,7 @@ class MessageModule extends YWebModule
 	 * Enable conversation mode
 	 * @var bool
 	 */
-	public $conversationMode = true;
+	public $conversationMode = false;
 
 	/**
 	 * Additional models import
@@ -92,6 +92,6 @@ class MessageModule extends YWebModule
 	 */
 	public function getUserName($model)
 	{
-		return Yii::app()->user->getState('nick_name'); 
+		return $model->nick_name; 
 	}
 }

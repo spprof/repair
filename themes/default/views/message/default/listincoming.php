@@ -1,7 +1,7 @@
 <?php
-	$this->breadcrumbs += array(PmModule::t('Incoming')); 
+	$this->breadcrumbs += array(MessageModule::t('Входящие сообщения')); 
 ?>
-<h2><?php echo PmModule::t('Incoming'); ?></h2>
+<h2><?php echo MessageModule::t('Входящие сообщения'); ?></h2>
 
 <?php if (Yii::app()->user->hasFlash('success')): ?>
 	<div class="flash-success">

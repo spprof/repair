@@ -13,32 +13,13 @@ class DefaultController extends YFrontController
 		{
 			$this->redirect(array('thread/index'));
 		}
-		$this->_userId = Yii::app()->getModule('pm')->getUserId();
+		$this->_userId = Yii::app()->getModule('message')->getUserId();
 		$this->breadcrumbs = array(
-			PmModule::t('Personal messages') => array('/pm')
+			MessageModule::t('Личные сообщения') => array('/message/default')
 		);
 		return parent::beforeAction($action);
 	}
-
-	public function filters()
-	{
-		return array(
-			'accessControl'
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-			array('allow',
-				'users'=>array('@'),
-			),
-			array('deny',
-				'users' => array('*')
-			)
-		);
-	}
-
+	
 	/**
 	 * Personal messages menu
 	 */
@@ -70,7 +51,7 @@ class DefaultController extends YFrontController
 			->findByPk($id);
 		if ($model === null)
 		{
-			throw new CHttpException(404, PmModule::t("Message not found"));
+			throw new CHttpException(404, MessageModule::t("Message not found"));
 		}
 			
 		// mark message as read
@@ -96,7 +77,7 @@ class DefaultController extends YFrontController
 		$model->recipient_id = $to;
 		if ($model->recipient === null)
 		{
-			throw new CHttpException(404, PmModule::t('User not found'));
+			throw new CHttpException(404, MessageModule::t('User not found'));
 		}
 
 		if (isset($_POST['PersonalMessage'])) 
@@ -105,8 +86,8 @@ class DefaultController extends YFrontController
 			
 			if ($model->save())
 		       	{
-				Yii::app()->user->setFlash('success', PmModule::t('Message has been sent.'));
-				$this->redirect(array('/pm/default'));					
+				Yii::app()->user->setFlash('success', MessageModule::t('Message has been sent.'));
+				$this->redirect(array('/message/default'));					
 			}
 			
 		} else {
@@ -141,7 +122,7 @@ class DefaultController extends YFrontController
 
 		if ($model === null)
 		{
-			throw new CHttpException(404, PmModule::t("Message not found"));
+			throw new CHttpException(404, MessageModule::t("Message not found"));
 		}
 
 		if ($model->sender_id == $this->_userId)
@@ -160,8 +141,8 @@ class DefaultController extends YFrontController
 
 			if ($modelNew->save()) {
 				Yii::app()->user->setFlash('success', 
-					PmModule::t('Message has been sent'));
-				$this->redirect(array('/pm/default'));					
+					MessageModule::t('Message has been sent'));
+				$this->redirect(array('/message/default'));					
 			}
 		} else	{
 			$modelNew->subject = $model->addReplyPrefix($model->subject);	
@@ -185,7 +166,7 @@ class DefaultController extends YFrontController
 			$model = PersonalMessage::model()->haveAccess($this->_userId)->findByPk($id);
 			if ($model !== null) {
 				($this->_userId == $model->sender_id)?$model->ds=1:$model->dr=1;
-				if (Yii::app()->getModule('pm')->reallyDelete && $model->ds && $model->dr) {
+				if (Yii::app()->getModule('message')->reallyDelete && $model->ds && $model->dr) {
 					$model->delete();
 				} else {
 					$model->save(false, array('dr', 'ds'));
@@ -194,8 +175,8 @@ class DefaultController extends YFrontController
 				if (!isset($_GET['ajax']))
 				{
 					Yii::app()->user->setFlash('success', 
-						PmModule::t('Message has been succsefully deleted.'));
-					$this->redirect(array('/pm/default/listincoming'));
+						MessageModule::t('Message has been succsefully deleted.'));
+					$this->redirect(array('/message/default/listincoming'));
 				}
 			}
 		} else {
@@ -208,7 +189,7 @@ class DefaultController extends YFrontController
 	 */
 	public function actionListIncoming()
 	{
-		$pm = Yii::app()->getModule('pm');
+		$pm = Yii::app()->getModule('message');
 
 		$criteria = new CDbCriteria(array(
 			'condition' => 'recipient_id=:recipient_id AND `dr`=0',
@@ -248,7 +229,7 @@ class DefaultController extends YFrontController
 		$dataProvider = new CActiveDataProvider('PersonalMessage', array(
 			'criteria' => $criteria,
 			'pagination' => array(
-				'pageSize' => Yii::app()->getModule('pm')->outgoingPageSize
+				'pageSize' => Yii::app()->getModule('message')->outgoingPageSize
 			)
 		));
 

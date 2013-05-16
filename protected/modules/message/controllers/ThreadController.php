@@ -10,32 +10,13 @@ class ThreadController extends YFrontController
 		{
 			$this->redirect(array('default/index'));
 		}
-		$this->_userId = Yii::app()->getModule('pm')->getUserId();
+		$this->_userId = Yii::app()->getModule('message')->getUserId();
 		$this->breadcrumbs = array(
-			PmModule::t('Personal messages') => array('/pm')
+			MessageModule::t('Personal messages') => array('/message/')
 		);
 		return parent::beforeAction($action);
 	}
-
-	public function filters()
-	{
-		return array(
-			'accessControl'
-		);
-	}
-
-	public function accessRules()
-	{
-		return array(
-			array('allow',
-				'users'=>array('@'),
-			),
-			array('deny',
-				'users' => array('*')
-			)
-		);
-	}
-
+	
 	/**
 	 * Personal messages menu
 	 */

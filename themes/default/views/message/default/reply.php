@@ -1,7 +1,7 @@
 <?php
-	$this->breadcrumbs += array(PmModule::t('Reply to message')); 
+	$this->breadcrumbs += array(MessageModule::t('Reply to message')); 
 ?>
-<h2><?php echo PmModule::t('Reply to message'); ?></h2>
+<h2><?php echo MessageModule::t('Ответить на сообщение'); ?></h2>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,

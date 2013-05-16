@@ -72,6 +72,8 @@
 		</div>
 		<hr>
 		
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array('links' => $this->breadcrumbs)); ?>
+		
 		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>
 		

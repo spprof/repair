@@ -1,9 +1,9 @@
 <?php
-/**
- * @var CActiveDataProvider $dataProvider
- */
-?>
-<h1><?php echo PmModule::t('Personal messages'); ?></h1>
+$this->breadcrumbs += array(
+	MessageModule::t('New conversations')
+); ?>
+
+<h2><?php echo MessageModule::t('New conversations'); ?></h2>
 <?php if (Yii::app()->user->hasFlash('success')): ?>
 	<div class="flash-success">
 		<?php echo Yii::app()->user->getFlash('success'); ?>
@@ -14,21 +14,6 @@
 	</div>
 <?php endif; ?>
 
-<p><?php echo PmModule::t('Unread messages');?>: <?php echo (int)$unread; ?></p>
-
-<p><?php echo PmModule::t('Compose message'); ?>:</p>
-<ul>
-	<?php foreach ($users as $user): ?>
-	<li> 
-		<?php echo $this->module->getUserName($user); ?>
-		&nbsp;
-		(<?php echo CHtml::link(PmModule::t('Compose message'), array(
-			'view', 'id' => $user->getPrimaryKey())
-		); ?>)
-	</li>
-	<?php endforeach; ?>
-</ul>
-
 <?php 
 	$this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider' => $dataProvider,
@@ -38,8 +23,9 @@
 			'type' => 'text',
 			'value' => '$data->getInterlocutorName()'
 		),
-		'read:boolean',
 		'created',
+		'read:boolean',
+		'id',
 		'subject:text',
 		array(
 			'class' => 'CButtonColumn',
@@ -50,8 +36,3 @@
 	'template' => '{items}'
 ));?>
 
-<br />
-<h2><?php echo PmModule::t('Widget example'); ?></h2>
-<?php $this->widget('application.modules.pm.components.pmwidget', array(
-	'url' => array('/pm/thread/unreadList')	
-)); ?>

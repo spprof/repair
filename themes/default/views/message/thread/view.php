@@ -1,7 +1,7 @@
 <?php
-$this->breadcrumbs += array(PmModule::t('View conversation'));
+$this->breadcrumbs += array(MessageModule::t('View conversation'));
 ?>
-<h2><?php echo PmModule::t('View conversation with {user}', array('{user}' => $message->recipientName)); ?></h2>
+<h2><?php echo MessageModule::t('View conversation with {user}', array('{user}' => $message->recipientName)); ?></h2>
 
 <?php 
 $data = array_reverse($dataProvider->getData());

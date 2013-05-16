@@ -4,7 +4,7 @@ class PmWidget extends CWidget {
 
 	public $userId = null;
 	public $tableName = null;
-	public $url = array('/pm/default/listincoming');
+	public $url = array('/message/default/');
 
 	public function run()
 	{

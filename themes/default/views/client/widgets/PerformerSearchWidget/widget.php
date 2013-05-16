@@ -3,7 +3,7 @@
 					'method' => 'get',
 					'action' => '/client/index/index/'
 				));?>
-	<?php $params = $params['search']?>
+	<?php $params = (isset($params['search'])) ? $params['search'] : array() ?>
 	<?php if (count($performer_types) && $view !== 'main'):?>
 	<h4><?=Performer::model()->getAttributeLabel('is_company');?></h4>
 		<?php foreach ($performer_types as $key=>$item):?>

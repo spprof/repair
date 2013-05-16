@@ -34,14 +34,14 @@ class PersonalMessage extends YModel
 	{
 		return array(
 			'id' => 'ID',
-			'sender_id' => PmModule::t('Sender'),
-			'recipient_id' => PmModule::t('Recipient'),
-			'read' => PmModule::t('Read'),
-			'created' => PmModule::t('Created'),
-			'subject' => PmModule::t('Subject'),
-			'text' => PmModule::t('Text'),
+			'sender_id' => MessageModule::t('Sender'),
+			'recipient_id' => MessageModule::t('Recipient'),
+			'read' => MessageModule::t('Read'),
+			'created' => MessageModule::t('Created'),
+			'subject' => MessageModule::t('Subject'),
+			'text' => MessageModule::t('Text'),
 
-			'interlocutorId' => PmModule::t('Interlocutor')
+			'interlocutorId' => MessageModule::t('Interlocutor')
 		);
 	}
 
