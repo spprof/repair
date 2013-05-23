@@ -28,7 +28,6 @@
     <?php echo $form->error($model, 'area'); ?>
 </div>
 
-
 <div class="field">
     <?php echo $form->labelEx($model, 'work_types'); ?>
     <?php $this->widget('application.modules.work.widgets.WorkFormWidget', array(
@@ -37,4 +36,10 @@
     		));
     ?>
     <?php echo $form->error($model, 'work_types'); ?>
+</div>
+
+<div class="field">
+    <?php echo $form->labelEx($model, 'about'); ?>
+    <?php echo $form->textArea($model, 'about') ?>
+    <?php echo $form->error($model, 'about'); ?>
 </div>

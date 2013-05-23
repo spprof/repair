@@ -41,7 +41,7 @@
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="/">Главная</a></li>
-						<li><a href="/index.php?r=site/specialists">Специалисты</a></li>
+						<li><a href="/client/index/index/">Специалисты</a></li>
 						<li><a href="#contact">Тендеры</a></li>
 						<li><a href="#contact">Вопросы и ответы</a></li>
 						<li><a href="#contact">Найти работу</a></li>

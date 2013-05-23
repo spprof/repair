@@ -12,6 +12,7 @@ class PerformerRegistrationForm extends CFormModel {
 	public $is_company;
 	public $company_name;
 	public $work_types;
+	public $about;
 	
 	public $password;
 	public $cPassword;
@@ -32,7 +33,7 @@ class PerformerRegistrationForm extends CFormModel {
 				array('nick_name,', 'checkNickName'),
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
-				array('work_types', 'safe'),
+				array('work_types, about', 'safe'),
 				array('email', 'checkEmail'),
 				array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.')),
 				array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements()),
@@ -57,6 +58,7 @@ class PerformerRegistrationForm extends CFormModel {
 				'password'   => Yii::t('ClientModule.customer', 'Пароль'),
 				'cPassword'  => Yii::t('ClientModule.customer', 'Подтверждение пароля'),
 				'verifyCode' => Yii::t('ClientModule.customer', 'Код проверки'),
+				'about' 	 => Yii::t('ClientModule.customer', 'Подробнее'),
 		);
 	}
 	

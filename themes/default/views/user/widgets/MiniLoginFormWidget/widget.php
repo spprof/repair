@@ -38,12 +38,14 @@
 				$links[0] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=customer', 'ico' => 'user' );
 				$links[5] = array( 'label' => 'Мои тендеры', 'url' => '/tender/index/owner/');
 				$links[6] = array( 'label' => 'Избранные исполнители', 'url' => '/tender/index/owner/' );
+				$links[7] = array( 'label' => 'Мои отзывы', 'url' => '/response/index/owner/');
 				break;
 			}
 			case 'performer' : {
 				$links[0] = array( 'label' => '<b>' . Yii::app()->user->nick_name . '</b>', 'url' => '/client/account/profile?type=performer', 'ico' => 'user' );
 				$links[5] = array( 'label' => 'Мои вакансии', 'url' => '/vacancy/index/owner/' );
 				$links[6] = array( 'label' => 'Мои клиенты', 'url' => '/tender/index/owner/' );
+				$links[7] = array( 'label' => 'Мои отзывы', 'url' => '/response/index/slave/');
 				break;
 			}
 			default :

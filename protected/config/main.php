@@ -98,7 +98,6 @@ return array(
                 'cache'        => true,
             ),
             // на продакшне gii рекомендуется отключить, подробнее: http://www.yiiframework.com/doc/guide/1.1/en/quickstart.first-app
-            /*
             'gii'   => array(
                 'class'          => 'system.gii.GiiModule',
                 'password'       => 'giiYupe',
@@ -107,7 +106,6 @@ return array(
                 ),
                 'ipFilters'=>array(),
             ),
-            */
         ), $config['modules']
     ),
     'behaviors' => array(

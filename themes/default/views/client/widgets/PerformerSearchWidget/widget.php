@@ -34,6 +34,6 @@
 	</div>
 	<?php endif;?>
 
-	<button type='submit' class="btn btn-inverse btn-large">Найти исполнителя</button>
+	<button type='submit' class="btn btn-inverse btn-large">Найти</button>
 
 <?php $this->endWidget(); ?>

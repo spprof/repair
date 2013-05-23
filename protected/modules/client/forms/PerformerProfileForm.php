@@ -12,6 +12,7 @@ class PerformerProfileForm extends CFormModel {
 	public $is_company;
 	public $company_name;
 	public $work_types;
+	public $about;
 	
 	public $password;
 	public $cPassword;
@@ -31,7 +32,7 @@ class PerformerProfileForm extends CFormModel {
 				array('nick_name,', 'checkNickName'),
 				array('cPassword', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('UserModule.user', 'Пароли не совпадают.')),
 				array('email', 'email'),
-				array('work_types', 'safe'),
+				array('work_types, about', 'safe'),
 				array('email', 'checkEmail'),
 		);
 	}
@@ -49,6 +50,7 @@ class PerformerProfileForm extends CFormModel {
 				'is_company' => Yii::t('ClientModule.customer', 'Фирма'),
 				'company_name' => Yii::t('ClientModule.customer', 'Название фирмы'),
 				'work_types' => Yii::t('ClientModule.customer', 'Типы работ'),
+				'about' 	 => Yii::t('ClientModule.customer', 'Подробнее'),
 	
 				'password'   => Yii::t('ClientModule.customer', 'Пароль'),
 				'cPassword'  => Yii::t('ClientModule.customer', 'Подтверждение пароля'),
