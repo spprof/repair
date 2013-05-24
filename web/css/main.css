@@ -1,6 +1,22 @@
 body {
     padding-bottom: 0px;
     background: url(../images/cream_pixels.png) repeat;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+
+.top{
+
+}
+
+label, input, button, select, textarea {
+font-size: 13px;
+line-height: 16px;
+}
+
+label {
+margin-bottom: 1px;
 }
 
 .clear{
@@ -8,8 +24,7 @@ body {
 }
 
 .navbar-inverse .navbar-inner {
-	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2), 0 0 2px 1px #CCC inset;
-	border-bottom: 1px solid #bbb;
+	border-bottom: 2px solid #000;
 }
 
 .hero-unit {
@@ -17,7 +32,13 @@ body {
 }
 
 h1, h2, h3 {
-	text-shadow: 0 1px 2px #888;
+	text-shadow: 1px 1px 1px #888;
+}
+
+h4{
+	font-style: italic;
+border-bottom: 1px solid #aaa;
+color: #777;
 }
 
 .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
@@ -35,6 +56,16 @@ h1, h2, h3 {
 	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
 }
 
+.span6-line{
+	width: 438px;
+	padding-right: 20px;
+	border-right: 2px solid #bbb;
+}
+
+.info{
+	font-size: 12px;
+}
+
 .brand{
 	color: #000;
 	font-size: 11px;
@@ -48,6 +79,15 @@ h1, h2, h3 {
 }
 .logo{
 	width: 177px;
+}
+
+
+.tender-item{
+	margin: 0 0 15px 0;
+}
+
+.spec-item{
+	margin: 0 0 15px 0;
 }
 
 .pseudo-link {
