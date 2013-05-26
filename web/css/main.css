@@ -28,6 +28,7 @@ margin-bottom: 1px;
 }
 
 .hero-unit {
+	padding: 15px 25px;
     box-shadow: 0 0 1px 1px #D0D0D0 inset;
 }
 
@@ -37,8 +38,17 @@ h1, h2, h3 {
 
 h4{
 	font-style: italic;
-border-bottom: 1px solid #aaa;
+border-bottom: 2px solid #aaa;
 color: #777;
+}
+
+h4 a{
+	float: right;
+	font-size: 13px;
+}
+
+.form-horizontal{
+	margin: 0 0 13px;
 }
 
 .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
@@ -56,10 +66,14 @@ color: #777;
 	box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
 }
 
-.span6-line{
-	width: 438px;
+.span6-mini1{
+	width: 448px;
 	padding-right: 20px;
-	border-right: 2px solid #bbb;
+	border-right: 2px solid #f6f6f6;
+}
+
+.span6-mini2{
+	width: 448px;
 }
 
 .info{
@@ -78,17 +92,13 @@ color: #777;
 	line-height: 14px;
 }
 .logo{
-	width: 177px;
+	width: 170px;
 }
 
 
-.tender-item{
-	margin: 0 0 15px 0;
-}
 
-.spec-item{
-	margin: 0 0 15px 0;
-}
+
+
 
 .pseudo-link {
 	border-bottom: 1px dashed #333;
@@ -117,8 +127,11 @@ input[id$="verifyCode"] {
 	padding-bottom: 24px;
 }
 
+
 .spec-item{
-	border-bottom: 0px solid #333;
+	margin: 0 0 15px 0;
+	padding: 0 0 15px 0;
+	border-bottom: 2px dotted #999;
 }
 
 .spec-item-rating{
@@ -127,6 +140,28 @@ input[id$="verifyCode"] {
 
 .spec-item-info{
 	float: left;
+	margin: 0 0 4px 0;
+}
+.spec-item-cont{
+	margin: 4px 0 0 0;
+}
+
+
+.tender-item{
+	margin: 0 0 15px 0;
+	padding: 0 0 15px 0;
+	border-bottom: 2px dotted #999;
+}
+.tender-item-date{
+	float: right;
+	font-weight: bolder;
+	font-size: 12px;
+}
+.tender-item-info{
+	margin: 0 0 4px 0;
+}
+.tender-item-cont{
+	margin: 4px 0 0 
 }
 
 .navbar-sort{
@@ -175,4 +210,11 @@ input[id$="verifyCode"] {
 	margin: 0 0 5px 0;
 	padding: 0 0 0 50px;
 	font-size: 13px;
+}
+
+
+footer{
+	margin: 30px 0 0 0;
+	padding: 30px 0 0 0;
+	border-top: 1px solid #aaa;
 }

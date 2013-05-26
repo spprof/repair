@@ -1,7 +1,7 @@
 
 <div class="row">
-	<div class="span6 span6-line1">
-		<h3>Для заказчиков</h3>
+	<div class="span6 span6-mini1">
+		<h3>Для клиентов</h3>
 		<div class="alert-">
 			<h4><!--<i class="icon-search"></i>--> Поиск специалиста</h4>
 		 
@@ -44,7 +44,64 @@
 		<br/>
 		
 			<div class="alert-">
-				<h4><!--<i class="icon-plus-sign"></i>-->Создание тендера</h4>
+				<h4>Лучшие специалисты <a href="">все специалисты</a></h4>
+				<div class="spec-item">
+					<div class="spec-item-info">
+						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
+						<i class="icon-envelope"></i> <a href="#">Отправить сообщение</a>
+					</div>	
+					<div class="spec-item-rating">
+							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
+					</div>
+					<div class="clear"></div>
+					<span class="label label-warning">отделка</span>
+					<span class="label label-warning">облицовка плиткой</span> 
+					<span class="label label-warning">установка окон</span><br/>
+					<div class="spec-item-cont">
+						Краткое описание компании или частного мастера. Краткое описание компании или частного мастера. 
+					</div>	
+				</div>
+				
+				<div class="spec-item">
+					<div class="spec-item-info">
+						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
+						<i class="icon-envelope"></i>
+						<a href="#">Отправить сообщение</a>
+					</div>	
+					<div class="spec-item-rating">
+							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
+					</div>
+					<div class="clear"></div>
+					<span class="label label-warning">отделка</span>
+					<span class="label label-warning">облицовка плиткой</span> 
+					<span class="label label-warning">установка окон</span><br/>
+					<div class="spec-item-cont">
+						Краткое описание компании или частного мастера. Краткое описание компании или частного мастера. 
+					</div>	
+				</div>
+
+				<div class="spec-item">
+					<div class="spec-item-info">
+						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
+						<i class="icon-envelope"></i>
+						<a href="#">Отправить сообщение</a>
+					</div>	
+					<div class="spec-item-rating">
+							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
+					</div>
+					<div class="clear"></div>
+					<span class="label label-warning">отделка</span>
+					<span class="label label-warning">облицовка плиткой</span> 
+					<span class="label label-warning">установка окон</span><br/>
+					<div class="spec-item-cont">
+						Краткое описание компании или частного мастера. Краткое описание компании или частного мастера. 
+					</div>	
+				</div>
+			</div>
+
+			<br>
+			<div class="alert-">
+				<h4><!--<i class="icon-plus-sign"></i>-->Создание заказа</h4>
 				<p>
 					Вам нужен комплексный ремонт или у вас нестандартная и сложная задача?
 					Создайте <b>тендер</b>(нужна регистрация) &ndash; <b>открытый конкурс</b> для всех специалистов, 
@@ -53,51 +110,14 @@
 			  		Специалисты нашего сайта сделают вам различные предложения, среди которых вы сможете выбрать оптимальное
 			  		и заключить договор.-->
 			 </p>
-			<p><button class="btn btn-inverse">Создать тендер</button></p>
-			</div>
-		<br/>
-			<div class="alert-">
-				<h4>Лучшие специалисты</h4>
-				<div class="spec-item">
-					<div class="spec-item-info">
-						#432 <a href="#">Профиль</a> <a href="#">Отправить сообщение</a>
-					</div>	
-					<div class="spec-item-rating">
-							<a href="#" rel="tooltip" class="label label-warning" title="Рейтинг">4,6</a>
-					</div>
-					<div class="clear"></div>
-					<b>Контактное лицо:</b> Роман<br/>
-					<b>Виды работ:</b> установка окон, установка дверей.<br/>
-				</div>
-				
-				<div class="spec-item">
-					<div class="spec-item-info">
-						#291 <a href="#">Профиль</a> <a href="#">Отправить сообщение</a>
-					</div>	
-					<div class="spec-item-rating">
-							<a href="#" rel="tooltip" class="label label-warning" title="Рейтин">3,5</a>
-					</div>
-					<div class="clear"></div>
-					<b>Компания:</b> "Set&Setting"<br/>
-					<b>Виды работ:</b> отделка, сантехника, электрика.<br/>
-				</div>
-
-				<div class="spec-item">
-					<div class="spec-item-info">
-						#291 <a href="#">Профиль</a> <a href="#">Отправить сообщение</a>
-					</div>	
-					<div class="spec-item-rating">
-							<a href="#" rel="tooltip" class="label label-warning" title="Рейтин">3,5</a>
-					</div>
-					<div class="clear"></div>
-					<b>Компания:</b> "Set&Setting"<br/>
-					<b>Виды работ:</b> отделка, сантехника, электрика.<br/>
-				</div>
+			<p><button class="btn btn-inverse">Создать заказ</button></p>
 			</div>
 		
 	</div>
-	<div class="span6">
-		<h3>Для специалистов</h3>
+
+
+	<div class="span6 span6-mini2">
+		<h3>Для исполнителей</h3>
 
 		<div class="alert-">
 			<h4><!--<i class="icon-user"></i>--> Зарегистрируйтесь</h4>
@@ -110,35 +130,53 @@
 		</div>
 		<br/>
 		<div class="alert-">
-			<h4>Последние тендеры</h4>
+			<h4>Последние заказы <a href="">все заказы</a></h4>
 
 				<div class="tender-item">
+					<div class="tender-item-date">
+						25 мая 14:35
+					</div>
 					<div class="tender-item-info">
-						№12 Заказчик <a href="#">Роман</a> <a href="#">Отправить сообщение</a>
+						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
+						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
 					</div>	
 					<div class="clear"></div>
-					<b>Виды работ:</b> установка окон, установка дверей.<br/>
-					<b>Краткое описание:</b> необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
+					<span class="label label-warning">установка окон</span> 
+					<span class="label label-warning">установка дверей</span>
+					<div class="tender-item-cont">
+					Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
+					но не стандартно, а по горизонтали%).
+				</div>
 					<a href="#">Подробнее &rarr;</a>
 				</div>
 				
 				<div class="tender-item">
+					<div class="tender-item-date">
+						25 мая 14:35
+					</div>
 					<div class="tender-item-info">
-						№12 Заказчик <a href="#">Роман</a> <a href="#">Отправить сообщение</a>
+						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
+						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
 					</div>	
 					<div class="clear"></div>
-					<b>Виды работ:</b> установка окон, установка дверей.<br/>
-					<b>Краткое описание:</b> необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
+					<span class="label label-warning">установка окон</span> 
+					<span class="label label-warning">установка дверей</span><br/>
+					Необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
 					<a href="#">Подробнее &rarr;</a>
 				</div>
 
 				<div class="tender-item">
+					<div class="tender-item-date">
+						25 мая 14:35
+					</div>
 					<div class="tender-item-info">
-						№12 Заказчик <a href="#">Роман</a> <a href="#">Отправить сообщение</a>
+						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
+						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
 					</div>	
 					<div class="clear"></div>
-					<b>Виды работ:</b> установка окон, установка дверей.<br/>
-					<b>Краткое описание:</b> необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
+					<span class="label label-warning">установка окон</span> 
+					<span class="label label-warning">установка дверей</span><br/>
+					Необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
 					<a href="#">Подробнее &rarr;</a>
 				</div>
 		</div>

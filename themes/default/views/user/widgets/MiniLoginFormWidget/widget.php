@@ -15,13 +15,24 @@
 		<div class="control-group">
 		      <?php echo $form->passwordField($model,'password',array('class'=>'input-medium', 'placeholder' => 'Пароль')); ?>
 		</div>
-		
+		<!--
 		<div class="control-group">
 			<input type="checkbox"> Запомнить
 		</div>
+		-->
 		 <div class="control-group">
 		 	<button type="submit" class="btn btn-inverse">Вход</button>
-		 	<a href="#" class="btn btn-warning">Регистрация</a>
+		 	<!--<a href="#" class="btn btn-warning">Регистрация</a>-->
+		 	<div class="btn-group">
+			  <a class="btn dropdown-toggle btn-warning" data-toggle="dropdown" href="#">
+			    Регистрация
+			    <span class="caret"></span>
+			  </a>
+			  <ul class="dropdown-menu">
+			    <li><a href="#">Я специалист</a></li>
+			    <li><a href="#">Я заказчик</a></li>
+			  </ul>
+			</div>
 		 </div>
 		 
 	<?php $this->endWidget(); ?>

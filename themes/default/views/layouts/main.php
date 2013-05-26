@@ -56,13 +56,13 @@
 		<div class="row top">
 			<div class="span3 text-center">
 				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png" /></a>
-				<div class="brand"><a href="/">BRS43 - биржа строительных и ремонтных услуг Кирова</a></div>
+				<!--<div class="brand"><a href="/">BRS43 - биржа строительных и ремонтных услуг Кирова</a></div>-->
 			</div>
 			<div class="span6">
 				<div class="hero-unit">
-					<p><strong>BRS43.RU</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
-						качественный ремонт и специалистами в области ремонта и строительства.</p>
-					<br/>
+					<p><strong>BRS43.RU</strong> &ndash; это биржа строительных и ремонтных услуг Кирова.
+						Сервис для заказчиков и специлиастов в области ремонта квартир, сантехники, электрики,
+						строительства, доставки.</p>
 					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
 				</div>
 			</div>
@@ -75,15 +75,21 @@
 		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>
 		
-		<hr/>
-		
 		<footer>
 			<div class="row">
-				<div class="span6">
-					<p> <strong>HandsHammer</strong> &ndash; биржа строительных и ремонтных работ. &copy; 2013</p>
+				<div class="span3">
+					<p> <strong>BRS43.RU</strong> &ndash; биржа строительных и ремонтных услгу &copy; 2013</p>
 				</div>
 				<div class="span3">
-					По вопросам рекламы и сотрудничества пишите на <a href="mailto:info@handshammer.ru">info@handshammer.ru</a>
+					<a href="#">Специалисты</a><br/>
+					<a href="#">Тендеры</a><br/>
+					<a href="#">Вопросы и ответы</a><br/>
+					<a href="#">Работа</a><br/>
+					<a href="#">О проекте</a><br/>
+				</div>
+				<div class="span3">
+					По вопросам рекламы и сотрудничества пишите на 
+					<a href="mailto:info@handshammer.ru">info@brs43.ru</a>
 				</div>
 				<div class="span3">
 				
