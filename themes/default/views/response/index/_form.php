@@ -1,28 +1,18 @@
 <div class='form'>
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'response-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="note">Поля, помеченные <span class="required">*</span>, обязательны для заполнения.</p>
-
+	<?php $form = $this->beginWidget('application.modules.yupe.extensions.booster.widgets.TbActiveForm', array(
+			'id'=>'horizontalForm',
+			'type'=>'horizontal',
+		)); ?>
+		
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="field">
-		<?php echo $form->labelEx($model,'text'); ?>
-		<?php echo $form->textArea($model,'text'); ?>
-		<?php echo $form->error($model,'text'); ?>
-	</div>
-
-	<div class="field">
-		<?php echo $form->labelEx($model,'rate'); ?>
-		<?php echo $form->dropDownList($model,'rate', array(0,1,2,3,4,5)); ?>
-		<?php echo $form->error($model,'rate'); ?>
-	</div>
-
-
-	<div class="buttons">
-		<?php echo CHtml::submitButton('Сохранить', array('class' => 'btn btn-large')); ?>
+	<?php echo $form->textAreaRow($model, 'text', array('class'=>'span8', 'rows'=>5)); ?>
+	
+	<?php echo $form->dropDownListRow($model, 'rate', array(0,1,2,3,4,5)); ?>
+	
+	<div class="form-actions">
+		<p class="note">Поля, помеченные <span class="required">*</span>, обязательны для заполнения.</p>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Отправить')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

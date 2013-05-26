@@ -45,15 +45,17 @@ class Performer extends YModel
 	{
 		return array(
 			'id' => 'ID',
-			'number' => 'Number',
-			'experience' => 'Experience',
+			'number' => 'Количество людей в группе',
+			'experience' => 'Опыт (лет)',
+			'phone' => 'Контактный телефон',
 			'area' => 'Area',
 			'rating' => 'Rating',
 			'status' => 'Status',
 			'weight' => 'Weight',
 			'is_company' => 'Is Company',
-			'company_name' => 'Company Name',
+			'company_name' => 'Название компании',
 			'work_types' => 'Виды работ',
+			'about' => 'Подробнее',
 		);
 	}
 	
@@ -94,6 +96,13 @@ class Performer extends YModel
 		return array(
 			0 => 'Мастер',
 			1 => 'Компания',
+		);
+	}
+	
+	public function getAreaList () {
+		return array(
+				0 => 'Город',
+				1 => 'Город + область',
 		);
 	}
 }

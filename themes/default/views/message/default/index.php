@@ -25,15 +25,3 @@
 		<?php echo CHtml::link(MessageModule::t('Исходящие'), array('/message/default/listoutgoing')); ?>
 	</li>
 </ul>
-
-<ul>
-	<?php /* foreach ($users as $user): ?>
-	<li> 
-		<?php echo $this->module->getUserName($user); ?>
-		&nbsp;
-		(<?php echo CHtml::link('Написать сообщение', array(
-			'create', 'to' => $user->getPrimaryKey())
-		); ?>)
-	</li>
-	<?php endforeach; */ ?>
-</ul>

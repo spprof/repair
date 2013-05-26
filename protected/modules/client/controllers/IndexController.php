@@ -9,7 +9,7 @@ class IndexController extends YFrontController {
 		$params['order'] = (isset($_GET['order'])) ? $_GET['order'] : null;
 		
 		$criteria=new CDbCriteria();
-		$criteria->with = array('work_type');
+		$criteria->with = array('work_type', 'user');
 		if (isset($params['search']['performer_type']))
 			$criteria->compare('is_company', $params['search']['performer_type']);
 		if (isset($params['search']['work_types'])) {
@@ -31,7 +31,14 @@ class IndexController extends YFrontController {
 	}
 	
 	public function actionView($id) {
-		$model = $this->loadModel((int)$id, Performer::model());
+		$user = $this->loadModel((int)$id, User::model());
+		$factory = new ClientFactory($user->client_type);
+		$model = $factory->model;
+		$model = $model::model()->with('user');
+		if ($user->client_type == 'performer') {
+			$model = $model->with(array('user', 'work_type'));
+		}
+		$model = $this->loadModel((int)$id, $model);
 		$this->render('view', array('model' => $model));
 	}
 	

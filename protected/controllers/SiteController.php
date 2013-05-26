@@ -6,6 +6,11 @@ class SiteController extends YFrontController
     {
         $this->render('welcome');
     }
+    
+    public function actionAbout()
+    {
+    	$this->render('about');
+    }
 
     public function actionSpecialists()
     {

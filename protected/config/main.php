@@ -72,7 +72,9 @@ return array(
     'theme'             => 'default',          // тема оформления по умолчанию
     'charset'           => 'UTF-8',
     'preload'           => CMap::mergeArray(
-		array(),
+		array(
+			'bootstrap',
+		),
         // array('bootstrap'),
         // preloading components
         $config['preload']
@@ -214,6 +216,15 @@ return array(
             // подключение CURL-обертки, подробнее https://github.com/hackerone/curl
             'curl' => array(
                 'class' => 'application.modules.yupe.extensions.curl.Curl'
+            ),
+            'bootstrap' => array(
+            		'class'          => 'application.modules.yupe.extensions.booster.components.Bootstrap',
+            		'coreCss'        => true,
+            		'responsiveCss'  => true,
+            		'yiiCss'         => true,
+            		'jqueryCss'      => true,
+            		'enableJS'       => true,
+            		'fontAwesomeCss' => true,
             ),
         ), $config['components']
     ),

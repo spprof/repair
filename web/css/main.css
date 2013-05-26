@@ -136,3 +136,8 @@ input[id$="verifyCode"] {
 	padding: 0 0 0 50px;
 	font-size: 13px;
 }
+
+.table .row-unred td{
+	background: #f0f0f0;
+}
+

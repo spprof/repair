@@ -10,8 +10,7 @@
     <meta name="keywords" content="<?php echo $this->keywords; ?>"/>
     <meta name="description" content="<?php echo $this->description; ?>"/>
     <meta name="viewport" content="width=device-width">
-    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="/web/vendor/bootstrap/js/bootstrap.js"></script> 
+    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script> 
     <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
     <script type="text/javascript">
     	$.browser = new Object();
@@ -42,10 +41,13 @@
 					<ul class="nav">
 						<li class="active"><a href="/">Главная</a></li>
 						<li><a href="/client/index/index/">Специалисты</a></li>
-						<li><a href="#contact">Тендеры</a></li>
+						<li><a href="/tender/index/index/">Тендеры</a></li>
+						<?php /* 
 						<li><a href="#contact">Вопросы и ответы</a></li>
 						<li><a href="#contact">Найти работу</a></li>
-						<li><a href="#contact">О проекте</a></li>
+						*/
+						?>
+						<li><a href="/site/about/">О проекте</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -63,7 +65,7 @@
 					<p><strong>HandsHammer</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
 						качественный ремонт и специалистами в области ремонта и строительства.</p>
 					<br/>
-					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
+					<p><a href='/site/about/' class="btn btn-warning">Узнать больше &raquo;</a></p>
 				</div>
 			</div>
 			<div class="span3">

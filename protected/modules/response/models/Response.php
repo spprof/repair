@@ -18,7 +18,7 @@ class Response extends YModel
 			array('id, owner_id, forwho_id', 'numerical', 'integerOnly'=>true),
 			array('rate', 'numerical', 'min' => 0, 'max' => 5),
 			array('status_id', 'numerical', 'min' => 0, 'max' => 1),
-			array('text, create_date', 'safe'),
+			array('rate, text', 'required'),
 			array('id, owner_id, forwho_id, text, create_date, rate, status_id', 'safe', 'on'=>'search'),
 		);
 	}
@@ -27,6 +27,7 @@ class Response extends YModel
 	{
 		return array(
 			'owner'=>array(self::BELONGS_TO, 'User', 'owner_id'),
+			'forwho'=>array(self::BELONGS_TO, 'User', 'forwho_id'),
 		);
 	}
 

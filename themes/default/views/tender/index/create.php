@@ -8,4 +8,7 @@
     $this->pageTitle = 'Создать тендер';
 ?>
 
+<a href='/tender/index/owner/'>Мои тендеры</a>
+<br/>
+<br/>
 <?php echo $this->renderPartial('_form', array(	'model' => $model,));?>

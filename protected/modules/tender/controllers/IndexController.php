@@ -4,7 +4,7 @@ class IndexController extends YFrontController
 {
 	public function filters() {
 		return array(
-			array('application.components.FrontAccessControl'),
+			array('application.components.FrontAccessControl - index'),
 		);
 	}
 	
@@ -33,7 +33,6 @@ class IndexController extends YFrontController
 	}
 	
 	public function actionCreate() {
-		Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
 		$model = $this->_model;
 		$model_class = get_class($model);
 		if (isset($_POST[$model_class])) {
@@ -47,7 +46,6 @@ class IndexController extends YFrontController
 	
 	public function actionUpdate($id)
 	{
-		Yii::app()->clientScript->registerScriptFile( '/web/vendor/bootstrap/js/bootstrap.min.js');
 		$model = $this->loadSelfModel((int)$id);
 		$model_class = get_class($model);
 		if (Yii::app()->request->isPostRequest && isset($_POST[$model_class]))

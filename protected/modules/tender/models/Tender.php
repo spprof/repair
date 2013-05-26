@@ -35,6 +35,7 @@ class Tender extends YModel
 	{
 		return array(
 			array('id, with_materials, budget, status_id, owner_id, performer_id', 'numerical', 'integerOnly'=>true),
+			array('label, text', 'required'),
 			array('label, text, images, create_date, catch_date, term, more, work_types', 'safe'),
 			array('id, label, text, images, create_date, catch_date, term, with_materials, budget, more, status_id, owner_id, performer_id', 'safe', 'on'=>'search'),
 		);
@@ -50,12 +51,13 @@ class Tender extends YModel
 			'create_date' => 'Дата создания',
 			'catch_date' => 'Дата начала исполнения',
 			'term' => 'Срок исполнения',
-			'with_materials' => 'Материалы',
+			'with_materials' => 'Свои материалы',
 			'budget' => 'Бюджет',
 			'more' => 'Дополнительно',
 			'status_id' => 'Статус',
 			'owner_id' => 'Автор',
 			'performer_id' => 'Исполнитель',
+			'work_types' => 'Типы работ',
 		);
 	}
 	
@@ -63,6 +65,7 @@ class Tender extends YModel
 		$this->owner_id = Yii::app()->user->getId();
 		$this->status_id = 0;
 		$this->create_date = new CDbExpression('NOW()');
+		$this->catch_date = null;
 		if ($this->id)
 			Yii::app()->db->createCommand()
 			->delete(	'rpr_tender_work_type',

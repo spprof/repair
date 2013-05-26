@@ -1,7 +1,6 @@
 <div class="spec-item">
-	<div class="spec-item-info">
-		#<?=$data->id?> 
-		<a href="/client/index/view/id/<?=$data->id?>">Профиль</a> 
+	<div class="spec-item-info"> 
+		<a href="/client/index/view/id/<?=$data->id?>"><?=$data->user->nick_name?></a> 
 		<a href="/message/default/create/to/<?=$data->id?>">Отправить сообщение</a>
 		<a href="/response/index/create/id/<?=$data->id?>">Оставить отзыв</a>
 	</div>	

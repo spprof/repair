@@ -1,35 +1,13 @@
-<div class="field">
-	<?php echo $form->labelEx($model,'is_company'); ?>
-	<?php echo $form->radioButtonList($model, 'is_company', $model->getIsCompanyList(), array('separator' => '')); ?>
-	<?php echo $form->error($model,'is_company'); ?>
-</div>
+<?php echo $form->checkBoxRow($model, 'is_company', array()); ?>
 
-<div class="field">
-    <?php echo $form->labelEx($model, 'company_name'); ?>
-    <?php echo $form->textField($model, 'company_name') ?>
-    <?php echo $form->error($model, 'company_name'); ?>
-</div>
+<?php echo $form->textFieldRow($model, 'company_name', array()); ?>
 
-<div class="field">
-    <?php echo $form->labelEx($model, 'number'); ?>
-    <?php echo $form->textField($model, 'number') ?>
-    <?php echo $form->error($model, 'number'); ?>
-</div>
+<?php echo $form->textFieldRow($model, 'number', array('append'=>' человек')); ?>
 
-<div class="field">
-    <?php echo $form->labelEx($model, 'experience'); ?>
-    <?php echo $form->textField($model, 'experience') ?>
-    <?php echo $form->error($model, 'experience'); ?>
-</div>
+<?php echo $form->dropDownListRow($model, 'area', $model->getAreaList()); ?>
 
-<div class="field">
-    <?php echo $form->labelEx($model, 'area'); ?>
-    <?php echo $form->radioButtonList($model, 'area', $model->getAreaList(), array('separator' => '')) ?>
-    <?php echo $form->error($model, 'area'); ?>
-</div>
-
-<div class="field">
-    <?php echo $form->labelEx($model, 'work_types'); ?>
+<div class="control-group ">
+    <?php echo $form->labelEx($model, 'work_types', array('class'=>'control-label')); ?>
     <?php $this->widget('application.modules.work.widgets.WorkFormWidget', array(
     			'model' => $model,
     			'attribute' => 'work_types',
@@ -38,8 +16,4 @@
     <?php echo $form->error($model, 'work_types'); ?>
 </div>
 
-<div class="field">
-    <?php echo $form->labelEx($model, 'about'); ?>
-    <?php echo $form->textArea($model, 'about') ?>
-    <?php echo $form->error($model, 'about'); ?>
-</div>
+<?php echo $form->textAreaRow($model, 'about', array('class'=>'span8', 'rows'=>5)); ?>

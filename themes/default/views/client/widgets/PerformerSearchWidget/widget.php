@@ -5,7 +5,7 @@
 				));?>
 	<?php $params = (isset($params['search'])) ? $params['search'] : array() ?>
 	<?php if (count($performer_types) && $view !== 'main'):?>
-	<h4><?=Performer::model()->getAttributeLabel('is_company');?></h4>
+	<?php //<h4><?=Performer::model()->getAttributeLabel('is_company');?></h4> 
 		<?php foreach ($performer_types as $key=>$item):?>
 			<label class="checkbox">
 				<?php $checked = (isset($params['performer_type'][$key]))?>
@@ -16,7 +16,8 @@
 	<?php endif;?>
 	
 	<?php if (count($work_types)):?>
-	<h4>Выберите вид работ</h4>	
+	<br/>
+	<h4>Вид работ</h4>	
 	<?php $columns = ($view !== 'main') ? 2 : 1?>
 	<?php $work_types = array_chunk($work_types, $columns);?>
 	<div class='row'>

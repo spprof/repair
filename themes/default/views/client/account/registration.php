@@ -11,51 +11,31 @@ $this->breadcrumbs = array('Регистрация нового пользова
 
 <?php $this->widget('application.modules.yupe.widgets.YFlashMessages'); ?>
 
-<div class="form">
+<div class='row'>
+<div class="span6 form">
 
-    <?php $form = $this->beginWidget('CActiveForm', array('id' => 'registration-form'));?>
+    <?php $form = $this->beginWidget('application.modules.yupe.extensions.booster.widgets.TbActiveForm', array(
+			'id'=>'horizontalForm',
+			'type'=>'horizontal',
+		)); ?>
+		
     <?php echo $form->errorSummary($model); ?>
-
-    <div class="field">
-        <?php echo $form->labelEx($model, 'nick_name'); ?>
-        <?php echo $form->textField($model, 'nick_name') ?>
-        <?php echo $form->error($model, 'nick_name'); ?>
-    </div>
     
-    <div class="field">
-        <?php echo $form->labelEx($model, 'first_name'); ?>
-        <?php echo $form->textField($model, 'first_name') ?>
-        <?php echo $form->error($model, 'first_name'); ?>
-    </div>
-
-    <div class="field">
-        <?php echo $form->labelEx($model, 'email'); ?>
-        <?php echo $form->textField($model, 'email') ?>
-        <?php echo $form->error($model, 'email'); ?>
-    </div>
+    <?php echo $form->textFieldRow($model, 'nick_name', array()); ?>
     
-    <div class="field">
-        <?php echo $form->labelEx($model, 'phone'); ?>
-        <?php echo $form->textField($model, 'phone') ?>
-        <?php echo $form->error($model, 'phone'); ?>
-    </div>
-	
+    <?php echo $form->textFieldRow($model, 'first_name', array()); ?>
+    
+    <?php echo $form->textFieldRow($model, 'email', array()); ?>
+    
+    <?php echo $form->textFieldRow($model, 'phone', array()); ?>
+    
     <?php echo $this->renderPartial("_{$type}_form", array('model' => $model, 'form' => $form)); ?>
     
-    <div class="field">
-        <?php echo $form->labelEx($model, 'password'); ?>
-        <?php echo $form->passwordField($model, 'password');?>
-        <?php echo $form->error($model, 'password'); ?>
-    </div>
+    <?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?>
+	    
+	<?php echo $form->passwordFieldRow($model, 'cPassword', array('class'=>'span3')); ?>
 
-    <div class="field">
-        <?php echo $form->labelEx($model, 'cPassword'); ?>
-        <?php echo $form->passwordField($model, 'cPassword');?>
-        <?php echo $form->error($model, 'cPassword'); ?>
-    </div>
-
-
-    <?php if ($module->showCaptcha && CCaptcha::checkRequirements()): ?>
+	<?php if ($module->showCaptcha && CCaptcha::checkRequirements()): ?>
         <div class="field">
             <?php echo $form->labelEx($model, 'verifyCode'); ?>
             <div>
@@ -73,10 +53,11 @@ $this->breadcrumbs = array('Регистрация нового пользова
             </div>
         </div>
     <?php endif; ?>
-	<br/>
-    <div class="submit">
-        <?php echo CHtml::submitButton('Зарегистрироваться', array('class' => 'btn btn-large')); ?>
-    </div>
-
+    
+    <div class="form-actions">
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Зарегистрироваться')); ?>
+	</div>
+	
     <?php $this->endWidget(); ?>
 </div><!-- form -->
+</div>

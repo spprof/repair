@@ -87,16 +87,14 @@ class PerformerProfileForm extends CFormModel {
 	
 	public function getIsCompanyList() {
 		return array(
-				1 => 'Да',
-				0 => 'Нет',
+			1 => 'Да',
+			0 => 'Нет',
 		);
 	}
 	
 	public function getAreaList () {
-		return array(
-				0 => 'Город',
-				1 => 'Город + область',
-		);
+		$model = new Performer();
+		return $model->getAreaList();
 	}
 	
 }

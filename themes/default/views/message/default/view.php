@@ -1,4 +1,7 @@
 <?php
+$this->breadcrumbs += ($this->_userId != $model->sender_id) ? 
+	array(MessageModule::t('Входящие')  => array('/message/default/listincoming')) : 
+	array(MessageModule::t('Исходящие')  => array('/message/default/listoutgoing'));
 $this->breadcrumbs += array(MessageModule::t('Просмотр сообщения'));
 ?>
 
@@ -7,20 +10,17 @@ $this->breadcrumbs += array(MessageModule::t('Просмотр сообщени�
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
 	'attributes' => array(
-		'id',
+		($this->_userId != $model->sender_id) ? 
 		array(
 			'name' => 'sender_id',
 			'type' => 'text',
 			'value' => $model->senderName
-		),
+		) :
 		array(
 			'name' => 'recipient_id',
 			'type' => 'text',
 			'value' => $model->recipientName
 		),
-		'read:boolean',
-		'ds:boolean',
-		'dr:boolean',
 		'created',
 		'subject:text',
 		'text:ntext'

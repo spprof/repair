@@ -28,6 +28,7 @@ class IndexController extends YFrontController
 		$model = $this->_model;
 		$criteria=new CDbCriteria();
 		$criteria->compare('owner_id',Yii::app()->user->getId());
+		$criteria->with = array('forwho');
 		$data_provider = new CActiveDataProvider(
 				$model, array('criteria' => $criteria));
 		$this->render('owner', array('data_provider' => $data_provider));

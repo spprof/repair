@@ -8,4 +8,4 @@
     $this->pageTitle = 'Мои отзывы';
 ?>
 
-<?php echo $this->renderPartial('_list', array(	'data_provider' => $data_provider,));?>
+<?php echo $this->renderPartial('_list', array(	'data_provider' => $data_provider, 'type' => 'forwho'));?>

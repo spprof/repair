@@ -33,7 +33,9 @@ class WorkFormWidget extends CJuiInputWidget{
 			}
 		}
 		
+		echo CHtml::openTag('div',array('class' => 'controls'));
 		echo CHtml::activeDropDownList($this->model, $this->attribute, $option_list, array('multiple' => 'multiple'));
+		echo CHtml::closeTag('div');
 		
 		$options = CMap::mergeArray($this->options, array(
 				'buttonClass' => 'btn',
