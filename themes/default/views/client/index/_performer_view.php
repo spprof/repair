@@ -12,14 +12,26 @@
 	
 	<h2>Личные данные</h2>
 		<?php $attributes =  array(
-				'user.nick_name',
+				array(
+					'label' => 'Имя (никнэйм)',
+					'type'  => 'html',
+					'value' => '<span class="label label-info">' . $model->user->nick_name . '</span>',
+				),
 				array(
 					'label' => 'Контактный e-mail',
 					'value' => $model->user->email,
 				),
 				'phone',
-				'number',
-				'experience',
+				array(
+					'label' => 'Количество человек в группе',
+					'type'  => 'html',
+					'value' => '<span class="badge">' . $model->number . '</span>',
+				),
+				array(
+						'label' => 'Опыт (лет)',
+						'type'  => 'html',
+						'value' => '<span class="badge">' . $model->experience . '</span>',
+				),
 				array(
 					'label' => 'География работ',
 					'value' => $area[$model->area],
