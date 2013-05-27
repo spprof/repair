@@ -1,13 +1,13 @@
 
 <div class="row">
 	<div class="span6 span6-mini1">
-		<h3>Для клиентов</h3>
+		<h3 class="label label-info">Для клиентов</h3>
 		<div class="alert-">
 			<h4><!--<i class="icon-search"></i>--> Поиск специалиста</h4>
-		 
+		 <div class="alert alert-info">
 		  <strong></strong>Если вам нужен <b>ремонт</b>, выполнение <b>строительных работ</b>, и вы хотите 
 		  найти подходящих <b>специалистов</b> &ndash; воспользуйтесь формой ниже. 
-		
+		</div>
 		<p>
 			<div class='row'>
 				<div class='span2'>
@@ -20,9 +20,7 @@
 					<label class="checkbox">
 						<input type="checkbox" value="">Электрика
 					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Электрика
-					</label>
+					
 				</div>
 				<div class='span2'>
 					<label class="checkbox">
@@ -31,9 +29,7 @@
 					<label class="checkbox">
 						<input type="checkbox" value="">Установка дверей
 					</label>
-					<label class="checkbox">
-						<input type="checkbox" value="">Потолки
-					</label>
+					
 					<span class='pseudo-link'>Больше видов работ</span>
 				</div>
 			</div>
@@ -41,21 +37,38 @@
 			<button class="btn btn-inverse">Найти исполнителя</button>
 		</p>
 		</div>
-		<br/>
+		<br/><br/>
+
+		<div class="alert-">
+				<h4><!--<i class="icon-plus-sign"></i>-->Создание тендера</h4>
+				<div class="alert alert-info">
+					Вам нужен комплексный ремонт или у вас нестандартная и сложная задача?
+					Создайте <b>тендер</b>(нужна регистрация) &ndash; <b>открытый конкурс</b> для всех специалистов, 
+					зарегистрированных на нашем сайте.
+				</div>
+			  		<!--При заполнении тендера подробно опишите ваш проект, укажите сроки выполнения работ, примерный бюджет.
+			  		Специалисты нашего сайта сделают вам различные предложения, среди которых вы сможете выбрать оптимальное
+			  		и заключить договор.-->
+			 </p>
+			<p><button class="btn btn-inverse">Создать тендер</button></p>
+		</div>
+		<br><br>
 		
 			<div class="alert-">
 				<h4>Лучшие специалисты <a href="">все специалисты</a></h4>
 				<div class="spec-item">
 					<div class="spec-item-info">
-						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
-						<i class="icon-envelope"></i> <a href="#">Отправить сообщение</a>
+						<i class="icon-user"></i> <b>Борис Петрович</b>
 					</div>	
 					<div class="spec-item-rating">
 							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
 					</div>
 					<div class="clear"></div>
+					<div class="spec-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a>  
+						<i class="icon-envelope"></i> <a href="#">Отправить сообщение</a>
+					</div>
 					<span class="label label-warning">отделка</span>
-					<span class="label label-warning">облицовка плиткой</span> 
 					<span class="label label-warning">установка окон</span><br/>
 					<div class="spec-item-cont">
 						Краткое описание компании или частного мастера. Краткое описание компании или частного мастера. 
@@ -64,14 +77,16 @@
 				
 				<div class="spec-item">
 					<div class="spec-item-info">
-						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
-						<i class="icon-envelope"></i>
-						<a href="#">Отправить сообщение</a>
+						<i class="icon-home"></i> <b>ООО "Реставрация"</b>
 					</div>	
 					<div class="spec-item-rating">
 							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
 					</div>
 					<div class="clear"></div>
+					<div class="spec-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a>  
+						<i class="icon-envelope"></i> <a href="#">Отправить сообщение</a>
+					</div>
 					<span class="label label-warning">отделка</span>
 					<span class="label label-warning">облицовка плиткой</span> 
 					<span class="label label-warning">установка окон</span><br/>
@@ -82,14 +97,16 @@
 
 				<div class="spec-item">
 					<div class="spec-item-info">
-						#432 <i class="icon-user"></i> <a href="#">Роман</a>  
-						<i class="icon-envelope"></i>
-						<a href="#">Отправить сообщение</a>
+						<i class="icon-user"></i> <b>Борис Петрович</b>
 					</div>	
 					<div class="spec-item-rating">
 							<a href="#" rel="tooltip" class="badge  badge-info" title="Рейтинг">4,6</a>
 					</div>
 					<div class="clear"></div>
+					<div class="spec-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a>  
+						<i class="icon-envelope"></i> <a href="#">Отправить сообщение</a>
+					</div>
 					<span class="label label-warning">отделка</span>
 					<span class="label label-warning">облицовка плиткой</span> 
 					<span class="label label-warning">установка окон</span><br/>
@@ -100,49 +117,41 @@
 			</div>
 
 			<br>
-			<div class="alert-">
-				<h4><!--<i class="icon-plus-sign"></i>-->Создание заказа</h4>
-				<p>
-					Вам нужен комплексный ремонт или у вас нестандартная и сложная задача?
-					Создайте <b>тендер</b>(нужна регистрация) &ndash; <b>открытый конкурс</b> для всех специалистов, 
-					зарегистрированных на нашем сайте.<br/>
-			  		<!--При заполнении тендера подробно опишите ваш проект, укажите сроки выполнения работ, примерный бюджет.
-			  		Специалисты нашего сайта сделают вам различные предложения, среди которых вы сможете выбрать оптимальное
-			  		и заключить договор.-->
-			 </p>
-			<p><button class="btn btn-inverse">Создать заказ</button></p>
-			</div>
+			
 		
 	</div>
 
 
 	<div class="span6 span6-mini2">
-		<h3>Для исполнителей</h3>
+		<h3 class="label label-info">Для исполнителей</h3>
 
 		<div class="alert-">
 			<h4><!--<i class="icon-user"></i>--> Зарегистрируйтесь</h4>
-		  	<p>
+		  	<div class="alert alert-info">
 			  <strong></strong>Если вы <b>мастер строительных и ремонтных работ</b>, то зарегистрируйтесь
 			  на нашем сайте, участвуйте в общем рейтинге, заполняйте портфолио, участвуйте в тендерах и мы обеспечим вас
 			  <b>стабильной работой</b>.
-			</p>
+			</div>
 			<a href='/client/account/registration?type=performer' class="btn btn-inverse">Регистрация</a><br/>
 		</div>
-		<br/>
+		<br/><br/>
 		<div class="alert-">
-			<h4>Последние заказы <a href="">все заказы</a></h4>
+			<h4>Последние тендеры <a href="">все тендеры</a></h4>
 
 				<div class="tender-item">
 					<div class="tender-item-date">
 						25 мая 14:35
 					</div>
 					<div class="tender-item-info">
-						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
-						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
+						<i class="icon-user"></i> Роман 
 					</div>	
 					<div class="clear"></div>
+					<div  class="tender-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a> 
+						<i class="icon-envelope"></i> <a href="#">отправить сообщение</a>
+					</div>
 					<span class="label label-warning">установка окон</span> 
-					<span class="label label-warning">установка дверей</span>
+					
 					<div class="tender-item-cont">
 					Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
 					но не стандартно, а по горизонтали%).
@@ -155,13 +164,19 @@
 						25 мая 14:35
 					</div>
 					<div class="tender-item-info">
-						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
-						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
+						<i class="icon-user"></i> Роман 
 					</div>	
 					<div class="clear"></div>
+					<div  class="tender-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a> 
+						<i class="icon-envelope"></i> <a href="#">отправить сообщение</a>
+					</div>
 					<span class="label label-warning">установка окон</span> 
-					<span class="label label-warning">установка дверей</span><br/>
-					Необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
+					<span class="label label-warning">установка дверей</span>
+					<div class="tender-item-cont">
+					Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
+					но не стандартно, а по горизонтали%).
+				</div>
 					<a href="#">Подробнее &rarr;</a>
 				</div>
 
@@ -170,19 +185,26 @@
 						25 мая 14:35
 					</div>
 					<div class="tender-item-info">
-						№12 <i class="icon-user"></i> <a href="#">Роман</a> 
-						<a href="#"><i class="icon-envelope"></i>отправить сообщение</a>
+						<i class="icon-user"></i> Роман 
 					</div>	
 					<div class="clear"></div>
+					<div  class="tender-item-actions">
+						<i class="icon-list-alt"></i> <a href="#">Профиль</a> 
+						<i class="icon-envelope"></i> <a href="#">отправить сообщение</a>
+					</div>
 					<span class="label label-warning">установка окон</span> 
-					<span class="label label-warning">установка дверей</span><br/>
-					Необходимо установить окна и двери, но не стандартно, а по горизонтали%).<br/>
+					<span class="label label-warning">установка дверей</span>
+					<div class="tender-item-cont">
+					Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
+					но не стандартно, а по горизонтали%).
+				</div>
 					<a href="#">Подробнее &rarr;</a>
 				</div>
 		</div>
+		<!--
 		<br/>
 		<div class="alert-">
-			<h4><!--<i class="icon-wrench"></i>--> Последние вакансии</h4>
+			<h4> Последние вакансии</h4>
 			<p>
 				Крупные строительные компании Кирова ищут грамотных специалистов
 			</p>
@@ -195,5 +217,6 @@
 				</li>
 			</ul>
 		</div>
+		-->
 	</div>
 </div>

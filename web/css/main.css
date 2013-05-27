@@ -1,13 +1,39 @@
 body {
     padding-bottom: 0px;
-    background: url(../images/cream_pixels.png) repeat;
+    background: url(../images/bg1.jpg) repeat;
     font-size: 13px;
     line-height: 16px;
+    color: #333;
 }
 
 
 .top{
+	-border-bottom: 1px dashed #999;
+}
 
+
+.navbar-inverse .navbar-inner {
+border-bottom: 2px solid #000;
+}
+
+.navbar-inverse .navbar-inner {
+background-color: #ffab33;
+background-image: -moz-linear-gradient(top, #febc5f, #febc5f);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffc573), to(#ffc573));
+background-image: -webkit-linear-gradient(top, #ffc573, #ffc573);
+background-image: -o-linear-gradient(top, #ffc573, #ffc573);
+background-image: linear-gradient(to bottom, #ffab33, #ffab33);
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+color: #fff;
+font-weight: bolder;
+font-size: 15px;
+text-shadow: 1px 1px 1px #333;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a:hover{
+	color:#fff;
 }
 
 label, input, button, select, textarea {
@@ -37,6 +63,7 @@ h1, h2, h3 {
 }
 
 h4{
+	margin: 0 0 15px 0;
 	font-style: italic;
 border-bottom: 2px solid #aaa;
 color: #777;
@@ -129,8 +156,8 @@ input[id$="verifyCode"] {
 
 
 .spec-item{
-	margin: 0 0 15px 0;
-	padding: 0 0 15px 0;
+	margin: 0 0 19px 0;
+	padding: 0 0 19px 0;
 	border-bottom: 2px dotted #999;
 }
 
@@ -140,17 +167,23 @@ input[id$="verifyCode"] {
 
 .spec-item-info{
 	float: left;
-	margin: 0 0 4px 0;
+	margin: 0 0 0px 0;
+	1color: #d87406;
 }
 .spec-item-cont{
 	margin: 4px 0 0 0;
 }
-
+.spec-item-actions{
+	margin: 4px 0 6px;
+}
 
 .tender-item{
 	margin: 0 0 15px 0;
 	padding: 0 0 15px 0;
 	border-bottom: 2px dotted #999;
+}
+.tender-item-actions{
+	margin: 4px 0 6px 0;
 }
 .tender-item-date{
 	float: right;
@@ -159,6 +192,8 @@ input[id$="verifyCode"] {
 }
 .tender-item-info{
 	margin: 0 0 4px 0;
+	1color: #468847;
+	font-weight:  bold;
 }
 .tender-item-cont{
 	margin: 4px 0 0 
@@ -217,4 +252,5 @@ footer{
 	margin: 30px 0 0 0;
 	padding: 30px 0 0 0;
 	border-top: 1px solid #aaa;
+	 background: url(../images/rab1.png) no-repeat 100% 0;
 }

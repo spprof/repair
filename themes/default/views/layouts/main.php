@@ -55,13 +55,13 @@
 	<div id="content" class="container">
 		<div class="row top">
 			<div class="span3 text-center">
-				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png" /></a>
+				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo3.png" /></a>
 				<!--<div class="brand"><a href="/">BRS43 - биржа строительных и ремонтных услуг Кирова</a></div>-->
 			</div>
 			<div class="span6">
 				<div class="hero-unit">
 					<p><strong>BRS43.RU</strong> &ndash; это биржа строительных и ремонтных услуг Кирова.
-						Сервис для заказчиков и специлиастов в области ремонта квартир, сантехники, электрики,
+						Сервис для общения заказчиков и специалистов в области ремонта квартир, сантехники, электрики,
 						строительства, доставки.</p>
 					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
 				</div>
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 		
-		
+		<hr>
 		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>
 		
