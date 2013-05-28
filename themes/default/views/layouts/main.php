@@ -53,25 +53,26 @@
 	</div>
 
 	<div id="content" class="container">
-		<div class="row top">
-			<div class="span3 text-center">
-				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo3.png" /></a>
-				<!--<div class="brand"><a href="/">BRS43 - биржа строительных и ремонтных услуг Кирова</a></div>-->
-			</div>
-			<div class="span6">
-				<div class="hero-unit">
-					<p><strong>BRS43.RU</strong> &ndash; это биржа строительных и ремонтных услуг Кирова.
-						Сервис для общения заказчиков и специалистов в области ремонта квартир, сантехники, электрики,
-						строительства, доставки.</p>
-					<p><a class="btn btn-warning">Узнать больше &raquo;</a></p>
+		<div class="top">
+			<div class="row">
+				<div class="span3 text-center">
+					<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo4.png" /></a>
+					<!--<div class="brand"><a href="/">BRS43 - биржа строительных и ремонтных услуг Кирова</a></div>-->
 				</div>
-			</div>
-			<div class="span3">
-				<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
+				<div class="span6">
+					<div class="hero-unit1">
+						<p><strong>BRS43.RU</strong> &ndash; это биржа строительных и ремонтных услуг Кирова.
+							Сервис для общения заказчиков и специалистов в области ремонта квартир.</p>
+						<p><a class="btn btn-warning btn-small">Узнать больше &raquo;</a></p>
+					</div>
+				</div>
+				<div class="span3">
+					<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
+				</div>
 			</div>
 		</div>
 		
-		<hr>
+		
 		<?php $this->widget('YFlashMessages');?>
 		<?=$content; ?>
 		

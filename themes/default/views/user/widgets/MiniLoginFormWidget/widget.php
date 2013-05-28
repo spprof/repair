@@ -1,8 +1,7 @@
 <?php if (!Yii::app()->user->isAuthenticated()):?>
 
 
-<div class="form alert">
-	<div style="margin-bottom: 5px;"><strong>Вход на сайт</strong></div>
+<div class="form alert-">
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'minilogin-form',
 		'enableAjaxValidation'=>false,
