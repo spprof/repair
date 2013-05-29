@@ -34,9 +34,13 @@ class Vacancy extends YModel
 	public function rules()
 	{
 		return array(
-			array('payment, owner_id, status_id', 'numerical', 'integerOnly'=>true),
-			array('label, more, create_date, work_types', 'safe'),
-			array('id, label, payment, more, owner_id, status_id, create_date', 'safe', 'on'=>'search'),
+			array('payment, label, more', 'filter', 'filter' => 'trim'),
+			array('payment, label, more','filter','filter'=>array($obj=new CHtmlPurifier(),'purify')),
+			array('label, owner_id', 'required'),
+			array('owner_id, status_id', 'numerical', 'integerOnly'=>true),
+			array('owner_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
+			array('create_date', 'date'),
+			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
 		);
 	}
 

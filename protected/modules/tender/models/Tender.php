@@ -34,10 +34,15 @@ class Tender extends YModel
 	public function rules()
 	{
 		return array(
-			array('id, with_materials, budget, status_id, owner_id, performer_id', 'numerical', 'integerOnly'=>true),
-			array('label, text', 'required'),
-			array('label, text, images, create_date, catch_date, term, more, work_types', 'safe'),
-			array('id, label, text, images, create_date, catch_date, term, with_materials, budget, more, status_id, owner_id, performer_id', 'safe', 'on'=>'search'),
+			array('budget, text, more, label, term, images', 'filter', 'filter' => 'trim'),
+			array('budget, text, more, label, term, images', 'filter', 'filter'=>array($obj=new CHtmlPurifier(),'purify')),
+			array('label, owner_id, text, term', 'required'),
+			array('id, budget, status_id, owner_id, performer_id', 'numerical', 'integerOnly'=>true),
+			array('owner_id', 'exist', 'className' => 'Customer', 'attributeName' => 'id'),
+			array('performer_id', 'exist', 'className' => 'Performer', 'attributeName' => 'id'),
+			array('with_materials', 'boolean', 'allowEmpty'=>false),
+			array('create_date, catch_date', 'date'),
+			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
 		);
 	}
 

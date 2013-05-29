@@ -14,10 +14,9 @@ class Customer extends YModel
 	public function rules()
 	{
 		return array(
-			array('city_id', 'numerical', 'integerOnly'=>true),
+			array('city_id', 'in', 'range'=>array_keys($this->getCityList())),
 			array('phone', 'length', 'max'=>20),
-			array('address', 'safe'),
-			array('id, phone, city_id, address', 'safe', 'on'=>'search'),
+			array('address, phone','filter','filter'=>array($obj=new CHtmlPurifier(),'purify')),
 		);
 	}
 

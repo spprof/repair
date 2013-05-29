@@ -15,11 +15,15 @@ class Response extends YModel
 	public function rules()
 	{
 		return array(
-			array('id, owner_id, forwho_id', 'numerical', 'integerOnly'=>true),
+			array('text', 'filter', 'filter' => 'trim'),
+			array('text', 'filter', 'filter' => array($obj=new CHtmlPurifier(),'purify')),
+			array('rate, text, owner_id, forwho_id', 'required'),
+			array('id, owner_id, forwho_id, rate, status_id', 'numerical', 'integerOnly'=>true),
+			array('owner_id', 'exist', 'className' => 'Customer', 'attributeName' => 'id'),
+			array('forwho_id', 'exist', 'className' => 'Performer', 'attributeName' => 'id'),
 			array('rate', 'numerical', 'min' => 0, 'max' => 5),
 			array('status_id', 'numerical', 'min' => 0, 'max' => 1),
-			array('rate, text', 'required'),
-			array('id, owner_id, forwho_id, text, create_date, rate, status_id', 'safe', 'on'=>'search'),
+			array('create_date', 'date'),
 		);
 	}
 	
@@ -32,6 +36,7 @@ class Response extends YModel
 	}
 
 	public function beforeSave() {
+		//Пересчитать рейтинг для исполнителя и занести его в исполнителя
 		$this->owner_id = Yii::app()->user->getId();
 		$this->status_id = 0;
 		$this->create_date = new CDbExpression('NOW()');

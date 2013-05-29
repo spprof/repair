@@ -16,9 +16,14 @@ class Performer extends YModel
 	public function rules()
 	{
 		return array(
-			array('id, number, experience, area, rating, status, weight, is_company', 'numerical', 'integerOnly'=>true),
+			array('about, phone', 'filter', 'filter' => 'trim'),
+			array('about, phone', 'filter', 'filter'=>array($obj=new CHtmlPurifier(),'purify')),
+			array('id, number, experience, status, weight, area', 'numerical', 'integerOnly'=>true),
+			array('rating', 'numerical', 'min' => 0, 'max' => 5),
+			array('area', 'in', 'range'=>array_keys($this->getAreaList())),
+			array('is_company', 'boolean', 'allowEmpty'=>false),
 			array('company_name', 'length', 'max'=>100),
-			array('phone, work_types, about', 'safe'),
+			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
 			array('id, number, experience, area, rating, status, weight, is_company, company_name', 'safe', 'on'=>'search'),
 		);
 	}
