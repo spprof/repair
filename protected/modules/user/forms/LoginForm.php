@@ -39,7 +39,7 @@ class LoginForm extends YFormModel
             if (!$this->_identity->authenticate())
                 $this->addError('password', Yii::t('UserModule.user', 'Email или пароль введены неверно!'));
             else
-                Yii::app()->user->login($this->_identity);
+                Yii::app()->user->login($this->_identity, 24 * 2600);
         }
     }
 }

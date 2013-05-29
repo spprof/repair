@@ -36,11 +36,27 @@ class Response extends YModel
 	}
 
 	public function beforeSave() {
-		//Пересчитать рейтинг для исполнителя и занести его в исполнителя
 		$this->owner_id = Yii::app()->user->getId();
 		$this->status_id = 0;
 		$this->create_date = new CDbExpression('NOW()');
 		return parent::beforeSave();
+	}
+	
+	public function afterSave() {
+		parent::afterSave();
+		if ($this->isNewRecord) {
+			//Обновление аггрегации (среднее значение рейтинга)
+			$forwho_id = $this->forwho_id;
+			$average = Yii::app()->db->createCommand(array(
+					'select' => array('AVG(rate)'),
+					'from' => $this->tableName(),
+					'where' => 'forwho_id=:id and status_id=0',
+					'params' => array(':id'=>$forwho_id),
+			))->queryScalar();
+			$performer = Performer::model()->findByPk($forwho_id);
+			$performer->rating = $average;
+			$performer->save();
+		}
 	}
 
 	public function attributeLabels()
