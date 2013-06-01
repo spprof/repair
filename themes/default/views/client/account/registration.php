@@ -3,7 +3,17 @@ $this->pageTitle = Yii::t('user', 'Регистрация нового поль�
 $this->breadcrumbs = array('Регистрация нового пользователя');
 ?>
 
-<h1>Регистрация нового пользователя</h1>
+<h1>Регистрация нового 
+
+	<?php if ($type == 'customer'):?>
+		заказчика
+	<?php elseif ($type == 'performer'):?>
+		исполнителя
+	<?php else:?>
+		пользователя
+	<?php endif;?>
+
+</h1>
 
 <div class='hint'>Пожалуйста, имя пользователя и пароль заполняйте только латинскими буквами и цифрами.</div>
 
@@ -12,6 +22,8 @@ $this->breadcrumbs = array('Регистрация нового пользова
 <?php $this->widget('application.modules.yupe.widgets.YFlashMessages'); ?>
 
 <div class='row'>
+<div class="span3">
+</div>
 <div class="span6 form">
 
     <?php $form = $this->beginWidget('application.modules.yupe.extensions.booster.widgets.TbActiveForm', array(

@@ -38,7 +38,7 @@ $this->breadcrumbs = array('Авторизация');
     </div>
 
     <div class="submit">
-        <?php echo CHtml::submitButton('Войти', array('class' => 'btn btn-large')); ?>
+        <?php echo CHtml::submitButton('Войти', array('class' => 'btn btn-large btn-primary')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

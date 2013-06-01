@@ -2,6 +2,8 @@
 class SiteController extends YFrontController
 {
 
+	public $layout='webroot.themes.default.views.layouts.index';
+
     public function actionIndex()
     {
         $this->render('welcome');

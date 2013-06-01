@@ -2,7 +2,7 @@
 
 <?php echo $form->textFieldRow($model, 'company_name', array()); ?>
 
-<?php echo $form->textFieldRow($model, 'number', array('append'=>' человек')); ?>
+<?php echo $form->textFieldRow($model, 'number', array('append'=>' (человек)')); ?>
 
 <?php echo $form->dropDownListRow($model, 'area', $model->getAreaList()); ?>
 
@@ -16,4 +16,4 @@
     <?php echo $form->error($model, 'work_types'); ?>
 </div>
 
-<?php echo $form->textAreaRow($model, 'about', array('class'=>'span8', 'rows'=>5)); ?>
+<?php echo $form->textAreaRow($model, 'about', array('class'=>'span6', 'rows'=>5)); ?>

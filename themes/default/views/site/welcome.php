@@ -18,8 +18,8 @@
 					    <span class="caret"></span>
 					  </a>
 					  <ul class="dropdown-menu">
-					     <li><a href="#">Я заказчик</a></li>
-					     <li><a href="#">Я исполнитель</a></li>
+					     <li><a href="/client/account/registration?type=customer">Я заказчик</a></li>
+		     			 <li><a href="/client/account/registration?type=performer">Я исполнитель</a></li>
 					  </ul>
 					</div>
 				</div>
@@ -171,7 +171,7 @@
 						</p>
 						<br/>
 						<p class='text-center'>
-							<button class="btn btn-inverse btn-large">Регистрация</button>
+							<a href='/client/account/registration?type=performer' class="btn btn-inverse btn-large">Регистрация</a>
 						</p>
 					</div>							
 				</div>
