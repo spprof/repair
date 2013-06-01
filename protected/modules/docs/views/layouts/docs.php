@@ -38,11 +38,13 @@
                 'htmlOptions' => array('class' => 'navbar-inverse'),
                 'fluid'       => true,
                 'brand'       => CHtml::image(
-                    $this->yupe->themeBaseUrl . "/web/images/logo.png", Yii::t('DocsModule.docs', 'Юпи! Документация'), array(
-                        'width'  => '38',
-                        'height' => '38',
-                        'title'  => Yii::t('DocsModule.docs', 'Юпи! Документация'),
-                    )
+                         Yii::app()->baseUrl.'/web/images/logo.png',
+                         Yii::t('DocsModule.docs', 'Юпи! Документация'),
+                         array(
+                            'width'  => '38',
+                            'height' => '38',
+                            'title'  => Yii::t('DocsModule.docs', 'Юпи! Документация'),
+                         )
                 ),
                 'brandUrl'    => CHtml::normalizeUrl(array("index")),
                 'items'       => array(
@@ -67,7 +69,7 @@
                                     'icon'  => 'icon-thumbs-up icon-white',
                                     'url'   => 'http://yupe.ru/?from=doc-navbar'
                                 ),
-                            ), Yii::app()->getModule('yupe')->languageSelectorArray
+                            ), $this->yupe->languageSelectorArray
                         ),
                     ),
                 ),

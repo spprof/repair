@@ -7,7 +7,7 @@
  * @package  YupeCMS
  * @author   YupeTeam <team@yupe.ru>
  * @license  BSD http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_BSD
- * @version  0.5 (dev)
+ * @version  0.5
  * @link     http://yupe.ru
  *
  **/
@@ -19,7 +19,7 @@
  * @package  YupeCMS
  * @author   YupeTeam <team@yupe.ru>
  * @license  BSD http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_BSD
- * @version  0.5 (dev)
+ * @version  0.5
  * @link     http://yupe.ru
  *
  **/
@@ -46,17 +46,16 @@ class UserIdentity extends CUserIdentity
             $this->_id      = $user->id;
             $this->username = $user->nick_name;
 
-            Yii::app()->user->setState('id', $user->id);
-            Yii::app()->user->setState('access_level', $user->access_level);
-            Yii::app()->user->setState('nick_name', $user->nick_name);
-            Yii::app()->user->setState('email', $user->email);
-            Yii::app()->user->setState('loginTime', time());
-            Yii::app()->user->setState('client_type', $user->client_type);
+            $this->setState('id', $user->id);
+            $this->setState('access_level', $user->access_level);
+            $this->setState('nick_name', $user->nick_name);
+            $this->setState('email', $user->email);
+            $this->setState('loginTime', time());
 
             // для админа в сессию запишем еще несколько значений
             if ($user->access_level == User::ACCESS_LEVEL_ADMIN) {
-                Yii::app()->user->setState('loginAdmTime', time());
-                Yii::app()->user->setState('isAdmin', $user->access_level);
+                $this->setState('loginAdmTime', time());
+                $this->setState('isAdmin', $user->access_level);
 
                 /* Получаем настройки по всем модулям для данного пользователя: */
                 $settings = Settings::model()->fetchUserModuleSettings(Yii::app()->user->id);
@@ -74,7 +73,7 @@ class UserIdentity extends CUserIdentity
                         }
                     }
                 }
-                Yii::app()->session['modSettings'] = $sessionSettings;
+                $this->setState('modSettings', $sessionSettings);
             }
 
             // зафиксируем время входа

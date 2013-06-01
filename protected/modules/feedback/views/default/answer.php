@@ -26,6 +26,7 @@
         )),
         array('icon' => 'trash', 'label' => Yii::t('FeedbackModule.feedback', 'Удалить сообщение  '), 'url' => '#', 'linkOptions' => array(
             'submit'  => array('/feedback/default/delete', 'id' => $model->id),
+            'params' => array(Yii::app()->request->csrfTokenName => Yii::app()->request->csrfToken),
             'confirm' => Yii::t('FeedbackModule.feedback', 'Вы уверены, что хотите удалить сообщение  ?'),
         )),
     );
@@ -95,7 +96,7 @@
         <div class="row-fluid control-group">
             <div class="span12">
                 <?php echo $form->labelEx($answerForm, 'answer'); ?>
-                <?php $this->widget(Yii::app()->getModule('yupe')->editor, array(
+                <?php $this->widget($this->yupe->editor, array(
                       'model'       => $answerForm,
                       'attribute'   => 'answer',
                       'options'     => array(

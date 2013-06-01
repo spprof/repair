@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v2.3.0
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -762,9 +762,7 @@ h2,
 h3 {
   line-height: 40px;
 }
-h3{
- line-height: 30px; 
-}
+
 h1 {
   font-size: 38.5px;
 }
@@ -1946,7 +1944,7 @@ legend + .control-group {
 }
 
 .form-horizontal .control-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   *zoom: 1;
 }
 
@@ -3011,6 +3009,15 @@ table th[class*="span"],
   display: block;
 }
 
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
@@ -3867,11 +3874,10 @@ input[type="submit"].btn.btn-mini {
 }
 
 .alert {
-  padding: 8px 15px 8px 14px;
+  padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
-  background-color: #fffef9;
   border: 1px solid #fbeed5;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -4785,12 +4791,12 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .navbar-inner {
-  background-color: #f5e000;
-  background-image: -moz-linear-gradient(top, #f5e000, #f5e000);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5e000), to(#f5e000));
-  background-image: -webkit-linear-gradient(top, #f5e000, #f5e000);
-  background-image: -o-linear-gradient(top, #f5e000, #f5e000);
-  background-image: linear-gradient(to bottom, #f5e000, #f5e000);
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
   background-repeat: repeat-x;
   border-color: #252525;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
@@ -4798,17 +4804,15 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #333;
-  font-weight: bolder;
-  font-size: 15px;
-  text-shadow: none;
+  color: #999999;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .brand:focus,
 .navbar-inverse .nav > li > a:focus {
-  color: #333;
+  color: #ffffff;
 }
 
 .navbar-inverse .brand {
@@ -4821,7 +4825,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse .nav > li > a:focus,
 .navbar-inverse .nav > li > a:hover {
-  color: #000;
+  color: #ffffff;
   background-color: transparent;
 }
 
@@ -6114,11 +6118,11 @@ a.badge:focus {
 }
 
 .hero-unit {
-  padding: 26px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: 100;
-  line-height: 20px;
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
   color: inherit;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;

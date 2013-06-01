@@ -14,91 +14,98 @@
     <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
     <script type="text/javascript">
     	$.browser = new Object();
-	</script> 
-    <script type="text/javascript" src="/web/vendor/modernizr/modernizr.min.js"></script> 
-    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	</script>  
+    <title><?php echo CHtml::encode($this->pageTitle)?></title>
     
     <link rel="shortcut icon" href="/favicon.ico"/>
     
-    <link rel="stylesheet" type="text/css" href="/web/vendor/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="/web/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="/web/css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/web/css/normalize.css"/>
     
-    <script type="text/javascript" src="/web/js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="/web/vendor/bootstrap/css/bootstrap-cosmo.css"/>
+    
+	<link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/web/css/fonts/stylesheet.css">
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/web/css/main.css"/>
+    
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/web/js/main.js"></script>
     
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li class="active"><a href="/">Главная</a></li>
-						<li><a href="/client/index/index/">Специалисты</a></li>
-						<li><a href="/tender/index/index/">Тендеры</a></li>
-						<?php /* 
-						<li><a href="#contact">Вопросы и ответы</a></li>
-						<li><a href="#contact">Найти работу</a></li>
-						*/
-						?>
-						<li><a href="/site/about/">О проекте</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
-
-	<div id="content" class="container">
-		<div class="row">
-			<div class="span3 text-center">
-				<a href="/"><img class="logo" alt='HandsHammer' src="<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo1.png" /></a>
-				<div class="brand"><a href="/">HandsHammer - биржа строительных и ремонтных работ г.Кирова</a></div>
-			</div>
-			<div class="span6">
-				<div class="hero-unit">
-					<p><strong>HandsHammer</strong> &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
-						качественный ремонт и специалистами в области ремонта и строительства.</p>
+	<header>
+		<div class="container">
+			<div class='row'>
+				<div class='span8 text-right'>
 					<br/>
-					<p><a href='/site/about/' class="btn btn-warning">Узнать больше &raquo;</a></p>
+					<br/>
+					<h1>Биржа ремонта и строительства</h1>
+					<p class="top-desc">
+						 &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
+							качественный ремонт и специалистами в области ремонта и строительства.
+					</p>
+					
+					<br/>
+
+					
+					<nav>
+						<a href="/">Главная</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#about">Исполнители</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#contact">Тендеры</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#contact">О проекте</a>
+					</nav>
+					
 				</div>
-			</div>
-			<div class="span3">
-				<?php $this->widget('application.modules.user.widgets.MiniLoginFormWidget');?>
+				<div class='span4'>
+					<div class='text-right top-auth'>
+						<a href='#'>Войти</a>&nbsp;&nbsp;&nbsp;<a href='#'>Зарегистрироваться</a>
+					</div>
+					<div class='logo'>
+						<a href='/'><img src='<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png' alt=''/></a>
+						<br/>
+						<div class='logo-desc'>Биржа ремонта и строительства</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<hr>
+	</header>
+	
+	<br/>
 		
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array('links' => $this->breadcrumbs)); ?>
-		
-		<?php $this->widget('YFlashMessages');?>
-		<?=$content; ?>
-		
-		<hr/>
-		
-		<footer>
-			<div class="row">
-				<div class="span6">
-					<p> <strong>HandsHammer</strong> &ndash; биржа строительных и ремонтных работ. &copy; 2013</p>
-				</div>
-				<div class="span3">
-					По вопросам рекламы и сотрудничества пишите на <a href="mailto:info@handshammer.ru">info@handshammer.ru</a>
-				</div>
-				<div class="span3">
-				
-				<div style="text-align: center;">
-					<a href="http://lepotart.ru/" target="_blank">
-						<img style="width: 40px;" src="http://lepotart.ru/assets/images/logo.png" alt="Lepoart"></a><br/>
-					<a href="http://lepotart.ru/" target="_blank"><small>Разработка сайта – «Lepotart»</small></a>
-				</div>
+		<?php echo $content?>
+	
+	<br/>
+	<footer class='container'>
+		<div class='row'>
+			<div class='span3'>
+				<img src='<?php echo Yii::app()->theme->baseUrl; ?>/web/images/nc-home-repair.jpg' width="200" alt=''/>
 			</div>
+			
+			<div class='span6'>
+				<ul class="nav">
+					<li class="active">
+					<a href="/">Главная</a>
+					</li>
+					<li>
+					<a href="/index.php?r=site/specialists">Специалисты</a>
+					</li>
+					<li>
+					<a href="#contact">Тендеры</a>
+					</li>
+					<li>
+					<a href="#contact">Вопросы и ответы</a>
+					</li>
+					<li>
+					<a href="#contact">Найти работу</a>
+					</li>
+					<li>
+					<a href="#contact">О проекте</a>
+					</li>
+				</ul>
 			</div>
-		</footer>
-	</div> <!-- /container -->
+			<div class='span3'>
+				<a href="mailto:info@brs43.ru" class="mail-to">info@brs43.ru</a>
+				<p class="mail-to-desc">По вопросам рекламы<br> и сотрудничества</p>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

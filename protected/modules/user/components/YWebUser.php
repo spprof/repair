@@ -7,7 +7,7 @@
  * @package  YupeCMS
  * @author   YupeTeam <team@yupe.ru>
  * @license  BSD http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_BSD
- * @version  0.5 (dev)
+ * @version  0.5
  * @link     http://yupe.ru
  *
  **/
@@ -19,7 +19,7 @@
  * @package  YupeCMS
  * @author   YupeTeam <team@yupe.ru>
  * @license  BSD http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_BSD
- * @version  0.5 (dev)
+ * @version  0.5
  * @link     http://yupe.ru
  *
  **/
@@ -50,7 +50,7 @@ class YWebUser extends CWebUser
      **/
     public function isAuthenticated()
     {
-        if (Yii::app()->user->isGuest)
+        if ($this->isGuest)
             return false;
 
         $authData = $this->getAuthData();
@@ -68,10 +68,10 @@ class YWebUser extends CWebUser
     protected function getAuthData()
     {
         return array(
-            'nick_name'    => Yii::app()->user->getState('nick_name'),
-            'access_level' => (int) Yii::app()->user->getState('access_level'),
-            'loginTime'    => Yii::app()->user->getState('loginTime'),
-            'id'           => (int) Yii::app()->user->getState('id'),
+            'nick_name'    => $this->getState('nick_name'),
+            'access_level' => (int) $this->getState('access_level'),
+            'loginTime'    => $this->getState('loginTime'),
+            'id'           => (int) $this->getState('id'),
         );
     }
 
@@ -85,8 +85,8 @@ class YWebUser extends CWebUser
         if (!$this->isAuthenticated())
             return false;
 
-        $loginAdmTime = Yii::app()->user->getState('loginAdmTime');
-        $isAdmin      = Yii::app()->user->getState('isAdmin');
+        $loginAdmTime = $this->getState('loginAdmTime');
+        $isAdmin      = $this->getState('isAdmin');
 
         if ($isAdmin == User::ACCESS_LEVEL_ADMIN && $loginAdmTime)
             return true;
@@ -119,7 +119,7 @@ class YWebUser extends CWebUser
      */
     protected function afterLogout()
     {
-        Yii::app()->cache->clear('loggedIn' . Yii::app()->user->getId());
+        Yii::app()->cache->clear('loggedIn' . $this->getId());
 
         return parent::afterLogout();
     }
@@ -133,7 +133,7 @@ class YWebUser extends CWebUser
      */
     protected function afterLogin($fromCookie)
     {
-        Yii::app()->cache->clear('loggedIn' . Yii::app()->user->getId());
+        Yii::app()->cache->clear('loggedIn' . $this->getId());
 
         return parent::afterLogin($fromCookie);
     }
