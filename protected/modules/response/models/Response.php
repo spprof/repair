@@ -23,7 +23,6 @@ class Response extends YModel
 			array('forwho_id', 'exist', 'className' => 'Performer', 'attributeName' => 'id'),
 			array('rate', 'numerical', 'min' => 0, 'max' => 5),
 			array('status_id', 'numerical', 'min' => 0, 'max' => 1),
-			array('create_date', 'date'),
 		);
 	}
 	
@@ -35,11 +34,11 @@ class Response extends YModel
 		);
 	}
 
-	public function beforeSave() {
+	public function prepare() {
 		$this->owner_id = Yii::app()->user->getId();
 		$this->status_id = 0;
 		$this->create_date = new CDbExpression('NOW()');
-		return parent::beforeSave();
+		return $this;
 	}
 	
 	public function afterSave() {
@@ -71,17 +70,4 @@ class Response extends YModel
 		);
 	}
 
-	public function search()
-	{
-		$criteria=new CDbCriteria;
-		$criteria->compare('id',$this->id);
-		$criteria->compare('owner_id',$this->owner_id);
-		$criteria->compare('forwho_id',$this->forwho_id);
-		$criteria->compare('text',$this->text,true);
-		$criteria->compare('datetime',$this->datetime,true);
-		$criteria->compare('rate',$this->rate);
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
 }

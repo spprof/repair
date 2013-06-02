@@ -23,6 +23,7 @@ class Performer extends YModel
 			array('area', 'in', 'range'=>array_keys($this->getAreaList())),
 			array('is_company', 'boolean', 'allowEmpty'=>false),
 			array('company_name', 'length', 'max'=>100),
+			array('work_types', 'safe'),
 			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
 			array('id, number, experience, area, rating, status, weight, is_company, company_name', 'safe', 'on'=>'search'),
 		);

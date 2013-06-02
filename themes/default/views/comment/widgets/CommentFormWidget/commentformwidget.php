@@ -41,19 +41,19 @@ $form = $this->beginWidget(
     <?php echo $form->hiddenField($model, 'level'); ?>
     <?php echo CHtml::hiddenField('redirectTo', $redirectTo); ?>
     <?php if (!Yii::app()->user->isAuthenticated()) : ?>
-        <div class="row">
+        <div class="field">
             <?php echo $form->labelEx($model, 'name'); ?>
             <?php echo $form->textField($model, 'name', array('size' => 60, 'maxlength' => 128)); ?>
             <?php echo $form->error($model, 'name'); ?>
         </div>
 
-        <div class="row">
+        <div class="field">
             <?php echo $form->labelEx($model, 'email'); ?>
             <?php echo $form->textField($model, 'email', array('size' => 60, 'maxlength' => 128)); ?>
             <?php echo $form->error($model, 'email'); ?>
         </div>
 
-        <div class="row">
+        <div class="field">
             <?php echo $form->labelEx($model, 'url'); ?>
             <?php echo $form->textField($model, 'url', array('size' => 60, 'maxlength' => 128)); ?>
             <?php echo $form->error($model, 'url'); ?>
@@ -61,13 +61,13 @@ $form = $this->beginWidget(
     <?php else: ?>
         <p><?php echo Yii::t('CommentModule.comment', 'От имени'); ?>: <?php echo Yii::app()->user->getState('nick_name'); ?></p>
     <?php endif; ?>
-    <div class="row">
+    <div class="field">
         <?php echo $form->labelEx($model, 'text'); ?>
-        <?php echo $form->textArea($model, 'text', array('rows' => 6, 'cols' => 50)); ?>
+        <?php echo $form->textArea($model, 'text', array('class'=>'span8', 'rows' => 5)); ?>
         <?php echo $form->error($model, 'text'); ?>
     </div>
     <?php if (!Yii::app()->user->isAuthenticated() && CCaptcha::checkRequirements()) : ?>
-        <div class="row">
+        <div class="field">
             <?php echo $form->labelEx($model, 'verifyCode'); ?>
             
                 <?php
@@ -87,8 +87,8 @@ $form = $this->beginWidget(
             </div>
         </div> 
     <?php endif; ?>
-    <div class="row buttons">
-        <?php echo CHtml::submitButton(Yii::t('CommentModule.comment', 'Добавить комментарий')); ?>
+    <div class="field buttons">
+        <?php echo CHtml::submitButton(Yii::t('CommentModule.comment', 'Добавить комментарий'), array('class' => 'btn')); ?>
     </div>
 <?php $this->endWidget(); ?>
 </div><!-- form -->

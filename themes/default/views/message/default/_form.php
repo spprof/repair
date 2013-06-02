@@ -1,27 +1,20 @@
 <div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id' => 'personal-message-form'
+<?php 
+$form = $this->beginWidget('application.modules.yupe.extensions.booster.widgets.TbActiveForm', array(
+	'id'=>'horizontalForm',
+	'type'=>'horizontal',
 )); ?>
 		
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model, 'subject'); ?>
-		<?php echo $form->textField($model, 'subject', array('size' => 50)); ?>
-		<?php echo $form->error($model, 'subject'); ?>	
-	</div>
+	<?php echo $form->textFieldRow($model, 'subject', array()); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model, 'text'); ?>
-		<?php echo $form->textArea($model, 'text', array(
-			'rows' => 10,
-			'cols' => 60
-		)); ?>
-		<?php echo $form->error($model, 'text'); ?>
+	<?php echo $form->textAreaRow($model, 'text', array('class'=>'span8', 'rows'=>5)); ?>
+	
+	<div class="form-actions">
+		<p class="note">Поля, помеченные <span class="required">*</span>, обязательны для заполнения.</p>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Отправить')); ?>
 	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton(MessageModule::t('Send')); ?>
-	</div>
+	
 <?php $this->endWidget(); ?>
 </div>

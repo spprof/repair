@@ -44,60 +44,7 @@
 	<div class="container">
 		<br/>
 		<h2>Выберите вид работ</h2>
-		<br/>
-		<div class='row'>
-			<div class='span4'>
-				<label class="checkbox">
-					<input type="checkbox" value="">Дизайн интерьера помещений 
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Строительное проектирование 
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Земляные работы, фундамент 
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Строительство зданий и сооружений 
-				</label>
-				
-			</div>
-			
-			<div class='span4'>
-				<label class="checkbox">
-					<input type="checkbox" value="">Кровельные работы, водостоки
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Металлоконструкции 
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Печные работы, камины, дымоходы
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Фасадные работы 
-				</label>
-				
-			</div>
-			
-			<div class='span4'>
-				<label class="checkbox">
-					<input type="checkbox" value="">Водоснабжение, отопление, канализация
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Вентиляция и кондиционирование 
-				</label>
-				<label class="checkbox">
-					<input type="checkbox" value="">Электромонтаж и электромонтажные работы 
-				</label>
-				
-				<a href="#">Больше видов работ</a>
-				
-			</div>
-		</div>
-		<br/>
-		<div class='text-center'>
-			<button class="btn btn-primary btn-large">Найти исполнителя</button>
-		</div>
-		<br/>
+		<?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>array(), 'view' => 'main'));?>
 	</div>
 </div>
 
@@ -150,6 +97,8 @@
 					<a href="#" class="tender-all"><b>Все тендеры</b></a>
 				</div>
 				
+				<?php //$this->widget('application.modules.tender.widgets.TenderBarWidget', array());?>
+				
 			</div>
 			
 			<div class='span6' style='background-color: #fff'>
@@ -157,11 +106,9 @@
 					<div style='padding-bottom: 20px; margin-bottom: 20px; border-bottom: 8px dotted #ccc'>
 						<p>
 							Вам нужен комплексный ремонт или у вас нестандартная и сложная задача? Создайте тендер(нужна регистрация) – открытый конкурс для всех специалистов, зарегистрированных на нашем сайте. 
-											
 						</p>
-						<br/>
 						<p class='text-center'>
-							<button class="btn btn-inverse btn-large">Создать тендер</button>
+							<a href='/tender/index/create' class="btn btn-inverse btn-large">Создать тендер</a>
 						</p>
 					</div>
 					<br/>
@@ -181,51 +128,14 @@
 			<div class='span3'>
 				<h4>Лучшие специалисты</h4>
 				<br/>
-				<div class="tender-item" >
-					<span class="badge badge-inverse" title="" rel="tooltip" data-original-title="Рейтинг">4,6</span>
-					<br/>
-					
-					<div class="tender-item-info">
-						<i class="icon-user"></i> <a href="#"><b>Роман</b></a>
-					</div>	
-					<div class="clear"></div>
-
-					<span class="badge badge-warning">установка окон</span> 
-
-					<div class="tender-item-cont">
-						Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
-						но не стандартно, а по горизонтали%).
-					</div>
-					<a class="tender-item-link" href="#">Подробнее &rarr;</a>
-				</div>
-
-				<div class="tender-item" >
-					<span class="badge badge-inverse" title="" rel="tooltip" data-original-title="Рейтинг">4,6</span>
-					<br/>
-					
-					<div class="tender-item-info">
-						<i class="icon-user"></i> <a href="#"><b>Роман</b></a>
-					</div>	
-					<div class="clear"></div>
-
-					<span class="badge badge-warning">установка окон</span> 
-
-					<div class="tender-item-cont">
-						Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
-						но не стандартно, а по горизонтали%).
-					</div>
-					<a class="tender-item-link" href="#">Подробнее &rarr;</a>
-				</div>
 				
-				<div class='text-right'>
-					<a href="#" class="tender-all"><b>Все специалисты</b></a>
-				</div>
+				<?php $this->widget('application.modules.client.widgets.PerformerBarWidget', array());?>
+				
 			</div>
 			
 		</div>
 	</div>
 </div>
-<br/>
 	
 <?php /*
 <div class="row">

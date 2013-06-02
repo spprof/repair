@@ -40,7 +40,7 @@ class Vacancy extends YModel
 			array('owner_id, status_id', 'numerical', 'integerOnly'=>true),
 			array('owner_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
 			array('create_date', 'date'),
-			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
+			array('work_types', 'safe'),
 		);
 	}
 
@@ -70,6 +70,7 @@ class Vacancy extends YModel
 	}
 	
 	public function save($runValidation=true,$attributes=null) {
+		$this->beforeSave();
 		$criteria = new CDbCriteria();
 		$criteria->addInCondition('id', $this->work_types);
 		$work_types = WorkType::model()->findAll($criteria);

@@ -49,9 +49,9 @@
 					
 					<nav>
 						<a href="/">Главная</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#about">Исполнители</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#contact">Тендеры</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="#contact">О проекте</a>
+						<a href="/client/index/index/">Исполнители</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/tender/index/index/">Тендеры</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/site/about/">О проекте</a>
 					</nav>
 					
 				</div>
@@ -68,12 +68,9 @@
 			</div>
 		</div>
 	</header>
-	
+	<?php $this->widget('application.modules.client.widgets.WorkPanelWidget', array());?>
 	<br/>
-		
-		<?php echo $content?>
-	
-	<br/>
+	<?php echo $content?>
 	<footer class='container'>
 		<div class='row'>
 			<div class='span3'>

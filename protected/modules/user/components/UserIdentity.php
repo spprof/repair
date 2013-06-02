@@ -50,6 +50,7 @@ class UserIdentity extends CUserIdentity
             $this->setState('access_level', $user->access_level);
             $this->setState('nick_name', $user->nick_name);
             $this->setState('email', $user->email);
+            $this->setState('client_type', $user->client_type);
             $this->setState('loginTime', time());
 
             // для админа в сессию запишем еще несколько значений

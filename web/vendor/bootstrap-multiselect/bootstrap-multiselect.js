@@ -120,7 +120,7 @@
 					return 'Не выбрано <b class="caret"></b>';
 				}
 				else if (options.length > 3) {
-					return options.length + ' selected <b class="caret"></b>';
+					return options.length + ' выбрано <b class="caret"></b>';
 				}
 				else {
 					var selected = '';

@@ -31,7 +31,6 @@ class ClientRegistrationAction extends CAction {
 			{
 				// если активации не требуется - сразу создаем аккаунт
 				$user = new User;
-
 				$user->createAccount($form->nick_name, $form->email, $form->password, null , User::STATUS_ACTIVE, User::EMAIL_CONFIRM_NO, $form->first_name, '', $type);
 
 				if ($user && !$user->hasErrors())

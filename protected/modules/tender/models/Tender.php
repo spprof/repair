@@ -17,6 +17,7 @@ class Tender extends YModel
 	public function relations()
 	{
 		return array(
+			'owner'=>array(self::BELONGS_TO, 'User', 'owner_id'),
 			'work_type'=>array(self::MANY_MANY, 'WorkType',
 				'rpr_tender_work_type(tender_id, work_type_id)'),
 		);
@@ -41,8 +42,8 @@ class Tender extends YModel
 			array('owner_id', 'exist', 'className' => 'Customer', 'attributeName' => 'id'),
 			array('performer_id', 'exist', 'className' => 'Performer', 'attributeName' => 'id'),
 			array('with_materials', 'boolean', 'allowEmpty'=>false),
-			array('create_date, catch_date', 'date'),
-			//array('work_types', 'exist', 'className' => 'WorkType', 'attributeName' => 'id'),
+			//array('create_date, catch_date', 'date'),
+			array('work_types', 'safe'),
 		);
 	}
 
@@ -91,11 +92,12 @@ class Tender extends YModel
 	}
 	
 	public function save($runValidation=true,$attributes=null) {
+		$this->beforeSave();
 		$criteria = new CDbCriteria();
 		$criteria->addInCondition('id', $this->work_types);
 		$work_type = WorkType::model()->findAll($criteria);
 		$this->work_type = $work_type;
-		$this->withRelated->save($runValidation, array('work_type'));
+		return $this->withRelated->save($runValidation, array('work_type'));
 	}
 
 }

@@ -27,6 +27,10 @@ class IndexController extends YFrontController
 	{
 		$model = $this->_model;
 		$criteria=new CDbCriteria();
+    	$criteria->order = 'create_date desc';
+    	$criteria->with = array('owner','work_type');
+    	$criteria->together = true;
+    	
 		$data_provider = new CActiveDataProvider(
 				$model, array('criteria' => $criteria));
 		$this->render('index', array('data_provider' => $data_provider));
@@ -38,12 +42,13 @@ class IndexController extends YFrontController
 		if (isset($_POST[$model_class])) {
 			$model->attributes = $_POST[$model_class];
 			if ($model->save()) {
-				$this->redirect(array('owner'));
+				$this->redirect(array('/tender/index/index/'));
 			}
 		}
 		$this->render('create',array('model' => $model));
 	}
 	
+	/*
 	public function actionUpdate($id)
 	{
 		$model = $this->loadSelfModel((int)$id);
@@ -53,13 +58,14 @@ class IndexController extends YFrontController
 			$model->setAttributes(Yii::app()->request->getPost($model_class));
 			if ($model->save())
 			{
-				$this->redirect(array('owner'));
+				$this->redirect(array('/tender/index/index/'));
 			}
 		}
 		$this->render('update',array(
 			'model' => $model,
 		));
 	}
+	*/
 	
 	public function loadModel($id, $model=null)
 	{
@@ -68,6 +74,13 @@ class IndexController extends YFrontController
 		if ($model === null)
 			throw new CHttpException(404, Yii::t('tournament_stat', 'Запрошенная страница не найдена.'));
 		return $model;
+	}
+	
+	public function actionView($id) {
+		$criteria=new CDbCriteria();
+		$criteria->with = array('owner','work_type');
+		$model = $this->loadModel($id, $this->_model->setDbCriteria($criteria));
+		$this->render('view', array('model' => $model));
 	}
 	
 }

@@ -10,6 +10,7 @@
  **/
 // подробнее про index.php http://www.yiiframework.ru/doc/guide/ru/basics.entry
 date_default_timezone_set('Europe/Moscow');
+mb_internal_encoding('UTF8');
 
 // Выбираем конфигурацию development-main.php, если сайт работает на localhost
 if (strpos($_SERVER['SERVER_ADDR'], '127') === 0) {

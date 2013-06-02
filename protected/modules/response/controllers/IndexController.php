@@ -41,11 +41,18 @@ class IndexController extends YFrontController
 		if (isset($_POST[$model_class])) {
 			$model->attributes = $_POST[$model_class];
 			$model->forwho_id = $id;
-			if ($model->save()) {
+			if ($model->prepare()->save()) {
 				$this->redirect(array('owner'));
 			}
 		}
 		$this->render('create',array('model' => $model, 'performer' => $performer));
+	}
+	
+	public function actionView($id) {
+		$criteria=new CDbCriteria();
+		$criteria->with = array('forwho', 'owner');
+		$model = $this->loadModel($id, $this->_model->setDbCriteria($criteria));
+		$this->render('view', array('model' => $model));
 	}
 	
 }

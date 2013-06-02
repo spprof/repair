@@ -1,23 +1,10 @@
-<div class='row'>
+<h1>Специалисты</h1>
 
-	<div class='span3'>
-		<div class="alert">
-			<h3>Поиск</h3>
-			<?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>$params));?>
-		</div>
-	</div>
-	
-	<div class='span9'>
-	
-		<h1>Специалисты</h1>
-		
-		<?php $this->widget('application.modules.client.widgets.PerformerOrderWidget', array('params' => $params));?>
-		
-		<?php $this->widget('zii.widgets.CListView', array(
-		    'dataProvider' => $data_provider,
-		    'itemView'     => '_performer_mini',
-		)); ?>
-		
-	</div>
+<?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>$params));?>
 
-</div>
+<?php $this->widget('application.modules.client.widgets.PerformerOrderWidget', array('params' => $params));?>
+
+<?php $this->widget('zii.widgets.CListView', array(
+    'dataProvider' => $data_provider,
+    'itemView'     => '_performer_mini',
+)); ?>
