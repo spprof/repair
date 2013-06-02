@@ -39,6 +39,8 @@
 	<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Мнений','model' => $data, 'modelId' => $data->id)); ?>
 	<br/>
 	<?php $this->widget('application.modules.comment.widgets.CommentFormWidget', array('redirectTo' => $this->createUrl('/tender/index/view/', array('id' => $data->id)), 'model' => $data, 'modelId' => $data->id)); ?>
+<?php else:?>
+	<hr/>
 <?php endif?>
 <br/>
 <?php endif;?>

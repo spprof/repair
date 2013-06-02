@@ -83,19 +83,13 @@
 					<a href="/">Главная</a>
 					</li>
 					<li>
-					<a href="/index.php?r=site/specialists">Специалисты</a>
+					<a href="/client/index/index/">Исполнители</a>
 					</li>
 					<li>
-					<a href="#contact">Тендеры</a>
+					<a href="/tender/index/index/">Тендеры</a>
 					</li>
 					<li>
-					<a href="#contact">Вопросы и ответы</a>
-					</li>
-					<li>
-					<a href="#contact">Найти работу</a>
-					</li>
-					<li>
-					<a href="#contact">О проекте</a>
+					<a href="/site/about/">О проекте</a>
 					</li>
 				</ul>
 			</div>

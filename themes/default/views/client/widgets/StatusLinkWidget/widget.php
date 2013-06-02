@@ -12,6 +12,6 @@
 		  </ul>
 		</div>
 	<?php else:?>
-		<a href='/profile/'><b><?php echo Yii::app()->user->nick_name?></b></a>&nbsp;&nbsp;&nbsp;<a href='/logout/'>Выйти</a>
+		<a href='/client/account/profile/'><b><?php echo Yii::app()->user->nick_name?></b></a>&nbsp;&nbsp;&nbsp;<a href='/logout/'>Выйти</a>
 	<?php endif;?>
 </div>
