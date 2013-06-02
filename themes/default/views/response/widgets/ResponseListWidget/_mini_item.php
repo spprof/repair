@@ -11,4 +11,4 @@
 <br/>
 <?=$data->text?>
 &nbsp;<a href='/response/index/view/id/<?=$data->id?>'>Подробнее</a>
-<br/>
+<hr/>
