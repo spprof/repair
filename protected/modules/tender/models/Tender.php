@@ -67,7 +67,7 @@ class Tender extends YModel
 		);
 	}
 	
-	public function beforeSave() {
+	public function beforeRelatedSave() {
 		$this->owner_id = Yii::app()->user->getId();
 		$this->status_id = 0;
 		$this->create_date = new CDbExpression('NOW()');
@@ -92,12 +92,16 @@ class Tender extends YModel
 	}
 	
 	public function save($runValidation=true,$attributes=null) {
-		$this->beforeSave();
-		$criteria = new CDbCriteria();
-		$criteria->addInCondition('id', $this->work_types);
-		$work_type = WorkType::model()->findAll($criteria);
-		$this->work_type = $work_type;
-		return $this->withRelated->save($runValidation, array('work_type'));
+		if ($this->work_types) {
+			$this->beforeRelatedSave();
+			$criteria = new CDbCriteria();
+			$criteria->addInCondition('id', $this->work_types);
+			$work_type = WorkType::model()->findAll($criteria);
+			$this->work_type = $work_type;
+			return $this->withRelated->save($runValidation, array('work_type'));
+		} else {
+			parent::save($runValidation,$attributes);
+		}
 	}
 
 }

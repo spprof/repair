@@ -34,9 +34,10 @@ class IndexController extends YFrontController {
 		$user = $this->loadModel((int)$id, User::model());
 		$factory = new ClientFactory($user->client_type);
 		$model = $factory->model;
-		$model = $model::model()->with('user');
 		if ($user->client_type == 'performer') {
 			$model = $model->with(array('user', 'work_type'));
+		} else {
+			$model = $model::model()->with('user');
 		}
 		$model = $this->loadModel((int)$id, $model);
 		$this->render('view', array('model' => $model));

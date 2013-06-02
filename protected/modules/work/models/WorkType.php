@@ -39,15 +39,4 @@ class WorkType extends YModel
 		);
 	}
 
-	public function search()
-	{
-		$criteria=new CDbCriteria;
-		$criteria->compare('id',$this->id);
-		$criteria->compare('label',$this->label,true);
-		$criteria->compare('active',$this->active);
-		$criteria->compare('weight',$this->weight);
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
 }

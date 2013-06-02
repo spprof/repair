@@ -81,7 +81,7 @@ class Performer extends YModel
 		return $res;
 	}
 	
-	public function beforeSave() {
+	public function beforeRelatedSave() {
 		if ($this->id)
 			Yii::app()->db->createCommand()
 				->delete(	'rpr_performer_work_type', 
@@ -91,11 +91,16 @@ class Performer extends YModel
 	}
 	
 	public function save($runValidation=true,$attributes=null) {
-		$criteria = new CDbCriteria();
-		$criteria->addInCondition('id', $this->work_types);
-		$work_types = WorkType::model()->findAll($criteria);
-		$this->work_type = $work_types;
-		$this->withRelated->save($runValidation, array('work_type'));
+		if ($this->work_types) {
+			$this->beforeRelatedSave();
+			$criteria = new CDbCriteria();
+			$criteria->addInCondition('id', $this->work_types);
+			$work_types = WorkType::model()->findAll($criteria);
+			$this->work_type = $work_types;
+			$this->withRelated->save($runValidation, array('work_type'));
+		} else {
+			parent::save($runValidation,$attributes);
+		}
 	}
 	
 	public function getPerformerTypes() {
