@@ -14,8 +14,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/web/vendor/jquery/jquery-1.9.1.min.js"></script> 
     <link rel="shortcut icon" href="/favicon.ico"/>
     <title><?php echo CHtml::encode(Yii::app()->name); ?> <?php echo CHtml::encode($this->pageTitle); ?></title>
+    
     <?php
     $mainAssets = Yii::app()->assetManager->publish(
         Yii::getPathOfAlias('application.modules.yupe.views.assets')
