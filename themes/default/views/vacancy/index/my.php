@@ -1,11 +1,11 @@
-<h1>Мои тендеры</h1>
+<h1>Мои заказы</h1>
 <?php
     $this->breadcrumbs = array(
         'Личный кабинет' => array('/client/account/profile/'),
-    	'Мои тендеры'
+    	'Мои заказы'
     );
 
-    $this->pageTitle = 'Мои тендеры';
+    $this->pageTitle = 'Мои заказы';
 ?>
 
 <?php echo $this->renderPartial('_list', array(	'data_provider' => $data_provider,));?>

@@ -6,7 +6,7 @@ class TenderBarWidget extends YWidget
 {
 	public $limit = 2;
 
-	public $order = 'id desc';
+	public $order = 'create_date desc';
 	
     public function run()
     {

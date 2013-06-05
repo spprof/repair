@@ -10,7 +10,7 @@ class PerformerSearchWidget extends YWidget {
 	{
 		$criteria = new CDbCriteria();
 		$criteria->compare('active',1);
-		$criteria->order = 'weight desc';
+		$criteria->order = 'weight desc, label';
 		
 		$work_types = WorkType::model()->findAll($criteria);
 		

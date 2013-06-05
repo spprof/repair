@@ -9,8 +9,8 @@
 		</div>	
 		<div class="clear"></div>
 	
-		<?php if ($model->work_type):?>
-			<?php foreach ($model->work_type as $type):?>
+		<?php if ($item->work_type):?>
+			<?php foreach ($item->work_type as $type):?>
 				<span class="badge badge-warning"><?=$type->label?></span>
 			<?php endforeach;?>
 		<?php endif;?>
@@ -22,6 +22,6 @@
 	</div>
 <?php endforeach;?>
 <div class='text-right'>
-	<a href="/tender/index/index/" class="tender-all"><b>Все тендеры</b></a>
+	<a href="/tender/index/index/" class="tender-all"><b>Все заказы</b></a>
 </div>
 <?php endif;?>

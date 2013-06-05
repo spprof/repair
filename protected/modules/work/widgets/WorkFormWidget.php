@@ -24,7 +24,7 @@ class WorkFormWidget extends CJuiInputWidget{
 		
 		$criteria = new CDbCriteria();
 		$criteria->condition = 'active=1';
-		$criteria->order = 'weight desc';
+		$criteria->order = 'weight desc, label';
 		$res = $model->findAll($criteria);
 		$option_list = array();
 		if ($res) {

@@ -13,9 +13,9 @@ class LoginForm extends YFormModel
         return array(
             array('email, password', 'required'),
             array('email', 'email'),
-            array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.'), 'on' => 'loginLimit'),
-            array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'on' => 'loginLimit'),
-            array('verifyCode', 'emptyOnInvalid'),
+            //array('verifyCode', 'YRequiredValidator', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'message' => Yii::t('UserModule.user', 'Код проверки не корректен.'), 'on' => 'loginLimit'),
+            //array('verifyCode', 'captcha', 'allowEmpty' => !$module->showCaptcha || !CCaptcha::checkRequirements(), 'on' => 'loginLimit'),
+            //array('verifyCode', 'emptyOnInvalid'),
             array('password', 'authenticate'),
         );
     }

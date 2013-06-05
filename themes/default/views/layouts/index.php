@@ -38,7 +38,7 @@
 				<div class='span8 text-right'>
 					<br/>
 					<br/>
-					<h1>Биржа ремонта и строительства</h1>
+					<h1>Сеть ремонта и строительства</h1>
 					<p class="top-desc">
 						 &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
 							качественный ремонт и специалистами в области ремонта и строительства.
@@ -50,7 +50,7 @@
 					<nav>
 						<a href="/">Главная</a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="/client/index/index/">Исполнители</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/tender/index/index/">Тендеры</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/tender/index/index/">Заказы</a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="/site/about/">О проекте</a>
 					</nav>
 					
@@ -62,7 +62,7 @@
 					<div class='logo'>
 						<a href='/'><img src='<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png' alt=''/></a>
 						<br/>
-						<div class='logo-desc'>Биржа ремонта и строительства</div>
+						<div class='logo-desc'>Сеть ремонта и строительства</div>
 					</div>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 					<a href="/client/index/index/">Исполнители</a>
 					</li>
 					<li>
-					<a href="/tender/index/index/">Тендеры</a>
+					<a href="/tender/index/index/">Заказы</a>
 					</li>
 					<li>
 					<a href="/site/about/">О проекте</a>

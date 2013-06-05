@@ -5,7 +5,7 @@
 		switch (Yii::app()->user->getState('client_type')) {
 			case 'customer' : {
 				$links[0] = array( 'label' => 'Профиль', 'url' => '/client/account/profile//' );
-				$links[5] = array( 'label' => 'Мои тендеры', 'url' => '/tender/index/owner/');
+				$links[5] = array( 'label' => 'Мои заказы', 'url' => '/tender/index/owner/');
 				//$links[6] = array( 'label' => 'Избранные исполнители', 'url' => '/tender/index/owner/' );
 				$links[7] = array( 'label' => 'Мои отзывы', 'url' => '/response/index/owner/');
 				break;
@@ -19,7 +19,7 @@
 			}
 			default :
 				$links[0] = array( 'label' => 'Профиль', 'url' => '/profile/' );
-				$links[5] = array( 'label' => 'Админ панель', 'url' => '#' );
+				$links[5] = array( 'label' => 'Админ панель', 'url' => '/yupe/backend' );
 		}
 	?>
 	<?php $links[99] = array( 'label' => 'Выход', 'url' => '/logout/' );?>

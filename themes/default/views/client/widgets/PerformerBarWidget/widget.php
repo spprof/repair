@@ -32,6 +32,6 @@
 	</div>
 <?php endforeach;?>
 <div class='text-right'>
-	<a href="/tender/index/index/" class="tender-all"><b>Все специалисты</b></a>
+	<a href="/client/index/index/" class="tender-all"><b>Все специалисты</b></a>
 </div>
 <?php endif;?>

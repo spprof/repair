@@ -1,11 +1,11 @@
-<h1>Создать тендер</h1>
+<h1>Создать заказ</h1>
 <?php
     $this->breadcrumbs = array(
         'Личный кабинет' => array('/client/account/profile/'),
-    	'Создать тендер'
+    	'Создать заказ'
     );
 
-    $this->pageTitle = 'Создать тендер';
+    $this->pageTitle = 'Создать заказ';
 ?>
 
 <?php echo $this->renderPartial('_form', array(	'model' => $model,));?>

@@ -46,11 +46,6 @@ class ClientModule extends YWebModule
         if (!$this->logoutSuccess)
             $this->logoutSuccess = $homeUrl;
 
-        $this->setImport(array(
-            'user.models.*',
-            'user.components.*',
-        ));
-        
         if (is_array($this->attachedProfileEvents))
         {
             foreach ($this->attachedProfileEvents as $e)

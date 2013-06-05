@@ -1,20 +1,23 @@
 <div class="spec-item row">
 
 	<div class='span3'>
-		<a href="/client/index/view/id/<?=$data->id?>"><i class="icon-user"></i>&nbsp;<b><?=$data->user->nick_name?></b></a>
+		<a href="/client/index/view/id/<?=$data->id?>"><i class="icon-user"></i>&nbsp;<b><?=$data->user->nick_name?></b> <small>смотреть профиль</small></a>
 		<br/>
 		<?php if ($data->is_company):?>
 			<b>Компания:</b> <?=$data->company_name?><br/>
 		<?php endif; ?>
 		<b>Человек в команде:</b> <?=$data->number?><br/>
-		<b>Стаж работы:</b> <?=$data->experience?>  год(а)<br/>
-		<b>География работ:</b> <?=$data->area?> <br/>
+		<?php if ( $data->experience !== null):?>
+			<b>Стаж работы (лет):</b> <?=$data->experience?><br/>
+		<?php endif;?>
+		<?php $area_list = $data->getAreaList()?>
+		<b>География работ:</b> <?=$area_list[$data->area]?> <br/>
 	</div>
 	<div class='span9'>
 		<div class='row'>
 			<div class='span5'>
 				<?php if ($data->rating != 0):?>
-				<span class='badge badge-inverse'><?=$data->rating?></span>
+				Рейтинг: <span class='badge badge-inverse'><?=$data->rating?></span>
 				<?php endif;?>
 			</div>
 			<div class='span4 text-right'>

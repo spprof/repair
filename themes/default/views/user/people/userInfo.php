@@ -35,7 +35,7 @@ if ($user->location)
 <br/><br/><br/>
 
 <?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array(
-    'label' => 'Мнений',
+    'label' => 'Комментариев',
     'model' => $user,
     'modelId' => $user->id,
 )); ?>

@@ -4,7 +4,7 @@ class IndexController extends YFrontController
 {
 	public function filters() {
 		return array(
-			array('application.components.FrontAccessControl - index'),
+			array('application.components.FrontAccessControl - index,view'),
 		);
 	}
 	
@@ -32,7 +32,7 @@ class IndexController extends YFrontController
     	$criteria->together = true;
     	
 		$data_provider = new CActiveDataProvider(
-				$model, array('criteria' => $criteria));
+				$model, array('criteria' => $criteria, 'pagination'=>array()));
 		$this->render('index', array('data_provider' => $data_provider));
 	}
 	

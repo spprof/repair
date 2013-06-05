@@ -40,7 +40,7 @@ $this->breadcrumbs = array(
 
 <br/><br/>
 
-<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Мнений','model' => $model, 'modelId' => $model->id)); ?>
+<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Комментариев','model' => $model, 'modelId' => $model->id)); ?>
 
 <br/>
 

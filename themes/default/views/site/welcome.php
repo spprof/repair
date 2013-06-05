@@ -55,49 +55,9 @@
 		<div class='row'>
 		
 			<div class='span3'>
-				<h4>Последние тендеры</h4>
-				<br/>
-				<div class="tender-item">
-					<div class="tender-item-date">
-						25 мая 14:35
-					</div>
-					<div class="tender-item-info">
-						<i class="icon-user"></i> <a href="#"><b>Роман</b></a>
-					</div>	
-					<div class="clear"></div>
-
-					<span class="badge badge-warning">установка окон</span> 
-
-					<div class="tender-item-cont">
-						Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
-						но не стандартно, а по горизонтали%).
-					</div>
-					<a class="tender-item-link" href="#">Подробнее &rarr;</a>
-				</div>
-
-				<div class="tender-item">
-					<div class="tender-item-date">
-						25 мая 14:35
-					</div>
-					<div class="tender-item-info">
-						<i class="icon-user"></i> <a href="#"><b>Роман</b></a>
-					</div>	
-					<div class="clear"></div>
-
-					<span class="badge badge-warning">установка окон</span> 
-
-					<div class="tender-item-cont">
-						Необходимо установить окна и двери, но не стандартно, а необходимо установить окна и двери, 
-						но не стандартно, а по горизонтали%).
-					</div>
-					<a class="tender-item-link" href="#">Подробнее &rarr;</a>
-				</div>
-				
-				<div class='text-right'>
-					<a href="#" class="tender-all"><b>Все тендеры</b></a>
-				</div>
-				
-				<?php //$this->widget('application.modules.tender.widgets.TenderBarWidget', array());?>
+				<h4>Последние заказы</h4>
+				<br/>				
+				<?php $this->widget('application.modules.tender.widgets.TenderBarWidget', array());?>
 				
 			</div>
 			
@@ -105,10 +65,10 @@
 				<div style='padding: 25px;'>
 					<div style='padding-bottom: 20px; margin-bottom: 20px; border-bottom: 8px dotted #ccc'>
 						<p>
-							Вам нужен комплексный ремонт или у вас нестандартная и сложная задача? Создайте тендер(нужна регистрация) – открытый конкурс для всех специалистов, зарегистрированных на нашем сайте. 
+							Вам нужен комплексный ремонт или у вас нестандартная и сложная задача? Создайте заказ(нужна регистрация) – открытый конкурс для всех специалистов, зарегистрированных на нашем сайте. 
 						</p>
 						<p class='text-center'>
-							<a href='/tender/index/create' class="btn btn-inverse btn-large">Создать тендер</a>
+							<a href='/tender/index/create' class="btn btn-inverse btn-large">Создать заказ</a>
 						</p>
 					</div>
 					<br/>
@@ -150,16 +110,16 @@
 		<br/>
 		
 			<div class="alert">
-				<h3><!--<i class="icon-plus-sign"></i>-->Создание тендера</h3>
+				<h3><!--<i class="icon-plus-sign"></i>-->Создание заказа</h3>
 				<p>
 					Вам нужен комплексный ремонт или у вас нестандартная и сложная задача?
-					Создайте <b>тендер</b>(нужна регистрация) &ndash; <b>открытый конкурс</b> для всех специалистов, 
+					Создайте <b>заказ</b>(нужна регистрация) &ndash; <b>открытый конкурс</b> для всех специалистов, 
 					зарегистрированных на нашем сайте.<br/>
-			  		При заполнении тендера подробно опишите ваш проект, укажите сроки выполнения работ, примерный бюджет.
+			  		При заполнении заказа подробно опишите ваш проект, укажите сроки выполнения работ, примерный бюджет.
 			  		Специалисты нашего сайта сделают вам различные предложения, среди которых вы сможете выбрать оптимальное
 			  		и заключить договор.
 			 </p>
-			<p><button class="btn btn-inverse">Создать тендер</button></p>
+			<p><button class="btn btn-inverse">Создать заказ</button></p>
 			</div>
 
 			<div class="alert">
@@ -197,14 +157,14 @@
 			<h3><!--<i class="icon-user"></i>--> Зарегистрируйтесь, как специалист</h3>
 		  	<p>
 			  <strong></strong>Если вы <b>мастер строительных и ремонтных работ</b>, то зарегистрируйтесь
-			  на нашем сайте, участвуйте в общем рейтинге, заполняйте портфолио, участвуйте в тендерах и мы обеспечим вас
+			  на нашем сайте, участвуйте в общем рейтинге, заполняйте портфолио, участвуйте в заказах и мы обеспечим вас
 			  <b>стабильной работой</b>.
 			</p>
 			<a href='/client/account/registration?type=performer' class="btn btn-inverse btn-large">Регистрация</a><br/>
 		</div>
 		<br/>
 		<div class="alert">
-			<h3>Последние тендеры</h3>
+			<h3>Последние заказы</h3>
 
 				<div class="tender-item">
 					<div class="tender-item-info">

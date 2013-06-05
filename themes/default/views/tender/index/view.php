@@ -27,8 +27,8 @@
 					),
 					'term',
 					array(
-						'label' => 'Свои материалы',
-						'value' => ($model->with_materials) ? 'Да' : 'Нет',
+						'label' => 'Материалы',
+						'value' => ($model->with_materials) ? 'Заказчика' : 'Исполнителя',
 					),
 					array(
 							'label' => 'Типы работ',
@@ -43,7 +43,7 @@
 	</div>
 </div>
 <br/>
-<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Мнений','model' => $model, 'modelId' => $model->id)); ?>
+<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Комментариев','model' => $model, 'modelId' => $model->id)); ?>
 <br/>
 <?php $this->widget('application.modules.comment.widgets.CommentFormWidget', array('redirectTo' => $this->createUrl('/tender/index/view/', array('id' => $model->id)), 'model' => $model, 'modelId' => $model->id)); ?>
 <br/>

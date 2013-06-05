@@ -10,9 +10,11 @@ class AccountController extends YFrontController
                 'testLimit' => 1,
                 'minLength' => Yii::app()->getModule('user')->minCaptchaLength,
             ),
+        	/*
             'registration'     => array(
                 'class' => 'application.modules.user.controllers.account.RegistrationAction',
             ),
+            */
             'profile'          => array(
                 'class' => 'application.modules.user.controllers.account.ProfileAction'
             ),
