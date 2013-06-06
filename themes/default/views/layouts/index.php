@@ -49,7 +49,7 @@
 					
 					<nav>
 						<a href="/">Главная</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/client/index/index/">Исполнители</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/client/index/index/">Специалисты</a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="/tender/index/index/">Заказы</a>&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="/site/about/">О проекте</a>
 					</nav>
@@ -83,7 +83,7 @@
 					<a href="/">Главная</a>
 					</li>
 					<li>
-					<a href="/client/index/index/">Исполнители</a>
+					<a href="/client/index/index/">Специалисты</a>
 					</li>
 					<li>
 					<a href="/tender/index/index/">Заказы</a>

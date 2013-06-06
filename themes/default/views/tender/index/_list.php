@@ -4,4 +4,12 @@
 <?php $this->widget('zii.widgets.CListView', array(
 		    'dataProvider' => $data_provider,
 		    'itemView'     => '_tender_mini',
+			'cssFile'=>false,
+			'pager' => array(
+				'cssFile'=>false,
+				'firstPageLabel'=>'<<',
+				'prevPageLabel'=>'<',
+				'nextPageLabel'=>'>',
+				'lastPageLabel'=>'>>'
+			)
 		)); ?>

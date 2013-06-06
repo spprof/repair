@@ -2,7 +2,7 @@
 <div class='row'>
 	<div class='span3'>
 		<?php if ($type === 'owner'):?>
-			Исполнитель: <a href="/client/index/view/id/<?=$data->forwho->id?>"><b><?=$data->forwho->nick_name?></b></a>
+			Специалист: <a href="/client/index/view/id/<?=$data->forwho->id?>"><b><?=$data->forwho->nick_name?></b></a>
 		<?php endif?> 
 		<?php if ($type === 'forwho'):?>
 			Написал: <a href="/client/index/view/id/<?=$data->owner->id?>"><b><?=$data->owner->nick_name?></b></a>

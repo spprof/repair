@@ -18,12 +18,12 @@ class IndexController extends YFrontController {
 		if ($params['order']) {
 			//$criteria->order = $params['order'] . ' desc';
 		}
-		$criteria->together = true;
+		//$criteria->together = true;
 		
 		$data_provider = new CActiveDataProvider(
 			Performer::model(),
 			array(  'criteria' => $criteria, 
-					'pagination'=>array('pageSize'=>10))
+					'pagination'=>array('pageSize'=>7))
 		);
 		
 		$this->render('index', array('params' => $params, 'data_provider' => $data_provider));

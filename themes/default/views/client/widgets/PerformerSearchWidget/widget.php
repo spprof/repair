@@ -9,7 +9,7 @@
 		<?php foreach ($performer_types as $key=>$item):?>
 			<div class='span4'>
 				<label class="checkbox">
-					<?php $checked = (isset($params['performer_type'][$key]))?>
+					<?php $checked = (isset($params['performer_type']) && isset($params['performer_type'][$key]))?>
 					<input type="checkbox" value="<?=$key?>" name="search[performer_type][]" <?=($checked) ? 'checked="checked"' : ''?>/>
 					<?=$item?>
 				</label>
@@ -60,7 +60,7 @@
 		<div class='span2'>
 		</div>
 		<div class='span8 text-center'>
-			<button class="btn btn-primary <?=($view == 'main') ? 'btn-large' : ''?>">Найти исполнителя</button>
+			<button class="btn btn-primary <?=($view == 'main') ? 'btn-large' : ''?>">Найти специалиста</button>
 		</div>
 		<?php if ($view !== 'main'):?>
 		<div class='span2 text-right'>

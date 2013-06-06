@@ -13,7 +13,7 @@
 			<?php if ($data->term):?>
 				<div><b>Срок:</b> <?=$data->term?></div>
 			<?php endif;?>
-			<div><?=($data->with_materials) ? '<span class="badge badge-info">Материалы заказчика</span>' : '<span class="badge badge-success">Материалы исполнителя</span>'?></div>
+			<div><?=($data->with_materials) ? '<span class="badge badge-info">Материалы заказчика</span>' : '<span class="badge badge-success">Материалы специалиста</span>'?></div>
 			<div><b>Бюджет:</b> <?=$data->budget?></div>
 		</div>
 		<div class='span8'>

@@ -28,7 +28,7 @@
 					'term',
 					array(
 						'label' => 'Материалы',
-						'value' => ($model->with_materials) ? 'Заказчика' : 'Исполнителя',
+						'value' => ($model->with_materials) ? 'Заказчика' : 'Специалиста',
 					),
 					array(
 							'label' => 'Типы работ',

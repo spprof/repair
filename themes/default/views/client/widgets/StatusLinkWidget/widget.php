@@ -8,7 +8,7 @@
 		  </a>
 		  <ul class="dropdown-menu">
 		     <li><a href="/client/account/registration?type=customer">Я заказчик</a></li>
-		     <li><a href="/client/account/registration?type=performer">Я исполнитель</a></li>
+		     <li><a href="/client/account/registration?type=performer">Я специалист</a></li>
 		  </ul>
 		</div>
 	<?php else:?>

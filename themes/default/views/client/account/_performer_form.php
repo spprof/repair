@@ -4,6 +4,8 @@
 
 <?php echo $form->textFieldRow($model, 'number', array('append'=>' (человек)')); ?>
 
+<?php echo $form->textFieldRow($model, 'experience', array('append'=>' (лет)')); ?>
+
 <?php echo $form->dropDownListRow($model, 'area', $model->getAreaList()); ?>
 
 <div class="control-group ">

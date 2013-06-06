@@ -8,7 +8,7 @@ $this->breadcrumbs = array('Регистрация нового пользова
 	<?php if ($type == 'customer'):?>
 		заказчика
 	<?php elseif ($type == 'performer'):?>
-		исполнителя
+		специалиста
 	<?php else:?>
 		пользователя
 	<?php endif;?>

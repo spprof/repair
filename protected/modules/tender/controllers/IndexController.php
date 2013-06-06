@@ -29,10 +29,10 @@ class IndexController extends YFrontController
 		$criteria=new CDbCriteria();
     	$criteria->order = 'create_date desc';
     	$criteria->with = array('owner','work_type');
-    	$criteria->together = true;
-    	
+    	//$criteria->together = true;
+    	$criteria->group = 't.id';
 		$data_provider = new CActiveDataProvider(
-				$model, array('criteria' => $criteria, 'pagination'=>array()));
+				$model, array('criteria' => $criteria, 'pagination'=>array('pageSize'=>7)));
 		$this->render('index', array('data_provider' => $data_provider));
 	}
 	
