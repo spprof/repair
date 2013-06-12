@@ -8,7 +8,8 @@ class UserModule extends YWebModule
     public $loginAdminSuccess              = '';
     public $logoutSuccess;
 
-    public $notifyEmailFrom;
+    public $notifyEmailFrom				   = 'admin@brs43.ru';
+    public $adminEmail				   	   = 'spprof@yandex.ru';
     public $autoRecoveryPassword           = true;
     public $recoveryDisabled               = false;
     public $registrationDisabled           = false;

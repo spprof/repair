@@ -75,7 +75,9 @@ class DefaultController extends YFrontController
 		$model = new PersonalMessage;
 		$model->sender_id = $this->_userId;
 		$model->recipient_id = $to;
-		if ($model->recipient === null)
+		$user = User::model()->findByPk($to);
+		
+		if ($model->recipient === null || ! $user)
 		{
 			throw new CHttpException(404, MessageModule::t('User not found'));
 		}
@@ -84,8 +86,17 @@ class DefaultController extends YFrontController
 		{
 			$model->attributes = $_POST['PersonalMessage'];
 			
-			if ($model->save())
-		       	{
+			if ($model->save()) {
+				
+				$emailBody = $this->controller->renderPartial('messageCreatedEmail', array('model' => $model), true);
+
+				Yii::app()->mail->send(
+					$module->notifyEmailFrom,
+					$user->email,
+					Yii::t('UserModule.user', 'Новое сообщение на сайте {site} !', array('{site}' => Yii::app()->name)),
+					$mailBody
+				);
+				
 				Yii::app()->user->setFlash('success', MessageModule::t('Message has been sent.'));
 				$this->redirect(array('/message/default'));					
 			}

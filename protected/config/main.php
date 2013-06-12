@@ -66,7 +66,7 @@ if (!empty($files)) {
 return array(
     'basePath'          => dirname(__FILE__) . '/..',
     'defaultController' => 'site',             // контроллер по умолчанию
-    'name'              => 'Юпи!',             // название приложения
+    'name'              => 'crs43',             // название приложения
     'language'          => 'ru',               // язык по умолчанию
     'sourceLanguage'    => 'ru',
     'theme'             => 'default',          // тема оформления по умолчанию

@@ -42,6 +42,27 @@ class IndexController extends YFrontController
 			$model->attributes = $_POST[$model_class];
 			$model->forwho_id = $id;
 			if ($model->prepare()->save()) {
+				
+				$module = Yii::app()->getModule('user');
+				
+				$emailBody = $this->controller->renderPartial('responseCreatedEmail', array('model' => $model), true);
+				
+				Yii::app()->mail->send(
+					$module->notifyEmailFrom,
+					$performer->user->email,
+					Yii::t('UserModule.user', 'Новый отзыв на сайте {site} !', array('{site}' => Yii::app()->name)),
+					$mailBody
+				);
+				
+				$emailBody = $this->controller->renderPartial('responseCreatedEmailToAdmin', array('model' => $model), true);
+				
+				Yii::app()->mail->send(
+					$module->notifyEmailFrom,
+					$module->adminEmail,
+					Yii::t('UserModule.user', 'Новый отзыв на сайте {site} !', array('{site}' => Yii::app()->name)),
+					$mailBody
+				);
+				
 				$this->redirect(array('owner'));
 			}
 		}

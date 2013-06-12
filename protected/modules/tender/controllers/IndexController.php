@@ -42,30 +42,23 @@ class IndexController extends YFrontController
 		if (isset($_POST[$model_class])) {
 			$model->attributes = $_POST[$model_class];
 			if ($model->save()) {
+				
+				$module = Yii::app()->getModule('user');
+				
+				$emailBody = $this->controller->renderPartial('tenderCreatedEmailToAdmin', array('model' => $model), true);
+				
+				Yii::app()->mail->send(
+					$module->notifyEmailFrom,
+					$module->adminEmail,
+					Yii::t('UserModule.user', 'Новый тендер на сайте {site} !', array('{site}' => Yii::app()->name)),
+					$mailBody
+				);
+				
 				$this->redirect(array('/tender/index/index/'));
 			}
 		}
 		$this->render('create',array('model' => $model));
 	}
-	
-	/*
-	public function actionUpdate($id)
-	{
-		$model = $this->loadSelfModel((int)$id);
-		$model_class = get_class($model);
-		if (Yii::app()->request->isPostRequest && isset($_POST[$model_class]))
-		{
-			$model->setAttributes(Yii::app()->request->getPost($model_class));
-			if ($model->save())
-			{
-				$this->redirect(array('/tender/index/index/'));
-			}
-		}
-		$this->render('update',array(
-			'model' => $model,
-		));
-	}
-	*/
 	
 	public function loadModel($id, $model=null)
 	{
