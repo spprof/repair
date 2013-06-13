@@ -6,7 +6,7 @@
 	<?php $this->widget('CStarRating',array(
 	                          'model'=>$data,
 	                          'attribute'=>'rate',
-							  'id' => 'rate_' . $data->id,
+							  'id' => 'rate_' . md5($data->create_date),
 	                          'minRating'=>1,
 	                          'maxRating'=>5,
 	                          'readOnly'=>true,

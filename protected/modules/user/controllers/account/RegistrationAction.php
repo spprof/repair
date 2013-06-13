@@ -110,15 +110,6 @@ class RegistrationAction extends CAction
                             $emailBody
                          );
                         
-                        $emailBody = $this->controller->renderPartial('accountCreatedEmailToAdmin', array('model' => $user), true);
-                        
-                        Yii::app()->mail->send(
-	                        $module->notifyEmailFrom,
-	                        $module->adminEmail,
-	                        Yii::t('UserModule.user', 'Регистрация на сайте {site} !', array('{site}' => Yii::app()->name)),
-	                        $emailBody
-                        );
-
                         Yii::app()->user->setFlash(
                             YFlashMessages::NOTICE_MESSAGE,
                             Yii::t('UserModule.user', 'Учетная запись создана! Пожалуйста, авторизуйтесь!')

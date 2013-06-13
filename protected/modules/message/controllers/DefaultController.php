@@ -88,7 +88,7 @@ class DefaultController extends YFrontController
 			
 			if ($model->save()) {
 				
-				$emailBody = $this->controller->renderPartial('messageCreatedEmail', array('model' => $model), true);
+				$emailBody = $this->renderPartial('messageCreatedEmail', array('model' => $model), true);
 
 				Yii::app()->mail->send(
 					$module->notifyEmailFrom,

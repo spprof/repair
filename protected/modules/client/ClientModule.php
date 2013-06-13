@@ -8,7 +8,8 @@ class ClientModule extends YWebModule
 	public $registrationSucess             = '/user/account/login';
 	public $logoutSuccess;
 	
-	public $notifyEmailFrom;
+	public $notifyEmailFrom				   = 'admin@crs43.ru';
+    public $adminEmail				   	   = 'spprof@yandex.ru';
     public $autoRecoveryPassword           = true;
     public $recoveryDisabled               = false;
     public $registrationDisabled           = false;

@@ -43,15 +43,15 @@ class IndexController extends YFrontController
 			$model->attributes = $_POST[$model_class];
 			if ($model->save()) {
 				
-				$module = Yii::app()->getModule('user');
+				$module = Yii::app()->getModule('client');
 				
-				$emailBody = $this->controller->renderPartial('tenderCreatedEmailToAdmin', array('model' => $model), true);
+				$emailBody = $this->renderPartial('tenderCreatedEmailToAdmin', array('model' => $model), true);
 				
 				Yii::app()->mail->send(
 					$module->notifyEmailFrom,
 					$module->adminEmail,
 					Yii::t('UserModule.user', 'Новый тендер на сайте {site} !', array('{site}' => Yii::app()->name)),
-					$mailBody
+					$emailBody
 				);
 				
 				$this->redirect(array('/tender/index/index/'));
