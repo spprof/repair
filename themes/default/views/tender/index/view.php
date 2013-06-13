@@ -43,7 +43,7 @@
 	</div>
 </div>
 <br/>
-<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Комментариев','model' => $model, 'modelId' => $model->id)); ?>
+<?php $this->widget('application.modules.comment.widgets.CommentsListWidget', array('label' => 'Откликов','model' => $model, 'modelId' => $model->id)); ?>
 <br/>
 <?php $this->widget('application.modules.comment.widgets.CommentFormWidget', array('redirectTo' => $this->createUrl('/tender/index/view/', array('id' => $model->id)), 'model' => $model, 'modelId' => $model->id)); ?>
 <br/>

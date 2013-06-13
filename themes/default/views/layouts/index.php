@@ -38,9 +38,9 @@
 				<div class='span8 text-right'>
 					<br/>
 					<br/>
-					<h1>Сеть ремонта и строительства</h1>
+					<h1>Центр ремонта и строительства</h1>
 					<p class="top-desc">
-						 &ndash; это сервис, позволяющий наладить коммуникации между тему, кому нужен 
+						 &ndash; это сервис, позволяющий наладить коммуникации между тем, кому нужен 
 							качественный ремонт и специалистами в области ремонта и строительства.
 					</p>
 					
@@ -62,7 +62,7 @@
 					<div class='logo'>
 						<a href='/'><img src='<?php echo Yii::app()->theme->baseUrl; ?>/web/images/logo.png' alt=''/></a>
 						<br/>
-						<div class='logo-desc'>Сеть ремонта и строительства</div>
+						<div class='logo-desc'>Центр ремонта и строительства</div>
 					</div>
 				</div>
 			</div>
@@ -94,7 +94,7 @@
 				</ul>
 			</div>
 			<div class='span3'>
-				<a href="mailto:info@brs43.ru" class="mail-to">info@brs43.ru</a>
+				<a href="mailto:info@brs43.ru" class="mail-to">info@сrs43.ru</a>
 				<p class="mail-to-desc">По вопросам рекламы<br> и сотрудничества</p>
 			</div>
 		</div>

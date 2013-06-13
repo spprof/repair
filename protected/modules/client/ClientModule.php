@@ -15,7 +15,7 @@ class ClientModule extends YWebModule
     public $registrationDisabled           = false;
     public $minPasswordLength              = 5;
     public $emailAccountVerification       = false;
-    public $showCaptcha                    = false;
+    public $showCaptcha                    = true;
     public $minCaptchaLength               = 5;
     public $documentRoot;
     public $avatarsDir;
