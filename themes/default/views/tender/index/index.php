@@ -1,3 +1,4 @@
+<?php $this->pageTitle = 'CRS43 - Заказы'; ?>
 <h1>Список заказов</h1>
 <?php
     $this->breadcrumbs = array(

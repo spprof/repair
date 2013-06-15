@@ -1,3 +1,5 @@
+<?php $this->pageTitle = 'CRS43 - Специалисты'; ?>
+
 <h1>Специалисты</h1>
 
 <?php $this->widget('application.modules.client.widgets.PerformerSearchWidget', array('params' =>$params));?>
