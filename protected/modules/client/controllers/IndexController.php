@@ -18,7 +18,8 @@ class IndexController extends YFrontController {
 		if ($params['order']) {
 			//$criteria->order = $params['order'] . ' desc';
 		}
-		//$criteria->together = true;
+		$criteria->together = true;
+		$criteria->group = 't.id';
 		
 		$data_provider = new CActiveDataProvider(
 			Performer::model(),

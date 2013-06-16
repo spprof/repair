@@ -28,7 +28,7 @@
 		<div class="tender-item-cont">
 			<?=mb_substr($item->about, 0, 200)?>
 		</div>
-		<a class="tender-item-link" href="/tender/index/view/id/<?=$this->id?>">Подробнее &rarr;</a>
+		<a class="tender-item-link" href="/client/index/view/id/<?=$item->user->id?>">Подробнее &rarr;</a>
 	</div>
 <?php endforeach;?>
 <div class='text-right'>
